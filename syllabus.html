@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Syllabus 2025-26</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --info: #2196f3;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.8rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-top: 30px;
+            background: linear-gradient(90deg, var(--accent) 0%, rgba(76,201,240,0.1) 100%);
+            padding: 10px 15px;
+            border-radius: 8px 0 0 8px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 25px;
+            padding-bottom: 8px;
+            border-bottom: 2px dashed var(--accent);
+        }
+        
+        h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .syllabus-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .syllabus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            font-weight: 600;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f8ff;
+        }
+        
+        .unit {
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .topic {
+            margin-left: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .topic:hover {
+            background-color: #e9f5ff;
+        }
+        
+        .note {
+            font-style: italic;
+            color: #666;
+            padding: 10px;
+            background-color: #fff8e1;
+            border-left: 4px solid var(--warning);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .highlight {
+            background-color: #e3f2fd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .badge-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .badge-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .badge-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .syllabus-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mathematics Syllabus 2025-26</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <div class="syllabus-card">
+            <h2>CLASS XI (2025-26)</h2>
+            <p><span class="badge badge-primary">Three Hours</span> <span class="badge badge-secondary">Max Marks: 80</span></p>
+
+            <h3>COURSE STRUCTURE</h3>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Units</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>I.</td>
+                    <td>Sets and Functions</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>II.</td>
+                    <td>Algebra</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>III.</td>
+                    <td>Coordinate Geometry</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>IV.</td>
+                    <td>Calculus</td>
+                    <td>08</td>
+                </tr>
+                <tr>
+                    <td>V.</td>
+                    <td>Statistics and Probability</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td></td>
+                    <td><strong>80</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Internal Assessment</strong></td>
+                    <td></td>
+                    <td><strong>20</strong></td>
+                </tr>
+            </table>
+
+            <p class="note">*No chapter/unit-wise weightage. Care to be taken to cover all the chapters.</p>
+
+            <div class="unit">
+                <h3>Unit-I: Sets and Functions</h3>
+                
+                <div class="topic">
+                    <h4>1. Sets</h4>
+                    <p>Sets and their representations, Empty set, Finite and Infinite sets, Equal sets, Subsets, Subsets of a set of real numbers especially intervals (with notations). Universal set. Venn diagrams. Union and Intersection of sets. Difference of sets. Complement of a set. Properties of Complement.</p>
+                    <div>
+                        <span class="tag">Venn diagrams</span>
+                        <span class="tag">Union</span>
+                        <span class="tag">Intersection</span>
+                        <span class="tag">Complement</span>
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h4>2. Relations & Functions</h4>
+                    <p>Ordered pairs. Cartesian product of sets. Number of elements in the Cartesian product of two finite sets. Cartesian product of the set of reals with itself (up to R × R × R). Definition of relation, pictorial diagrams, domain, co-domain and range of a relation. Function as a special type of relation. Pictorial representation of a function, domain, co-domain and range of a function. Real valued functions, domain and range of these functions, constant, identity, polynomial, rational, modulus, signum, exponential, logarithmic and greatest integer functions, with their graphs. Sum, difference, product and quotients of functions.</p>
+                    <div>
+                        <span class="tag">Cartesian product</span>
+                        <span class="tag">Relations</span>
+                        <span class="tag">Functions</span>
+                        <span class="tag">Graphs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="unit">
+                <h3>Unit-II: Algebra</h3>
+                
+                <div class="topic">
+                    <h4>1. Complex Numbers and Quadratic Equations</h4>
+                    <p>Need for complex numbers, especially √-1, to be motivated by inability to solve some of the quadratic equations. Algebraic properties of complex numbers. Argand plane.</p>
+                    <div>
+                        <span class="tag">Complex numbers</span>
+                        <span class="tag">Quadratic equations</span>
+                        <span class="tag">Argand plane</span>
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h4>2. Linear Inequalities</h4>
+                    <p>Linear inequalities. Algebraic solutions of linear inequalities in one variable and their representation on the number line.</p>
+                    <div>
+                        <span class="tag">Inequalities</span>
+                        <span class="tag">Number line</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>QUESTION PAPER DESIGN</h3>
+            <table>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Typology of Questions</th>
+                    <th>Total Marks</th>
+                    <th>% Weightage</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><span class="highlight">Remembering:</span> Exhibit memory of previously learned material by recalling facts, terms, basic concepts, and answers. <span class="highlight">Understanding:</span> Demonstrate understanding of facts and ideas by organizing, comparing, translating, interpreting, giving descriptions, and stating main ideas</td>
+                    <td>44</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><span class="highlight">Applying:</span> Solve problems to new situations by applying acquired knowledge, facts, techniques and rules in a different way.</td>
+                    <td>20</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><span class="highlight">Analysing:</span> Examine and break information into parts by identifying motives or causes. <span class="highlight">Evaluating:</span> Present and defend opinions by making judgments about information. <span class="highlight">Creating:</span> Compile information together in a different way.</td>
+                    <td>16</td>
+                    <td>20</td>
+                </tr>
+            </table>
+
+            <h3>INTERNAL ASSESSMENT <span class="badge badge-accent">20 MARKS</span></h3>
+            <div class="topic" style="background-color: #e8f5e9;">
+                <h4>Periodic Tests</h4>
+                <p>Best 2 out of 3 tests conducted: <span class="highlight">10 Marks</span></p>
+            </div>
+            <div class="topic" style="background-color: #e3f2fd;">
+                <h4>Mathematics Activities</h4>
+                <p>Practical work and projects: <span class="highlight">10 Marks</span></p>
+            </div>
+        </div>
+
+        <div class="syllabus-card">
+            <h2>CLASS XII (2025-26)</h2>
+            <p><span class="badge badge-primary">One Paper</span> <span class="badge badge-secondary">Max. Marks: 80</span></p>
+
+            <h3>COURSE STRUCTURE</h3>
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Units</th>
+                    <th>Marks</th>
+                </tr>
+                <tr>
+                    <td>I.</td>
+                    <td>Relations and Functions</td>
+                    <td>08</td>
+                </tr>
+                <tr>
+                    <td>II.</td>
+                    <td>Algebra</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>III.</td>
+                    <td>Calculus</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <td>IV.</td>
+                    <td>Vectors and Three-Dimensional Geometry</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>V.</td>
+                    <td>Linear Programming</td>
+                    <td>05</td>
+                </tr>
+                <tr>
+                    <td>VI.</td>
+                    <td>Probability</td>
+                    <td>08</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td></td>
+                    <td><strong>80</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Internal Assessment</strong></td>
+                    <td></td>
+                    <td><strong>20</strong></td>
+                </tr>
+            </table>
+
+            <div class="unit">
+                <h3>Unit-I: Relations and Functions</h3>
+                
+                <div class="topic">
+                    <h4>1. Relations and Functions</h4>
+                    <p>Types of relations: reflexive, symmetric, transitive and equivalence relations. One to one and onto functions.</p>
+                    <div>
+                        <span class="tag">Relations</span>
+                        <span class="tag">Functions</span>
+                        <span class="tag">Equivalence</span>
+                    </div>
+                </div>
+
+                <div class="topic">
+                    <h4>2. Inverse Trigonometric Functions</h4>
+                    <p>Definition, range, domain, principal value branch. Graphs of inverse trigonometric functions.</p>
+                    <div>
+                        <span class="tag">Trigonometry</span>
+                        <span class="tag">Inverse functions</span>
+                        <span class="tag">Graphs</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>QUESTION PAPER DESIGN</h3>
+            <table>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Typology of Questions</th>
+                    <th>Total Marks</th>
+                    <th>% Weightage</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><span class="highlight">Remembering:</span> Exhibit memory of previously learned material. <span class="highlight">Understanding:</span> Demonstrate understanding of facts and ideas.</td>
+                    <td>44</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><span class="highlight">Applying:</span> Solve problems to new situations.</td>
+                    <td>20</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><span class="highlight">Higher Order Thinking Skills</span> (Analysis, Evaluation, Creation)</td>
+                    <td>16</td>
+                    <td>20</td>
+                </tr>
+            </table>
+
+            <h3>INTERNAL ASSESSMENT <span class="badge badge-accent">20 MARKS</span></h3>
+            <div class="topic" style="background-color: #e8f5e9;">
+                <h4>Periodic Tests</h4>
+                <p>Best 2 out of 3 tests conducted: <span class="highlight">10 Marks</span></p>
+            </div>
+            <div class="topic" style="background-color: #e3f2fd;">
+                <h4>Mathematics Activities</h4>
+                <p>Practical work and projects: <span class="highlight">10 Marks</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lincoln's Timeless Wisdom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .letter-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .letter-header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .letter-body {
+            padding: 40px;
+            position: relative;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, rgba(76,201,240,0.3) 0%, rgba(76,201,240,0) 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--secondary);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            background: rgba(248, 249, 250, 0.5);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tip {
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .tip-title {
+            font-weight: 500;
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tip-title:before {
+            content: "💡";
+            margin-right: 10px;
+        }
+        
+        .signature {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2rem;
+            color: var(--secondary);
+            text-align: right;
+            margin-top: 40px;
+            position: relative;
+        }
+        
+        .signature:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: 0;
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+        }
+        
+        .decoration {
+            text-align: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin: 40px 0;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .letter-body {
+                padding: 25px;
+            }
+            
+            .quote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-card">
+        <div class="letter-header">
+            <h1>A Father's Timeless Advice</h1>
+            <p>Abraham Lincoln's letter to his son's teacher</p>
+        </div>
+        
+        <div class="letter-body">
+            <p>My son starts school today. It is all going to be strange and new to him for a while, and I wish you would treat him gently. It is an adventure that might take him across continents—an adventure that will include <span class="highlight">wars, tragedy, and sorrow</span>. To live this life will require <span class="highlight">faith, love, and courage</span>.</p>
+            
+            <div class="tip">
+                <h3 class="tip-title">The Teacher's Challenge</h3>
+                <p>So dear Teacher, will you please take him by his hand and teach him things he will have to know—teaching him, but gently, if you can.</p>
+            </div>
+            
+            <div class="quote">
+                "Teach him that for every enemy, there is a friend. He will have to know that all men are not just, that all men are not true. But teach him also that for every scoundrel there is a hero; that for every crooked politician, there is a dedicated leader."
+            </div>
+            
+            <p>Teach him if you can that <span class="highlight">10 cents earned is of far more value than a dollar found</span>. In school, teacher, it is far more honorable to fail than to cheat. Teach him to learn how to <span class="highlight">gracefully lose</span>, and enjoy winning when he does win.</p>
+            
+            <div class="tip">
+                <h3 class="tip-title">Life's Contradictions</h3>
+                <p>Teach him to be gentle with gentle people, but tough with tough people. Steer him away from envy if you can, and teach him the secret of quiet laughter. Teach him how to laugh when he is sad, and that there is no shame in tears.</p>
+            </div>
+            
+            <p>Teach him there can be <span class="highlight">glory in failure</span> and despair in success. Teach him to scoff at cynics and to beware of too much sweetness. Teach him the wonders of books, but also give him quiet time to ponder the eternal mystery of birds in the sky, bees in the sun, and flowers on a green hillside.</p>
+            
+            <div class="quote">
+                "Teach him to have faith in his own ideas, even if everyone tells him they are wrong. Try to give my son the strength not to follow the crowd when everyone is getting on the bandwagon."
+            </div>
+            
+            <p>Teach him to listen to all men but to <span class="highlight">filter all he hears on the screen of truth</span>, and to take only the good that comes through. Teach him to sell his talents and brains to the highest bidder, but never to put a price tag on his heart and soul.</p>
+            
+            <div class="decoration">✦ ✦ ✦</div>
+            
+            <p>Let him have the courage to be impatient, and the patience to be brave. Teach him to have <span class="highlight">sublime faith in himself</span>, because then he will always have sublime faith in mankind and in God.</p>
+            
+            <p>This is a big order, teacher, but see what you can do. He is such a nice little boy—he is my son.</p>
+            
+            <div class="signature">Abraham Lincoln</div>
+        </div>
+    </div>
+</body>
+</html>

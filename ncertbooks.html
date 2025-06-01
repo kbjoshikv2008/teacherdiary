@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCERT Mathematics Textbooks - Class 7 to 12</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --light-text: #7f8c8d;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            --hover-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        
+        h2 {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: var(--dark-text);
+            margin-top: 25px;
+            font-size: 1.4rem;
+        }
+        
+        .textbook-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .textbook-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .textbook-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .textbook-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin: 0;
+        }
+        
+        .textbook-meta {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        .chapter-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .chapter-item {
+            background-color: var(--light-bg);
+            border-radius: 6px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+        
+        .chapter-item:hover {
+            background-color: #e1f0fa;
+            transform: translateX(5px);
+        }
+        
+        .chapter-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-link:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .chapter-desc {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-top: 5px;
+        }
+        
+        .features-box {
+            background-color: #e8f4fc;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        
+        .features-list {
+            padding-left: 20px;
+        }
+        
+        .features-list li {
+            margin-bottom: 8px;
+        }
+        
+        .ncert-logo {
+            text-align: center;
+            margin: 20px 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .chapter-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .textbook-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NCERT Mathematics Textbooks</h1>
+            <div class="subtitle">Comprehensive Resources for Classes 7 to 12</div>
+        </header>
+        
+        <!-- Class 7 Mathematics -->
+        <div class="textbook-card">
+            <div class="textbook-header">
+                <h2 class="textbook-title">Class 7 Mathematics</h2>
+                <div class="textbook-meta">New Syllabus as per NEP 2020 & NCF-SE 2023</div>
+            </div>
+            
+            <div class="ncert-logo">गणित प्रकाश (Ganita Prakash)</div>
+            
+            <h3>Chapter-wise Content</h3>
+            <ul class="chapter-list">
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=1-8" class="chapter-link" target="_blank">Chapter 1: Large Numbers Around Us</a>
+                    <div class="chapter-desc">Introduces the world of lakhs, crores, millions and billions through engaging contexts.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=9-18" class="chapter-link" target="_blank">Chapter 2: Arithmetic Expressions</a>
+                    <div class="chapter-desc">Covers expressions with multiple operations and how to write/read them unambiguously.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=19-30" class="chapter-link" target="_blank">Chapter 3: A Peek Beyond the Point</a>
+                    <div class="chapter-desc">Introduces decimal numbers and operations with them.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=31-40" class="chapter-link" target="_blank">Chapter 4: Expressions using Letter-Numbers</a>
+                    <div class="chapter-desc">First steps into algebra with letter-numbers and algebraic expressions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=41-50" class="chapter-link" target="_blank">Chapter 5: Parallel and Intersecting Lines</a>
+                    <div class="chapter-desc">Fundamental geometry concepts with paper-folding activities.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=51-64" class="chapter-link" target="_blank">Chapter 6: Number Play</a>
+                    <div class="chapter-desc">Computational thinking through puzzles, sequences, and cryptarithms.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=65-76" class="chapter-link" target="_blank">Chapter 7: A Tale of Three Intersecting Lines</a>
+                    <div class="chapter-desc">Properties of triangles through construction activities.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?gegp1=77-90" class="chapter-link" target="_blank">Chapter 8: Working with Fractions</a>
+                    <div class="chapter-desc">Multiplication/division of fractions including Brahmagupta's methods.</div>
+                </li>
+            </ul>
+            
+            <div class="features-box">
+                <h3>Key Features:</h3>
+                <ul class="features-list">
+                    <li>Aligns with <strong>NEP 2020</strong> and <strong>NCF-SE 2023</strong> guidelines</li>
+                    <li>Integrates Indian knowledge systems (e.g., Brahmagupta's methods)</li>
+                    <li>Includes puzzles, real-life applications, and cross-subject connections</li>
+                    <li>Develops computational thinking through interactive exercises</li>
+                    <li>Available in both Hindi and English mediums</li>
+                </ul>
+                
+                <a href="https://ncert.nic.in/textbook.php?gegp1=0-8" class="download-btn" target="_blank">Download Full Book PDF</a>
+            </div>
+        </div>
+        
+        <!-- Class 11 Mathematics -->
+        <div class="textbook-card">
+            <div class="textbook-header">
+                <h2 class="textbook-title">Class 11 Mathematics</h2>
+                <div class="textbook-meta">Comprehensive foundation for higher mathematics</div>
+            </div>
+            
+            <h3>Chapter-wise Content</h3>
+            <ul class="chapter-list">
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=1-14" class="chapter-link" target="_blank">Chapter 1: Sets</a>
+                    <div class="chapter-desc">Introduction to sets and their properties.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=2-14" class="chapter-link" target="_blank">Chapter 2: Relations and Functions</a>
+                    <div class="chapter-desc">Understanding relations and different types of functions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=3-14" class="chapter-link" target="_blank">Chapter 3: Trigonometric Functions</a>
+                    <div class="chapter-desc">Exploring trigonometric functions and their properties.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=4-14" class="chapter-link" target="_blank">Chapter 4: Principle of Mathematical Induction</a>
+                    <div class="chapter-desc">Fundamental principle for proving mathematical statements.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=5-14" class="chapter-link" target="_blank">Chapter 5: Complex Numbers and Quadratic Equations</a>
+                    <div class="chapter-desc">Working with complex numbers and solving quadratic equations.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=6-14" class="chapter-link" target="_blank">Chapter 6: Linear Inequalities</a>
+                    <div class="chapter-desc">Solving and graphing linear inequalities.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=7-14" class="chapter-link" target="_blank">Chapter 7: Permutations and Combinations</a>
+                    <div class="chapter-desc">Counting principles and their applications.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=8-14" class="chapter-link" target="_blank">Chapter 8: Binomial Theorem</a>
+                    <div class="chapter-desc">Expanding binomial expressions using the binomial theorem.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=9-14" class="chapter-link" target="_blank">Chapter 9: Sequences and Series</a>
+                    <div class="chapter-desc">Understanding arithmetic and geometric sequences and series.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=10-14" class="chapter-link" target="_blank">Chapter 10: Straight Lines</a>
+                    <div class="chapter-desc">Various forms of equations of lines and their properties.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=11-14" class="chapter-link" target="_blank">Chapter 11: Conic Sections</a>
+                    <div class="chapter-desc">Study of circles, parabolas, ellipses, and hyperbolas.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=12-14" class="chapter-link" target="_blank">Chapter 12: Introduction to Three Dimensional Geometry</a>
+                    <div class="chapter-desc">Coordinates in three dimensions and direction cosines.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=13-14" class="chapter-link" target="_blank">Chapter 13: Limits and Derivatives</a>
+                    <div class="chapter-desc">Fundamental concepts of calculus.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=14-14" class="chapter-link" target="_blank">Chapter 14: Mathematical Reasoning</a>
+                    <div class="chapter-desc">Developing logical reasoning skills in mathematics.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=15-14" class="chapter-link" target="_blank">Chapter 15: Statistics</a>
+                    <div class="chapter-desc">Measures of dispersion and analysis of frequency distributions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?kemh1=16-14" class="chapter-link" target="_blank">Chapter 16: Probability</a>
+                    <div class="chapter-desc">Basic concepts of probability and random experiments.</div>
+                </li>
+            </ul>
+            
+            <div class="features-box">
+                <h3>Key Features:</h3>
+                <ul class="features-list">
+                    <li>Comprehensive coverage of fundamental mathematical concepts</li>
+                    <li>Prepares students for higher studies in mathematics and sciences</li>
+                    <li>Includes numerous solved examples and practice problems</li>
+                    <li>Clear explanations with diagrams and illustrations</li>
+                </ul>
+                
+                <a href="https://ncert.nic.in/textbook.php" class="download-btn" target="_blank">Download Full Book PDF</a>
+            </div>
+        </div>
+        
+        <!-- Class 12 Mathematics -->
+        <div class="textbook-card">
+            <div class="textbook-header">
+                <h2 class="textbook-title">Class 12 Mathematics</h2>
+                <div class="textbook-meta">Advanced concepts for senior secondary level</div>
+            </div>
+            
+            <h3>Chapter-wise Content</h3>
+            <ul class="chapter-list">
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=1-13" class="chapter-link" target="_blank">Chapter 1: Relations and Functions</a>
+                    <div class="chapter-desc">Types of relations and functions, composition of functions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=2-13" class="chapter-link" target="_blank">Chapter 2: Inverse Trigonometric Functions</a>
+                    <div class="chapter-desc">Properties of inverse trigonometric functions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=3-13" class="chapter-link" target="_blank">Chapter 3: Matrices</a>
+                    <div class="chapter-desc">Operations on matrices and their properties.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=4-13" class="chapter-link" target="_blank">Chapter 4: Determinants</a>
+                    <div class="chapter-desc">Properties of determinants and their applications.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=5-13" class="chapter-link" target="_blank">Chapter 5: Continuity and Differentiability</a>
+                    <div class="chapter-desc">Continuity, differentiability, and their applications.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=6-13" class="chapter-link" target="_blank">Chapter 6: Application of Derivatives</a>
+                    <div class="chapter-desc">Rate of change, increasing/decreasing functions, maxima/minima.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=7-13" class="chapter-link" target="_blank">Chapter 7: Integrals</a>
+                    <div class="chapter-desc">Methods of integration and their applications.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=8-13" class="chapter-link" target="_blank">Chapter 8: Application of Integrals</a>
+                    <div class="chapter-desc">Area under curves and between curves.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=9-13" class="chapter-link" target="_blank">Chapter 9: Differential Equations</a>
+                    <div class="chapter-desc">Formation and solution of differential equations.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=10-13" class="chapter-link" target="_blank">Chapter 10: Vector Algebra</a>
+                    <div class="chapter-desc">Vectors and their operations in two and three dimensions.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=11-13" class="chapter-link" target="_blank">Chapter 11: Three Dimensional Geometry</a>
+                    <div class="chapter-desc">Direction cosines, lines and planes in space.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=12-13" class="chapter-link" target="_blank">Chapter 12: Linear Programming</a>
+                    <div class="chapter-desc">Formulation and solution of linear programming problems.</div>
+                </li>
+                
+                <li class="chapter-item">
+                    <a href="https://ncert.nic.in/textbook.php?lemh1=13-13" class="chapter-link" target="_blank">Chapter 13: Probability</a>
+                    <div class="chapter-desc">Conditional probability, Bayes' theorem, and random variables.</div>
+                </li>
+            </ul>
+            
+            <div class="features-box">
+                <h3>Key Features:</h3>
+                <ul class="features-list">
+                    <li>Advanced mathematical concepts for Class 12 students</li>
+                    <li>Thorough preparation for competitive examinations</li>
+                    <li>Clear explanations with step-by-step solutions</li>
+                    <li>Includes exercises with varying difficulty levels</li>
+                </ul>
+                
+                <a href="https://ncert.nic.in/textbook.php" class="download-btn" target="_blank">Download Full Book PDF</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>NCERT Mathematics Textbooks - Class 7 to 12 | Last updated: 2023</p>
+            <p>Additional Resources: 
+                <a href="https://ncert.nic.in/exemplar-problems.php" target="_blank">NCERT Exemplar Problems</a> | 
+                <a href="https://epathshala.nic.in/" target="_blank">e-Pathshala</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

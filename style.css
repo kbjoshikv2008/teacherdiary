@@ -1,0 +1,19 @@
+body {
+  font-family: Arial;
+  margin: 40px;
+  line-height: 1.6;
+}
+.editable {
+  padding: 15px;
+  border: 1px dashed #ddd;
+  margin: 20px 0;
+  min-height: 100px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
