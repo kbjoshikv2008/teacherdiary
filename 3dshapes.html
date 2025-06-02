@@ -1,22 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Time Table</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>3D Shapes Overview</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #e1bee7);
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #4a148c;
+    }
+    .shape-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .dropbox-link {
+      background-color: #4a148c;
+      color: white;
+      padding: 12px 20px;
+      text-align: center;
+      display: inline-block;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .dropbox-link:hover {
+      background-color: #7b1fa2;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f3e5f5;
+    }
+  </style>
 </head>
 <body>
-  <h1>SYLLABUS</h1>
-  <a href="index.html">← Back to Home</a>
-  
-  <div class="editable" contenteditable="true">
-    <table border="1" style="width:100%">
-      <tr>
-        <th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th>
-      </tr>
-      <tr>
-        <td>Monday</td><td>Class 6 Math</td><td>Class 7 Science</td>
-      </tr>
-    </table>
+
+<header>
+  <h1>Explore 3D Shapes</h1>
+</header>
+
+<div class="container">
+  <div class="shape-card">
+    <h2>Cube</h2>
+    <p>A cube has 6 equal square faces, 12 edges, and 8 vertices. All angles are right angles.</p>
   </div>
+
+  <div class="shape-card">
+    <h2>Cuboid</h2>
+    <p>A cuboid has 6 rectangular faces, 12 edges, and 8 vertices. It resembles a box.</p>
+  </div>
+
+  <div class="shape-card">
+    <h2>Sphere</h2>
+    <p>A sphere is perfectly round and has no edges or vertices. Every point on its surface is equidistant from its center.</p>
+  </div>
+
+  <div class="shape-card">
+    <h2>Cylinder</h2>
+    <p>A cylinder has 2 circular bases and 1 curved surface. It has 2 edges and no vertices.</p>
+  </div>
+
+  <div class="shape-card">
+    <h2>Cone</h2>
+    <p>A cone has 1 circular base, 1 curved surface, and 1 vertex. It tapers smoothly from base to point.</p>
+  </div>
+
+  <p>📁 Download resources: 
+    <a class="dropbox-link" href="https://www.dropbox.com/s/your-link-here" target="_blank">Download from Dropbox</a>
+  </p>
+</div>
+
+<footer>
+  &copy; 2025 Geometry Resources
+</footer>
+
 </body>
 </html>

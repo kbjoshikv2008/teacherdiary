@@ -1,22 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Time Table</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My GeoGebra Resources</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e8f0fe;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #1565c0;
+    }
+    .description {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .links a {
+      text-decoration: none;
+      background-color: #1e88e5;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+    .links a:hover {
+      background-color: #1565c0;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <h1>SYLLABUS</h1>
-  <a href="index.html">← Back to Home</a>
-  
-  <div class="editable" contenteditable="true">
-    <table border="1" style="width:100%">
-      <tr>
-        <th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th>
-      </tr>
-      <tr>
-        <td>Monday</td><td>Class 6 Math</td><td>Class 7 Science</td>
-      </tr>
-    </table>
+  <div class="container">
+    <h1>My GeoGebra Resources</h1>
+    <p class="description">
+      Explore, create, and share interactive math resources using GeoGebra.
+    </p>
+
+    <div class="links">
+      <a href="https://www.geogebra.org/u/kbjoshikv" target="_blank">🔗 My GeoGebra Profile</a>
+      <a href="https://www.geogebra.org/calculator" target="_blank">🧮 Graphing Calculator</a>
+      <a href="https://www.geogebra.org/geometry" target="_blank">📐 Geometry Tool</a>
+      <a href="https://www.geogebra.org/cas" target="_blank">💻 CAS (Algebra System)</a>
+    </div>
+
+    <iframe src="https://www.geogebra.org/u/kbjoshikv" allowfullscreen></iframe>
   </div>
 </body>
 </html>
