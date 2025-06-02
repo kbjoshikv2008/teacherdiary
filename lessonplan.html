@@ -1,871 +1,380 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>LESSON PLAN FOR CLASS 12</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f7fa;
-      color: #333;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-      border-bottom: 2px solid #3498db;
-    }
-    h2 {
-      color: #2980b9;
-      margin-top: 30px;
-    }
-    h3 {
-      color: #16a085;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background-color: #3498db;
-      color: white;
-    }
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    tr:hover {
-      background-color: #e3f2fd;
-    }
-    .header-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-bottom: 30px;
-      background-color: #e8f4fc;
-      padding: 15px;
-      border-radius: 8px;
-    }
-    .header-info div {
-      margin-bottom: 5px;
-    }
-    .header-info strong {
-      color: #2c3e50;
-    }
-    .learning-outcomes, .resources {
-      background-color: #f8f9fa;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    .concept-box {
-      background-color: #e8f5e9;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .concept-box h3 {
-      margin-top: 0;
-    }
-    .case-study {
-      background-color: #fff3e0;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .assessment {
-      background-color: #fce4ec;
-      padding: 15px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .footer {
-      text-align: right;
-      margin-top: 30px;
-      font-style: italic;
-      color: #7f8c8d;
-    }
-    .image-placeholder {
-      background-color: #ecf0f1;
-      padding: 20px;
-      text-align: center;
-      border-radius: 5px;
-      margin: 15px 0;
-      color: #7f8c8d;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Lesson Plans Hub</title>
+    <style>
+        :root {
+            --class7: #FF6B6B;
+            --class11: #4ECDC4;
+            --class12: #45B7D1;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #F9F9F9;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--dark), #34495E);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-weight: 300;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Navigation Tabs */
+        .nav-container {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: -30px auto 3rem auto;
+            max-width: 900px;
+            position: relative;
+            z-index: 10;
+            padding: 5px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .nav-tabs::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(0,0,0,0.05);
+            border-radius: 3px;
+        }
+        
+        .nav-tabs li {
+            flex: 1;
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .nav-tabs a {
+            display: block;
+            padding: 1.5rem 1rem;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .nav-tabs a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+        
+        .nav-tabs a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-tabs a.class7::before {
+            background: var(--class7);
+        }
+        
+        .nav-tabs a.class11::before {
+            background: var(--class11);
+        }
+        
+        .nav-tabs a.class12::before {
+            background: var(--class12);
+        }
+        
+        .nav-tabs a.active {
+            color: var(--white);
+        }
+        
+        .nav-tabs a.class7.active {
+            background: var(--class7);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .nav-tabs a.class11.active {
+            background: var(--class11);
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+        }
+        
+        .nav-tabs a.class12.active {
+            background: var(--class12);
+            box-shadow: 0 4px 15px rgba(69, 183, 209, 0.4);
+        }
+        
+        /* Welcome Content */
+        .welcome-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .welcome-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .welcome-content p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+        
+        .class7-icon {
+            background: var(--class7);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .class11-icon {
+            background: var(--class11);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .class12-icon {
+            background: var(--class12);
+            box-shadow: 0 5px 15px rgba(69, 183, 209, 0.3);
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .feature-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-class7 {
+            background: var(--class7);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+        }
+        
+        .btn-class11 {
+            background: var(--class11);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(78, 205, 196, 0.3);
+        }
+        
+        .btn-class12 {
+            background: var(--class12);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(69, 183, 209, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            .nav-tabs li {
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content {
+                padding: 0 15px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>LESSON PLAN FOR CLASS 12</h1>
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1woMKQLLuwuaVcRiS3QYtkNFM7gOFHn0p/view?usp=drive_link" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
+    <header>
+        <div class="header-content">
+            <h1>Mathematics Lesson Plans</h1>
+            <p class="subtitle">Comprehensive teaching resources for all classes</p>
+        </div>
+    </header>
     
-    <div class="header-info">
-      <div><strong>Grade:</strong> 12</div>
-      <div><strong>Subject:</strong> Mathematics</div>
-      <div><strong>Chapter:</strong> Relations and Functions</div>
-      <div><strong>Date:</strong> 31/03/2025</div>
-      <div><strong>Begins on Date:</strong> 01/04/2025</div>
-      <div><strong>No. of periods:</strong> 12</div>
-    </div>
-    
-    <div class="learning-outcomes">
-      <h2>Learning Outcomes:</h2>
-      <p>Students will be able to:</p>
-      <ul>
-        <li>Explain Relations and Functions</li>
-        <li>Write reflexive, symmetric and transitive relations</li>
-        <li>Check and prove equivalence relations</li>
-        <li>Check and prove bijective functions</li>
-      </ul>
-    </div>
-    
-    <div class="resources">
-      <h2>Resources Required:</h2>
-      <ul>
-        <li>GeoGebra</li>
-        <li>Activity kit of NCERT</li>
-        <li>NCERT textbook and CBSE Exemplar</li>
-      </ul>
-    </div>
-    
-    <h2>Teaching Methodology</h2>
-    <table>
-      <tr>
-        <th>Objective</th>
-        <th>Teaching Methodology</th>
-        <th>Skills and Attitude</th>
-        <th>Competencies</th>
-      </tr>
-      <tr>
-        <td><strong>Explain Relations</strong></td>
-        <td>Begin the lesson by recalling the concepts pertaining to the Cartesian system of sets. Use simple examples, such as roll numbers or birth years, to illustrate relations and functions.</td>
-        <td>Critical Thinking</td>
-        <td>Formulating situations Mathematically</td>
-      </tr>
-      <tr>
-        <td><strong>Write reflexive, symmetric and transitive relations</strong></td>
-        <td>Concept building with visual aids: Charts and graphs to illustrate types of functions, making concepts tangible. Case study on real-life functions.</td>
-        <td>Problem Solving</td>
-        <td>Employing Mathematical Concepts, Facts, Procedures and Reasoning</td>
-      </tr>
-    </table>
-    
-    <div class="concept-box">
-      <h3>Key Concepts:</h3>
-      <p><strong>Reflexive:</strong> if (a, a) ∈ R, for every a ∈ A</p>
-      <p><strong>Symmetric:</strong> if (a1, a2) ∈ R implies (a2, a1) ∈ R, for all a1, a2∈ A</p>
-      <p><strong>Transitive:</strong> if (a1, a2) ∈ R and (a2, a3) ∈ R implies (a1, a3) ∈ R</p>
-      <p><strong>Equivalence Relation:</strong> reflexive, symmetric and transitive</p>
-      <p><strong>One-one Function:</strong> distinct elements have distinct images</p>
-      
-      <h3>Types of Functions</h3>
-      <p><strong>One to one Function (Injective):</strong> A function f : X → Y is defined to be one-one if the images of distinct elements of X under f are distinct.</p>
-      <img src="images/oneone.jpg" alt="One-one Function illustration" class="lesson-image">
-      
-      <p><strong>Onto Function (Surjective):</strong> A function f: X → Y is said to be onto if every element of Y is the image of some element of X under f.</p>
-     <img src="images/onto.jpg" alt="One-one Function illustration" class="lesson-image">
-      
-      <p><strong>One-one and Onto Function (Bijective):</strong> A function f: X → Y is said to be one-one and onto if f is both one-one and onto.</p>
-       <img src="images/bijective.jpg" alt="One-one Function illustration" class="lesson-image">
-    </div>
-    
-    <div class="case-study">
-      <h3>Case Based Question:</h3>
-      <p>Students visit a railway museum. An exhibit shows rail lines on a track. Let L be the set of all rail lines and R be the relation on L defined by R = {(l₁, l₂): l₁ is parallel to l₂}.</p>
-      <ol>
-        <li>Find whether R is symmetric</li>
-        <li>Find whether R is transitive</li>
-        <li>If one rail line is y = 3x + 2, find the set of rail lines related to it</li>
-      </ol>
-      <img src="casebased.png" alt="case based question" class="lesson-image">
-    </div>
-    
-    <div class="assessment">
-      <h3>Assessment:</h3>
-      <ol>
-        <li>A function f: A→B defined as f(x) = 2x is bijective. If A = {1,2,3,4}, find B.</li>
-        <li>Show that R on N×N defined by (a,b)R(c,d) if ad(b+c) = bc(a+d) is equivalence.</li>
-        <li>Check if S = {(a,b): a ≤ b³} on real numbers is reflexive, symmetric or transitive.</li>
-        <li>For f: A→B where A = R-{5}, B = R-{1}, f(x) = (x-3)/(x-5), show f is bijective.</li>
-      </ol>
-    </div>
-    
-    <div class="footer">
-      <p>Name of the Facilitator: <strong>Kirti Ballabh Joshi (PGT Maths)</strong></p>
-    </div>
-  </div>
-</body>
-</html>
-
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1O-1TvCmcnIjT2_z5YjrvTLF78dzNe_dz/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
-
-
-<h1>COMPETENCY-BASED LESSON PLAN</h1>
-
-<table class="header-table">
-    <tr>
-        <th>Class 12</th>
-        <th>Subject: Mathematics</th>
-        <th>Chapter: Inverse Trigonometric Functions</th>
-        <th>Concept: 1. Introduction to Inverse Trigonometric Functions 2. Properties and Graphs 3. Principal Value Branches 4. Applications</th>
-        <th>Total number of days: 8</th>
-    </tr>
-    <tr>
-        <td>Date:</td>
-        <td>13/04/2025</td>
-        <td>Begins on Date:</td>
-        <td>15/04/2025</td>
-        <td>No. of periods: 10</td>
-    </tr>
-</table>
-
-<h2>Learning Outcomes:</h2>
-<p>Students will be able to:</p>
-<ul>
-    <li>Understand the concept of inverse trigonometric functions and their necessity.</li>
-    <li>Determine the principal value of inverse trigonometric functions.</li>
-    <li>Plot and interpret graphs of inverse trigonometric functions.</li>
-    <li>Apply inverse trigonometric functions to solve real-world problems.</li>
-</ul>
-
-<h2>Resources Required:</h2>
-<ul>
-    <li>GeoGebra (for graphical visualization)</li>
-    <li>NCERT Textbook and Exemplar</li>
-    <li>Chart papers for graph plotting</li>
-    <li>Worksheets with practice problems</li>
-</ul>
-
-<table>
-    <tr>
-        <th>Objective</th>
-        <th>Teaching Methodology</th>
-        <th>Skills and Attitude</th>
-        <th>Competencies</th>
-    </tr>
-    <tr>
-        <td>The students will be able to:</td>
-        <td>
-            <p><strong>Warm-up:</strong> Recall basic trigonometric functions and their properties. Discuss why inverse functions are needed (e.g., solving for angles).</p>
-            <p><strong>Introduction:</strong> Define inverse trigonometric functions using real-life examples (e.g., calculating angles in engineering or physics).</p>
-            <p><strong>Concept Building:</strong> Use GeoGebra to visualize graphs of inverse trigonometric functions and compare them with their standard counterparts.</p>
-            <p><strong>Case Study:</strong> Solve problems involving heights and distances using inverse trigonometric functions.</p>
-            <p><strong>Mathematically:</strong> "The inverse sine function, sin<sup>-1</sup>x, is defined as the angle whose sine is x, with a restricted domain [-1, 1] and range [-π/2, π/2]."</p>
-        </td>
-        <td>Critical Thinking, Problem Solving</td>
-        <td>
-            <ul>
-                <li>Conceptual Understanding</li>
-                <li>Mathematical Communication</li>
-                <li>Visualization & Graphical Analysis</li>
-                <li>Application to Real-World Contexts</li>
+    <div class="container">
+        <div class="nav-container">
+            <ul class="nav-tabs">
+                <li><a href="class7-lessons.html" class="class7"><i class="fas fa-calculator"></i> Class 7</a></li>
+                <li><a href="class11-lessons.html" class="class11"><i class="fas fa-function"></i> Class 11</a></li>
+                <li><a href="class12-lessons.html" class="class12 active"><i class="fas fa-infinity"></i> Class 12</a></li>
             </ul>
-        </td>
-    </tr>
-</table>
-
-<h2>Explain Inverse Trigonometric Functions</h2>
-<ul>
-    <li><strong>Definition:</strong> A function that reverses the effect of the trigonometric function (e.g., sin<sup>-1</sup>x, cos<sup>-1</sup>x, tan<sup>-1</sup>x).</li>
-    <li><strong>Principal Value Branch:</strong> The range in which the inverse function gives a unique output.
-        <ul>
-            <li>sin<sup>-1</sup>x: [-π/2, π/2]</li>
-            <li>cos<sup>-1</sup>x: [0, π]</li>
-            <li>tan<sup>-1</sup>x: (-π/2, π/2)</li>
-        </ul>
-    </li>
-</ul>
-
-<h2>Properties and Graphs</h2>
-<ul>
-    <li><strong>Key Properties:</strong>
-        <ul>
-            <li class="math">sin<sup>-1</sup>(-x) = -sin<sup>-1</sup>x</li>
-            <li class="math">cos<sup>-1</sup>(-x) = π - cos<sup>-1</sup>x</li>
-            <li class="math">tan<sup>-1</sup>x + tan<sup>-1</sup>y = tan<sup>-1</sup>((x + y)/(1 - xy)) for xy < 1</li>
-        </ul>
-    </li>
-    <li><strong>Graphs:</strong> Plot and analyze the graphs of sin<sup>-1</sup>x, cos<sup>-1</sup>x, and tan<sup>-1</sup>x using GeoGebra.</li>
-</ul>
-
-<h2>Applications</h2>
-<ul>
-    <li>Solve problems involving heights and distances.</li>
-    <li>Use inverse trigonometric functions to find angles in geometric shapes.</li>
-</ul>
-
-<h2>Case-Based Question</h2>
-<p>A ladder leans against a wall, making an angle θ with the ground. If the foot of the ladder is 4 meters away from the wall and the ladder is 5 meters long, answer the following:</p>
-<ol>
-    <li>Find θ using inverse trigonometric functions.</li>
-    <li>If the ladder slides down such that the angle becomes φ = cos<sup>-1</sup>(0.6), find the new distance of the foot from the wall.</li>
-</ol>
-
-<h2>Assessment</h2>
-<ol>
-    <li>Find the principal value of sin<sup>-1</sup>(1/2).</li>
-    <li>Prove that tan<sup>-1</sup>2 + tan<sup>-1</sup>3 = 3π/4.</li>
-    <li>Solve for x: cos<sup>-1</sup>x = 2sin<sup>-1</sup>(1/2).</li>
-    <li>A tower stands vertically on the ground. From a point on the ground 30 meters away, the angle of elevation to the top of the tower is tan<sup>-1</sup>(2/5). Find the height of the tower.</li>
-</ol>
-
-<p><strong>Problem Solving</strong><br>
-Interpreting, Applying, and Evaluating Mathematical Outcomes</p>
-
-<p><strong>Name of the Facilitator:</strong> Kirit Ballabh Joshi (PGT Mathematics)</p>
-
-</body>
-</html>
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1OBnhykm_4o3J6dp4vgl7aH21IspxFW2b/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
+        </div>
+        
+        <div class="welcome-content">
+            <h2>Welcome to Mathematics Lesson Plans Hub</h2>
+            <p>Discover comprehensive, competency-based lesson plans designed to make mathematics engaging and accessible for students of all levels. Select a class above to explore available resources.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon class7-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Class 7 Resources</h3>
+                <p>Foundational mathematics concepts including number systems, fractions, geometry, and introduction to algebra.</p>
+                <a href="class7-lessons.html" class="btn btn-class7">Explore Class 7</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon class11-icon">
+                    <i class="fas fa-function"></i>
+                </div>
+                <h3>Class 11 Resources</h3>
+                <p>Advanced topics including sets, relations, trigonometry, and introduction to calculus concepts.</p>
+                <a href="class11-lessons.html" class="btn btn-class11">Explore Class 11</a>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon class12-icon">
+                    <i class="fas fa-infinity"></i>
+                </div>
+                <h3>Class 12 Resources</h3>
+                <p>Comprehensive coverage of calculus, linear algebra, probability, and exam preparation materials.</p>
+                <a href="class12-lessons.html" class="btn btn-class12">Explore Class 12</a>
+            </div>
+        </div>
     </div>
-
-
-<h1>COMPETENCY-BASED LESSON PLAN</h1>
-
-<table>
-    <tr>
-        <th>Grade: 12</th>
-        <th>Subject: Maths</th>
-        <th>Chapter: 3. Matrices</th>
-        <th>Concept: 1. Introduction to Matrices 2. Types of Matrices 3. Operations on Matrices 4. Transpose and Symmetric Matrices</th>
-        <th>Total number of days: 10</th>
-    </tr>
-    <tr>
-        <td>Date:</td>
-        <td>01/06/2025</td>
-        <td>Begins on Date:</td>
-        <td>02/06/2025</td>
-        <td>No. of periods: 12</td>
-    </tr>
-</table>
-
-<h2>Learning Outcomes:</h2>
-<p>Students will be able to:</p>
-<ul>
-    <li>Define matrices and identify their types.</li>
-    <li>Perform operations on matrices (addition, subtraction, multiplication).</li>
-    <li>Understand the properties of transpose and symmetric matrices.</li>
-    <li>Solve problems involving matrix algebra.</li>
-</ul>
-
-<h2>Resources Required:</h2>
-<ul>
-    <li>GeoGebra</li>
-    <li>Activity kit of NCERT</li>
-    <li>Text Book: NCERT Mathematics for Class 12</li>
-    <li>Reference Book: CBSE Exemplar</li>
-</ul>
-
-<table>
-    <tr>
-        <th>Objective</th>
-        <th>Teaching Methodology</th>
-        <th>Skills and Attitude</th>
-        <th>Competencies</th>
-    </tr>
-    <tr>
-        <td class="objective">The students will be able to:</td>
-        <td>
-            <p><strong>Warm-up:</strong> Recall the concept of arrays and tables to introduce matrices.</p>
-            <p><strong>Introduction with Examples:</strong> Use real-life examples like marks of students, sales data, etc., to explain matrices.</p>
-            <p><strong>Concept Building - Visual Aids:</strong> Use charts and digital tools to display different types of matrices.</p>
-            <p><strong>Case Study on Applications:</strong> Discuss how matrices are used in computer graphics, economics, and engineering.</p>
-            <p>Mathematically, "a matrix is a rectangular array of numbers, symbols, or expressions arranged in rows and columns."</p>
-        </td>
-        <td>Critical Thinking, Logical Reasoning</td>
-        <td>Problem Solving, Interpreting Mathematical Concepts</td>
-    </tr>
-</table>
-
-<h2>Define Matrices</h2>
-<p>A matrix is a rectangular array of numbers arranged in rows and columns. For example:</p>
-<p>\[ A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \]</p>
-
-<h2>Types of Matrices</h2>
-<ul>
-    <li><strong>Row Matrix:</strong> A matrix with only one row.</li>
-    <li><strong>Column Matrix:</strong> A matrix with only one column.</li>
-    <li><strong>Square Matrix:</strong> A matrix with an equal number of rows and columns.</li>
-    <li><strong>Diagonal Matrix:</strong> A square matrix where non-diagonal elements are zero.</li>
-    <li><strong>Identity Matrix:</strong> A diagonal matrix with all diagonal elements as 1.</li>
-</ul>
-
-<h2>Operations on Matrices</h2>
-<ul>
-    <li><strong>Addition and Subtraction:</strong> Performed on matrices of the same order by adding/subtracting corresponding elements.</li>
-    <li><strong>Multiplication:</strong> Defined if the number of columns in the first matrix equals the number of rows in the second matrix.</li>
-</ul>
-
-<h2>Transpose and Symmetric Matrices</h2>
-<ul>
-    <li><strong>Transpose of a Matrix:</strong> Obtained by interchanging rows and columns.</li>
-    <li><strong>Symmetric Matrix:</strong> A square matrix equal to its transpose, i.e., \( A = A^T \).</li>
-</ul>
-
-<div class="case-study">
-    <h2>CASE-BASED QUESTION:</h2>
-    <p>A company produces three products: A, B, and C. The production data for two months is given by the matrices:</p>
-    <p>\[ P_1 = \begin{bmatrix} 50 & 60 & 70 \end{bmatrix}, \quad P_2 = \begin{bmatrix} 80 & 90 & 100 \end{bmatrix} \]</p>
-    <p>On the basis of the above information, answer the following questions:</p>
-    <ol>
-        <li>Find the total production for the two months.</li>
-        <li>If the selling price of each product is given by the matrix \( S = \begin{bmatrix} 10 \\ 20 \\ 30 \end{bmatrix} \), calculate the total revenue for each month.</li>
-        <li>Verify whether the matrix \( P_1 + P_2 \) is equal to \( P_2 + P_1 \).</li>
-    </ol>
-</div>
-
-<div class="assessment">
-    <h2>ASSESSMENT:</h2>
-    <ol>
-        <li>If \( A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} \) and \( B = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix} \), find \( A + B \) and \( A - B \).</li>
-        <li>Show that the matrix \( A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 5 \\ 3 & 5 & 6 \end{bmatrix} \) is symmetric.</li>
-        <li>For the matrices \( A = \begin{bmatrix} 2 & 3 \end{bmatrix} \) and \( B = \begin{bmatrix} 4 \\ 5 \end{bmatrix} \), find \( AB \) and \( BA \).</li>
-        <li>If \( A = \begin{bmatrix} 1 & -1 \\ 2 & 3 \end{bmatrix} \), find \( A^T \) and verify whether \( A + A^T \) is symmetric.</li>
-    </ol>
-</div>
-
-<h2>Problem Solving</h2>
-<p>Interpreting, Applying, and Evaluating Mathematical Outcomes</p>
-
-<p><strong>Name of the Facilitator:</strong> [Your Name] (PGT Maths)</p>
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-</body>
-</html>
-
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1eynnXuD14esM74S76oIpoVCG_32uQk4s/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
- <h1>COMPETENCY-BASED LESSON PLAN</h1>
-    </div>
-
-    <table>
-        <tr>
-            <th>Grade:</th>
-            <td>12</td>
-            <th>Subject:</th>
-            <td>Maths</td>
-            <th>Chapter:</th>
-            <td>4. Determinants</td>
-        </tr>
-        <tr>
-            <th>Concept:</th>
-            <td colspan="3">1. Determinants and their Properties 2. Minors and Cofactors 3. Adjoint and Inverse of a Matrix 4. Applications of Determinants</td>
-            <th>Total number of days:</th>
-            <td>10</td>
-        </tr>
-        <tr>
-            <th>Date:</th>
-            <td>01/06/2025</td>
-            <th>Begins on Date:</th>
-            <td>02/06/2025</td>
-            <th>No. of periods:</th>
-            <td>12</td>
-        </tr>
-    </table>
-
-    <h2>Learning Outcomes:</h2>
-    <p>Students will be able to:</p>
-    <ul>
-        <li>Understand the concept of determinants and their properties.</li>
-        <li>Calculate minors, cofactors, and adjoint of a matrix.</li>
-        <li>Find the inverse of a matrix using determinants.</li>
-        <li>Apply determinants to solve systems of linear equations and area calculations.</li>
-    </ul>
-
-    <h2>Resources Required:</h2>
-    <ul>
-        <li>GeoGebra</li>
-        <li>NCERT Activity Kit</li>
-        <li>Textbook: NCERT Mathematics for Class 12</li>
-        <li>Reference Book: CBSE Exemplar</li>
-    </ul>
-
-    <table>
-        <tr>
-            <th>Objective</th>
-            <th>Teaching Methodology</th>
-            <th>Skills and Attitude</th>
-            <th>Competencies</th>
-        </tr>
-        <tr>
-            <td>The students will be able to:</td>
-            <td>
-                Warm-up: Recall the concept of matrices and their operations.<br>
-                Introduction with Examples: Use 2x2 and 3x3 matrices to introduce determinants.<br>
-                Concept Building: Use visual aids like grids to explain expansion by minors and cofactors.<br>
-                Real-Life Applications: Discuss how determinants are used in engineering and physics (e.g., solving circuits, stability analysis).<br>
-                Mathematically, "The determinant of a square matrix is a scalar value that encodes certain properties of the matrix."
-            </td>
-            <td>Critical Thinking, Problem Solving</td>
-            <td>Interpreting, Applying, and Evaluating Mathematical Outcomes</td>
-        </tr>
-    </table>
-
-    <h2>Key Concepts:</h2>
     
-    <div class="key-concept">
-        <h3>1. Determinants and their Properties</h3>
-        <ul>
-            <li>For a 2x2 matrix \( A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \), the determinant is \( \text{det}(A) = ad - bc \).</li>
-            <li>Properties:
-                <ul>
-                    <li>\(\text{det}(AB) = \text{det}(A) \cdot \text{det}(B)\)</li>
-                    <li>\(\text{det}(A^T) = \text{det}(A)\)</li>
-                    <li>If two rows/columns are identical, \(\text{det}(A) = 0\).</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="key-concept">
-        <h3>2. Minors and Cofactors</h3>
-        <ul>
-            <li>Minor of an element \( a_{ij} \) is the determinant of the submatrix obtained by deleting the \( i^{th} \) row and \( j^{th} \) column.</li>
-            <li>Cofactor: \( C_{ij} = (-1)^{i+j} \cdot \text{Minor of } a_{ij} \).</li>
-        </ul>
-    </div>
-
-    <div class="key-concept">
-        <h3>3. Adjoint and Inverse of a Matrix</h3>
-        <ul>
-            <li>Adjoint of \( A \) is the transpose of the cofactor matrix.</li>
-            <li>Inverse: \( A^{-1} = \frac{\text{adj}(A)}{\text{det}(A)} \), provided \(\text{det}(A) \neq 0\).</li>
-        </ul>
-    </div>
-
-    <div class="key-concept">
-        <h3>4. Applications of Determinants</h3>
-        <ul>
-            <li>Solving linear equations using Cramer's Rule.</li>
-            <li>Calculating area of triangles using determinants.</li>
-        </ul>
-    </div>
-
-    <div class="case-study">
-        <h2>Case-Based Question:</h2>
-        <p>A city planner designs a park with three main pathways intersecting at points \( A(1,2) \), \( B(3,4) \), and \( C(5,1) \).</p>
-        <ol>
-            <li>Find the area of the triangular park using determinants.</li>
-            <li>If a new pathway is added parallel to \( AB \), how does it affect the area?</li>
-        </ol>
-    </div>
-
-    <div class="assessment">
-        <h2>Assessment:</h2>
-        <ol>
-            <li>Find the determinant of \( \begin{pmatrix} 2 & -3 \\ 4 & 5 \end{pmatrix} \).</li>
-            <li>For \( A = \begin{pmatrix} 1 & 0 & 2 \\ 3 & 1 & 0 \\ -1 & 2 & 4 \end{pmatrix} \), find the minor and cofactor of \( a_{23} \).</li>
-            <li>Show that the matrix \( \begin{pmatrix} 2 & 3 \\ 4 & 6 \end{pmatrix} \) is singular.</li>
-            <li>Solve the system using Cramer's Rule:
-                \( 2x + 3y = 5 \)
-                \( 4x - y = 3 \).</li>
-        </ol>
-    </div>
-
-    <p><strong>Problem Solving</strong> | <strong>Interpreting, Applying, and Evaluating Mathematical Outcomes</strong></p>
-
-    <p><strong>Name of the Facilitator:</strong> [Your Name] (PGT Maths)</p>
-
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
-</html>
-
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1jcQ2UrfscUn2ZaVCJfxZCQGyrrJAfJJV/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
-   <h1>COMPETENCY-BASED LESSON PLAN</h1>
-
-    <table class="header-table">
-        <tr>
-            <th>Grade: 12</th>
-            <th>Subject: Maths</th>
-            <th>Chapter: Continuity and Differentiability</th>
-            <th>Total number of days: 10</th>
-        </tr>
-        <tr>
-            <td>Date: 05/05/2025</td>
-            <td>Begins on Date: 06/05/2025</td>
-            <td colspan="2">No. of periods: 12</td>
-        </tr>
-        <tr>
-            <td colspan="4">
-                <strong>Concept:</strong> 1. Continuity 2. Differentiability 3. Derivatives of Composite Functions 4. Mean Value Theorem
-            </td>
-        </tr>
-    </table>
-
-    <h2>Learning Outcomes:</h2>
-    <p>Students will be able to:</p>
-    <ul>
-        <li>Explain the concepts of continuity and differentiability of functions.</li>
-        <li>Determine the continuity of a function at a point and over an interval.</li>
-        <li>Apply differentiation rules to find derivatives of various functions.</li>
-        <li>Understand and apply the Mean Value Theorem.</li>
-    </ul>
-
-    <h2>Resources Required:</h2>
-    <ul>
-        <li>GeoGebra</li>
-        <li>NCERT Activity Kit</li>
-        <li>Textbook: NCERT Mathematics for Class 12</li>
-        <li>Reference Book: CBSE Exemplar</li>
-    </ul>
-
-    <table class="objective-table">
-        <tr>
-            <th>Objective</th>
-            <th>Teaching Methodology</th>
-            <th>Skills and Attitude</th>
-            <th>Competencies</th>
-        </tr>
-        <tr>
-            <td>The students will be able to:</td>
-            <td>
-                <strong>Warm-up:</strong> Recall the basics of limits and functions.<br>
-                <strong>Introduction with Examples:</strong> Use graphical representations to illustrate continuity and discontinuity.<br>
-                <strong>Concept Building:</strong> Use real-life examples (e.g., motion of objects) to explain differentiability.<br>
-                <strong>Case Study:</strong> Analyze the application of derivatives in physics (e.g., velocity, acceleration).<br>
-                <strong>Mathematically</strong>, "A function f is continuous at a point x = a if lim<sub>x→a</sub> f(x) = f(a). A function is differentiable at x = a if the derivative f'(a) exists."
-            </td>
-            <td>Critical Thinking, Analytical Skills</td>
-            <td>Problem Solving, Interpreting Mathematical Concepts</td>
-        </tr>
-    </table>
-
-    <h2>Explain Continuity</h2>
-    <ul>
-        <li><strong>Continuity at a Point:</strong> A function f is continuous at x = a if:
-            <ol>
-                <li>f(a) is defined.</li>
-                <li>lim<sub>x→a</sub> f(x) exists.</li>
-                <li>lim<sub>x→a</sub> f(x) = f(a).</li>
-            </ol>
-        </li>
-        <li><strong>Continuity on an Interval:</strong> A function is continuous on an interval if it is continuous at every point in the interval.</li>
-    </ul>
-
-    <h2>Explain Differentiability</h2>
-    <ul>
-        <li>A function f is differentiable at x = a if the derivative f'(a) exists. Graphically, the function has a non-vertical tangent line at that point.</li>
-    </ul>
-
-    <h2>Types of Discontinuities</h2>
-    <ol>
-        <li><strong>Removable Discontinuity:</strong> lim<sub>x→a</sub> f(x) exists but f(a) is not defined or lim<sub>x→a</sub> f(x) ≠ f(a).</li>
-        <li><strong>Jump Discontinuity:</strong> Left-hand and right-hand limits exist but are not equal.</li>
-        <li><strong>Infinite Discontinuity:</strong> The limit approaches infinity.</li>
-    </ol>
-
-    <h2>Derivatives of Composite Functions (Chain Rule)</h2>
-    <p>If y = f(u) and u = g(x), then the derivative of y with respect to x is:</p>
-    <p style="text-align: center;">dy/dx = dy/du · du/dx</p>
-
-    <h2>Mean Value Theorem</h2>
-    <p>If f is continuous on [a, b] and differentiable on (a, b), then there exists a point c ∈ (a, b) such that:</p>
-    <p style="text-align: center;">f'(c) = (f(b) - f(a))/(b - a)</p>
-
-    <div class="case-study">
-        <h2>Case-Based Question</h2>
-        <p>A car is moving along a straight road. The distance s (in meters) covered by the car at time t (in seconds) is given by:</p>
-        <p style="text-align: center;">s(t) = t<sup>3</sup> - 6t<sup>2</sup> + 9t</p>
-        <p>On the basis of the above information, answer the following questions:</p>
-        <ol>
-            <li>Determine if the distance function s(t) is continuous at t = 2.</li>
-            <li>Find the velocity of the car at t = 2 and interpret the result.</li>
-            <li>Check if the Mean Value Theorem holds for s(t) in the interval [1, 4].</li>
-        </ol>
-    </div>
-
-    <div class="assessment">
-        <h2>Assessment</h2>
-        <ol>
-            <li>Determine the continuity of the function f(x) = (x<sup>2</sup> - 4)/(x - 2) at x = 2.</li>
-            <li>Find the derivative of y = sin(2x + 3) using the chain rule.</li>
-            <li>Verify the Mean Value Theorem for the function f(x) = x<sup>2</sup> - 4x + 3 on the interval [1, 3].</li>
-            <li>Check the differentiability of the function f(x) = |x - 1| at x = 1.</li>
-        </ol>
-        <p><strong>Problem Solving</strong><br>
-        Interpreting, Applying, and Evaluating Mathematical Outcomes</p>
-    </div>
-
-    <p><strong>Name of the Facilitator:</strong> Kirti Ballabh Joshi (PGT Maths)</p>
-</body>
-</html>
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/19UFwObgafGG3llk11KM9zPlDt3d5Nl_k/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
-<h1>COMPETENCY-BASED LESSON PLAN</h1>
-
-<table>
-    <tr>
-        <th>Grade: 12</th>
-        <th>Subject: Maths</th>
-        <th>Chapter: 2. Application of Derivatives</th>
-        <th>Concept: 1.Rate of Change 2.Increasing/Decreasing Functions 3.Tangents/Normals 4.Maxima/Minima</th>
-        <th>Total number of days: 10</th>
-    </tr>
-    <tr>
-        <td>Date: 01/06/2025</td>
-        <td>Begins on Date: 03/06/2025</td>
-        <td colspan="3">No. of periods: 12</td>
-    </tr>
-</table>
-
-<h2>Learning Outcomes:</h2>
-<p>Students will be able to:</p>
-<ul>
-    <li>Determine the rate of change of quantities</li>
-    <li>Find intervals where functions are increasing or decreasing</li>
-    <li>Find equations of tangents and normals to curves</li>
-    <li>Apply derivatives to find approximate values</li>
-    <li>Solve optimization problems using maxima/minima concepts</li>
-</ul>
-
-<h2>Resources Required:</h2>
-<ul>
-    <li>GeoGebra</li>
-    <li>NCERT Activity Kit</li>
-    <li>Text Book: NCERT Mathematics for Class 12</li>
-    <li>Reference Book: CBSE Exemplar</li>
-</ul>
-
-<table>
-    <tr>
-        <th>Objective</th>
-        <th>Teaching Methodology</th>
-        <th>Skills and Attitude</th>
-        <th>Competencies</th>
-    </tr>
-    <tr>
-        <td>The students will be able to:</td>
-        <td>
-            Warm up – Recall basic differentiation rules and geometrical interpretation of derivatives.<br>
-            Introduction with Real-World Examples: Use examples like growth rate of plants or speed of vehicles to illustrate rate of change.<br>
-            Concept Building – Visual Aids: Use GeoGebra to demonstrate tangent lines and curve behavior.<br>
-            Case Study on Optimization: Examples from business (profit maximization) and engineering (material minimization).<br>
-            Mathematically, "the derivative f'(x) represents the instantaneous rate of change of y = f(x) with respect to x".
-        </td>
-        <td>Critical Thinking Problem Solving</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Explain Rate of Change</strong><br>
-            The derivative as a rate measurer:<br>
-            If y = f(x), then dy/dx represents the rate of change of y with respect to x.<br>
-            Application in physics, chemistry, biology and economics.
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Determine Increasing/Decreasing Functions</strong><br>
-            A function f is:<br>
-            Increasing if f'(x) > 0<br>
-            Decreasing if f'(x) < 0
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Find Tangents and Normals</strong><br>
-            Slope of tangent = f'(x)<br>
-            Slope of normal = -1/f'(x)<br>
-            Equation forms: y-y₁ = m(x-x₁)
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Solve Approximation Problems</strong><br>
-            Δy ≈ f'(x)Δx<br>
-            f(x+Δx) ≈ f(x) + f'(x)Δx
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><strong>Apply Maxima/Minima Concepts</strong><br>
-            First derivative test for local maxima/minima<br>
-            Second derivative test for concavity<br>
-            Absolute maxima/minima in closed intervals
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-
-<h2>CASE BASED QUESTION:</h2>
-<p>A manufacturing company wants to design cylindrical containers for its product with volume 1000cm³. The material for the top and bottom costs ₹5 per cm² while the material for the sides costs ₹3 per cm².</p>
-<p>On the basis of the above information, answer:</p>
-<ol>
-    <li>Express the total cost as a function of radius r</li>
-    <li>Find the dimensions that minimize the cost</li>
-    <li>Calculate the minimum cost</li>
-</ol>
-
-<h2>ASSESSMENT:</h2>
-<ol>
-    <li>The radius of a circle increases at 2mm/s. Find the rate of change of area when r=5cm.</li>
-    <li>Find the intervals where f(x) = x³ - 6x² + 9x + 15 is increasing/decreasing.</li>
-    <li>Find the equation of tangent to y = x³ - 2x +1 at x = 2.</li>
-    <li>Use differentials to approximate √25.3.</li>
-    <li>Find two positive numbers whose product is 16 and sum is minimum.</li>
-</ol>
-
-<h2>Problem Solving</h2>
-<p>Interpreting Applying and Evaluating Mathematical Outcomes</p>
-
-<p>Name of the Facilitator: Kirti Ballabh Joshi (PGT Maths)</p>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Mathematics Lesson Plans Hub. All rights reserved.</p>
+            <p>Created with <i class="fas fa-heart" style="color: #FF6B6B;"></i> for educators</p>
+        </div>
+    </footer>
 </body>
 </html>
