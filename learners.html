@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learner Categories</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      background-color: #003366;
+      color: white;
+      padding: 20px 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 80px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 40px 30px;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #333;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 100px;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Learner Categories</h1>
+
+  <div class="container">
+    <a class="card" href="brightlearner.html">
+      <h2>Bright Learners</h2>
+      <p>Explore profiles of students showing exceptional performance.</p>
+    </a>
+
+    <a class="card" href="slowlearner.html">
+      <h2>Slow Learners</h2>
+      <p>Support-focused profiles of students needing extra guidance.</p>
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Learner Profiles Dashboard
+  </footer>
+
+</body>
+</html>
