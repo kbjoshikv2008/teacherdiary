@@ -1,16 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Main Site</title>
-  <script>
-    // Redirect to gate.html if access is not granted
-    if (sessionStorage.getItem('access_granted') !== 'yes') {
-      window.location.href = '/gate.html';
-    }
-  </script>
-<head>
-  <title>Teacher's Diary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Digital Diary</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -24,16 +19,16 @@
     
     .container {
       max-width: 1400px;
-      margin: 1px;
+      margin: 1px auto;
       padding: 1px;
     }
     
     header {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 80%);
       color: yellow;
-      padding: 2px 0;
+      padding: 20px 0;
       text-align: center;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
       position: relative;
       overflow: hidden;
@@ -55,17 +50,20 @@
       top: 20px;
       height: 80px;
       width: 80px;
-      border-radius: 80%;
+      border-radius: 50%;
       border: 3px solid white;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       object-fit: cover;
       z-index: 1;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.8em;
+    h1, h2, h3 {
+      margin: 10px 0;
       font-family: 'Poppins', sans-serif;
+    }
+    
+    h1 {
+      font-size: 2.8em;
       font-weight: 700;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
       letter-spacing: 1px;
@@ -74,8 +72,8 @@
     .nav {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 5px;
-      margin-bottom: 5px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
     
     .nav a {
@@ -105,7 +103,7 @@
     .editable {
       padding: 20px;
       border: 3px dashed #a78bfa;
-      margin: 10px 0;
+      margin: 20px 0;
       min-height: 50px;
       background: white;
       border-radius: 10px;
@@ -127,13 +125,13 @@
       font-size: 1.8em;
       border-bottom: 3px solid #e9d8fd;
       padding-bottom: 5px;
-      margin-bottom: 5px;
+      margin-bottom: 15px;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
     }
     
     .editable p {
       font-size: 1.1em;
-      line-height: 1;
+      line-height: 1.5;
       color: #4a5568;
       font-weight: 600;
     }
@@ -161,15 +159,15 @@
       }
       
       .nav a {
-        padding: 15px;
+        padding: 12px;
         font-size: 0.95em;
       }
 
       .profile-photo {
-        height: 80px;
-        width: 80px;
-        right: 30px;
-        top: 20px;
+        height: 60px;
+        width: 60px;
+        right: 20px;
+        top: 15px;
       }
     }
   </style>
@@ -179,15 +177,15 @@
     <div class="container">
       <img src="kbjoshi.png" class="profile-photo" alt="Teacher's Photo">
       <h1>TEACHER'S DIGITAL DIARY</h1>
-<h2> K B JOSHI PGT MATHEMATICS </h2>
-<h3> PM SHRI KENDRIYA VIDYALAYA RANIKHET</h3>
+      <h2>K B JOSHI PGT MATHEMATICS</h2>
+      <h3>PM SHRI KENDRIYA VIDYALAYA RANIKHET</h3>
     </div>
   </header>
   
   <div class="container">
     <!-- NAVIGATION -->
     <div class="nav">
-	<a href="profile.html">PROFILE</>
+      <a href="profile.html">PROFILE</a>
       <a href="timetable.html">Time Table</a>
       <a href="syllabus.html">Syllabus</a>
       <a href="lessonplan.html">LESSON PLAN</a>
