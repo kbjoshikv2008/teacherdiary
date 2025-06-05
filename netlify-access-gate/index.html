@@ -1,12 +1,14 @@
-<script>
-  // If session flag is not set, redirect to gate.html
-  if (sessionStorage.getItem('access_granted') !== 'yes') {
-    window.location.href = '/gate.html';
-  }
-</script>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Main Site</title>
+  <script>
+    // Redirect to gate.html if access is not granted
+    if (sessionStorage.getItem('access_granted') !== 'yes') {
+      window.location.href = '/gate.html';
+    }
+  </script>
 <head>
   <title>Teacher's Diary</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
