@@ -1,3 +1,10 @@
+<script>
+  if (sessionStorage.getItem('access_granted') !== 'yes') {
+    window.location.href = '/gate.html';
+  }
+</script>
+
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,0 +1,23 @@
+/ /gate.html 200
+
+
+<!-- gate.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Access Required</title>
+</head>
+<body>
+  <h1>Welcome to the Access Gate</h1>
+  <p>Click below to proceed to the main site.</p>
+  <button onclick="goToMain()">Enter Site</button>
+
+  <script>
+    function goToMain() {
+      // Store a session flag to indicate access allowed
+      sessionStorage.setItem('access_granted', 'yes');
+      window.location.href = '/index.html';
+    }
+  </script>
+</body>
+</html>
