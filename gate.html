@@ -1,18 +1,49 @@
-
-<!-- gate.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Access Required</title>
+  <meta charset="UTF-8">
+  <title>Access Gate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #f0f8ff;
+    }
+    .container {
+      background: #ffffff;
+      display: inline-block;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the Access Gate</h1>
-  <p>Click below to proceed to the main site.</p>
-  <button onclick="goToMain()">Enter Site</button>
+  <div class="container">
+    <h1>Welcome to the Site</h1>
+    <p>To continue, click the button below.</p>
+    <button onclick="grantAccess()">Enter Site</button>
+  </div>
 
   <script>
-    function goToMain() {
-      // Store a session flag to indicate access allowed
+    function grantAccess() {
+      // Set a session flag to grant access
       sessionStorage.setItem('access_granted', 'yes');
       window.location.href = '/index.html';
     }

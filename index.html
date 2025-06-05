@@ -1,9 +1,9 @@
 <script>
+  // If session flag is not set, redirect to gate.html
   if (sessionStorage.getItem('access_granted') !== 'yes') {
     window.location.href = '/gate.html';
   }
 </script>
-
 
 <!DOCTYPE html>
 <html>
