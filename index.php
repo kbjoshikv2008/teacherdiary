@@ -1,7 +1,8 @@
 <?php
+// Start session and check authentication
 session_start();
 
-// Check authentication
+// Redirect to login if not authenticated
 if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
     header('Location: gate.php');
     exit;
@@ -26,11 +27,9 @@ $_SESSION['last_activity'] = time();
   <title>Teacher's Digital Diary</title>
   
   <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
-
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -39,13 +38,13 @@ $_SESSION['last_activity'] = time();
       padding: 0;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
       color: #2d3748;
-      min-height: 75vh;
+      min-height: 100vh;
     }
     
     .container {
       max-width: 1400px;
-      margin: 1px auto;
-      padding: 1px;
+      margin: 0 auto;
+      padding: 20px;
     }
     
     header {
@@ -204,10 +203,10 @@ $_SESSION['last_activity'] = time();
       background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
       color: white;
       border: none;
-      padding: 10px 15px;
+      padding: 12px 20px;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       z-index: 100;
@@ -215,8 +214,8 @@ $_SESSION['last_activity'] = time();
     }
     
     .logout-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -270,34 +269,4 @@ $_SESSION['last_activity'] = time();
     </footer>
   </div>
 
-  <!-- Logout Button -->
-  <button class="logout-btn" onclick="logout()">Logout</button>
-
-  <script>
-    // Auto-logout after 30 minutes of inactivity
-    let inactivityTime = function() {
-      let time;
-      window.onload = resetTimer;
-      document.onmousemove = resetTimer;
-      document.onkeypress = resetTimer;
-      
-      function logout() {
-        window.location.href = 'logout.php';
-      }
-      
-      function resetTimer() {
-        clearTimeout(time);
-        time = setTimeout(logout, 1800000); // 30 minutes
-      }
-    };
-    
-    inactivityTime();
-    
-    // Manual logout function
-    function logout() {
-      fetch('logout.php', { method: 'POST' })
-        .then(() => window.location.href = 'gate.php');
-    }
-  </script>
-</body>
-</html>
+  <!-- Log
