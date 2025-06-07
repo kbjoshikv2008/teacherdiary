@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBSE Class 12 Maths Previous Year Papers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #2a4ba0, #3a6bc5);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff8a00, #da1b60, #1a2a6c);
+        }
+        
+        h1 {
+            color: #1a2a6c;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 i {
+            color: #ff8a00;
+            margin-right: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: #da1b60;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .info-box {
+            background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+            border-left: 5px solid #1a2a6c;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-box i {
+            font-size: 2.5rem;
+            color: #1a2a6c;
+            margin-right: 25px;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .info-content h3 {
+            color: #1a2a6c;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .info-content p {
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .years-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .year-card {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .year-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+        
+        .card-header {
+            background: linear-gradient(to right, #1a2a6c, #2a4ba0);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 1.7rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .paper-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .paper-info:last-child {
+            border-bottom: none;
+        }
+        
+        .paper-type {
+            font-weight: 600;
+            color: #1a2a6c;
+            font-size: 1.2rem;
+        }
+        
+        .paper-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a2a6c;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            text-align: center;
+            min-width: 140px;
+        }
+        
+        .paper-links a:hover {
+            background: #da1b60;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .paper-links a i {
+            margin-right: 8px;
+        }
+        
+        .paper-links a.question-paper {
+            background: #1a2a6c;
+        }
+        
+        .paper-links a.marking-scheme {
+            background: #2a7f62;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #1a2a6c;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-card p {
+            color: #444;
+            line-height: 1.8;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            color: white;
+            font-size: 1.1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .official-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 35px;
+            background: white;
+            color: #1a2a6c;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .official-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: #f8f9fa;
+        }
+        
+        .copyright {
+            margin-top: 25px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .years-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .paper-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .paper-links {
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .paper-links a {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-square-root-alt"></i> CBSE Class 12 Maths</h1>
+            <p class="subtitle">Previous Year Question Papers with Marking Schemes (2023-2025)</p>
+        </header>
+        
+        <div class="info-box">
+            <i class="fas fa-info-circle"></i>
+            <div class="info-content">
+                <h3>About CBSE Class 12 Maths Papers</h3>
+                <p>Access previous year question papers and marking schemes for CBSE Class 12 Mathematics. These resources are essential for understanding exam patterns, marking distribution, and important topics. Solving previous papers helps students improve time management and identify their strengths and weaknesses.</p>
+            </div>
+        </div>
+        
+        <div class="years-container">
+            <!-- 2025 Papers -->
+            <div class="year-card">
+                <div class="card-header">2025 Question Papers</div>
+                <div class="card-body">
+                    <div class="paper-info">
+                        <div class="paper-type">Sample Paper</div>
+                        <div class="paper-links">
+                            <a href="https://cbseacademic.nic.in/SQP_CLASSXII_2024-25.html" target="_blank" class="question-paper"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://cbseacademic.nic.in/MS_CLASSXII_2024-25.html" target="_blank" class="marking-scheme"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+                    <div class="paper-info">
+                        <div class="paper-type">all sets Board</div>
+                        <div class="paper-links">
+                            <a href="https://drive.google.com/drive/folders/19BaHC05XPd1FRPkN8_wq7Ipccb-l3Edo?usp=sharing"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://drive.google.com/drive/folders/1tZeFgQqmf4Zx7ISX7pc1ttdaeYT6Ay1W?usp=sharing"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- 2024 Papers -->
+            <div class="year-card">
+                <div class="card-header">2024 Question Papers</div>
+                <div class="card-body">
+                    <div class="paper-info">
+                        <div class="paper-type">Sample Paper</div>
+                        <div class="paper-links">
+                            <a href="https://cbseacademic.nic.in/SQP_CLASSXII_2023-24.html" target="_blank" class="question-paper"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://cbseacademic.nic.in/MS_CLASSXII_2023-24.html" target="_blank" class="marking-scheme"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+                    <div class="paper-info">
+                        <div class="paper-type">all sets Board</div>
+                        <div class="paper-links">
+                            <a href="https://drive.google.com/drive/folders/1ZEp_aehsNsSMK7iOHRPPDRcchv5YH2xM?usp=sharing"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://drive.google.com/drive/folders/1WS_X3LU2BU6i1hdyApZSLQ1BIbJTxwi3?usp=sharing"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+             
+                </div>
+            </div>
+            
+            <!-- 2023 Papers -->
+            <div class="year-card">
+                <div class="card-header">2023 Question Papers</div>
+                <div class="card-body">
+                    <div class="paper-info">
+                        <div class="paper-type">Sample Papers</div>
+                        <div class="paper-links">
+                            <a href="https://cbseacademic.nic.in/SQP_CLASSXII_2022-23.html" target="_blank" class="question-paper"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://cbseacademic.nic.in/MS_CLASSXII_2022-23.html" target="_blank" class="marking-scheme"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+                    <div class="paper-info">
+                        <div class="paper-type">all sets Board</div>
+                        <div class="paper-links">
+                            <a href="https://drive.google.com/drive/folders/1mzbtTSYWi5gpmZL4_VrV8t3xnswQKnh8?usp=sharing"><i class="fas fa-file-pdf"></i> Question Paper</a>
+                            <a href="https://drive.google.com/drive/folders/1GrZa5vFnTpdzf6HUwAHgcnvvFfUYjndU?usp=sharing"><i class="fas fa-check-circle"></i> Marking Scheme</a>
+                        </div>
+                    </div>
+                    
+            
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Why Solve Previous Papers?</h3>
+                <p>Solving previous year papers helps you understand the exam pattern, important topics, and difficulty level. It improves time management and boosts confidence for the actual exam.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h3>Marking Scheme Benefits</h3>
+                <p>Marking schemes help you understand how answers are evaluated, how marks are distributed, and what examiners expect in ideal answers.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Performance Analysis</h3>
+                <p>After solving papers, analyze your performance to identify weak areas. Focus your preparation on topics where you lose maximum marks.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Official Resources for CBSE Class 12 Mathematics</p>
+            <a href="https://cbseacademic.nic.in/index.html" class="official-link" target="_blank">
+                Visit Official CBSE Website <i class="fas fa-external-link-alt"></i>
+            </a>
+            <div class="copyright">
+                <p>© 2023 CBSE Class 12 Maths Resources | For Educational Purposes Only</p>
+                <p>Note: Actual papers may be subject to copyright restrictions. Always refer to official CBSE sources.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for cards when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const yearCards = document.querySelectorAll('.year-card');
+            
+            yearCards.forEach((card, index) => {
+                // Add delay for staggered animation
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.classList.add('animate-in');
+            });
+        });
+    </script>
+</body>
+</html>
