@@ -1,35 +1,11 @@
-<?php
-// Start session and check authentication
-session_start();
-
-// Redirect to login if not authenticated
-if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
-    header('Location: gate.php');
-    exit;
-}
-
-// Check session timeout (30 minutes)
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
-    session_unset();
-    session_destroy();
-    header('Location: gate.php');
-    exit;
-}
-
-// Update last activity time
-$_SESSION['last_activity'] = time();
-?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher's Digital Diary</title>
-  
-  <!-- Security Headers -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -38,13 +14,13 @@ $_SESSION['last_activity'] = time();
       padding: 0;
       background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
       color: #2d3748;
-      min-height: 100vh;
+      min-height: 75vh;
     }
     
     .container {
       max-width: 1400px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: 1px auto;
+      padding: 1px;
     }
     
     header {
@@ -194,29 +170,6 @@ $_SESSION['last_activity'] = time();
         top: 15px;
       }
     }
-
-    /* Logout button styling */
-    .logout-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      z-index: 100;
-      transition: all 0.3s ease;
-    }
-    
-    .logout-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
   </style>
 </head>
 <body>
@@ -232,30 +185,30 @@ $_SESSION['last_activity'] = time();
   <div class="container">
     <!-- NAVIGATION -->
     <div class="nav">
-      <a href="profile.php">PROFILE</a>
-      <a href="timetable.php">Time Table</a>
-      <a href="syllabus.php">Syllabus</a>
-      <a href="lessonplan.php">LESSON PLAN</a>
-      <a href="codeofconduct.php">CODE OF CONDUCT</a>
-      <a href="lincoln.php">Lincoln's Letter</a>
-      <a href="activities.php">Activities</a>
-      <a href="ncertbooks.php">NCERT BOOKS</a>
-      <a href="homework.php">Holiday HW</a>
-      <a href="practice.php">Practice Papers</a>
-      <a href="exams.php">Examinations</a>
-      <a href="ioqm.php">Math Olympiad (IOQM)</a>
-      <a href="meetings.php">Subject Committee Meetings</a>
-      <a href="3dshapes.php">3D Shapes</a>
-      <a href="geogebra.php">GeoGebra</a>
-      <a href="robocompass.php">RoboCompass</a>
-      <a href="paper-folding.php">Paper Folding</a>
-      <a href="ppts.php">PPTs</a>
-      <a href="students.php">Students Profile</a>
-      <a href="monitoring.php">Monitoring</a>
-      <a href="board.php">Board Questions</a>
-      <a href="studymaterial.php">STUDY MATERIALS</a>
-      <a href="ptm.php">PTMs</a>
-      <a href="learners.php">LEARNERS LIST</a>
+      <a href="profile.html">PROFILE</a>
+      <a href="timetable.html">Time Table</a>
+      <a href="syllabus.html">Syllabus</a>
+      <a href="lessonplan.html">LESSON PLAN</a>
+      <a href="codeofconduct.html">CODE OF CONDUCT</a>
+      <a href="lincoln.html">Lincoln's Letter</a>
+      <a href="activities.html">Activities</a>
+      <a href="ncertbooks.html">NCERT BOOKS</a>
+      <a href="homework.html">Holiday HW</a>
+      <a href="practice.html">Practice Papers</a>
+      <a href="exams.html">Examinations</a>
+      <a href="ioqm.html">Math Olympiad (IOQM)</a>
+      <a href="meetings.html">Subject Committee Meetings</a>
+      <a href="3dshapes.html">3D Shapes</a>
+      <a href="geogebra.html">GeoGebra</a>
+      <a href="robocompass.html">RoboCompass</a>
+      <a href="paper-folding.html">Paper Folding</a>
+      <a href="ppts.html">PPTs</a>
+      <a href="students.html">Students Profile</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a href="board.html">Board Questions</a>
+      <a href="studymaterial.html">STUDY MATERIALS</a>
+      <a href="ptm.html">PTMs</a>
+      <a href="learners.html">LEARNERS LIST</a>
     </div>
 
     <div class="editable" contenteditable="true">
@@ -265,8 +218,8 @@ $_SESSION['last_activity'] = time();
     </div>
     
     <footer>
-      <strong>TEACHER'S DIGITAL DIARY</strong> &copy; <?php echo date('Y'); ?> | Empowering Educators with Creative Tools
+      <strong>TEACHER'S DIGITAL DIARY</strong> &copy; 2023 | Empowering Educators with Creative Tools
     </footer>
   </div>
-
-  <!-- Log
+</body>
+</html>
