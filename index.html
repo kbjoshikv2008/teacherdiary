@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<?php
+session_start();
 
+// Check authentication
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    header('Location: gate.php');
+    exit;
+}
+
+// Check session timeout (30 minutes)
+if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
+    session_unset();
+    session_destroy();
+    header('Location: gate.php');
+    exit;
+}
+
+// Update last activity time
+$_SESSION['last_activity'] = time();
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher's Digital Diary</title>
+  
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -170,6 +195,29 @@
         top: 15px;
       }
     }
+
+    /* Logout button styling */
+    .logout-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+    
+    .logout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -185,30 +233,30 @@
   <div class="container">
     <!-- NAVIGATION -->
     <div class="nav">
-      <a href="profile.html">PROFILE</a>
-      <a href="timetable.html">Time Table</a>
-      <a href="syllabus.html">Syllabus</a>
-      <a href="lessonplan.html">LESSON PLAN</a>
-      <a href="codeofconduct.html">CODE OF CONDUCT</a>
-      <a href="lincoln.html">Lincoln's Letter</a>
-      <a href="activities.html">Activities</a>
-      <a href="ncertbooks.html">NCERT BOOKS</a>
-      <a href="homework.html">Holiday HW</a>
-      <a href="practice.html">Practice Papers</a>
-      <a href="exams.html">Examinations</a>
-      <a href="ioqm.html">Math Olympiad (IOQM)</a>
-      <a href="meetings.html">Subject Committee Meetings</a>
-      <a href="3dshapes.html">3D Shapes</a>
-      <a href="geogebra.html">GeoGebra</a>
-      <a href="robocompass.html">RoboCompass</a>
-      <a href="paper-folding.html">Paper Folding</a>
-      <a href="ppts.html">PPTs</a>
-      <a href="students.html">Students Profile</a>
-      <a href="monitoring.html">Monitoring</a>
-      <a href="board.html">Board Questions</a>
-      <a href="studymaterial.html">STUDY MATERIALS</a>
-      <a href="ptm.html">PTMs</a>
-      <a href="learners.html">LEARNERS LIST</a>
+      <a href="profile.php">PROFILE</a>
+      <a href="timetable.php">Time Table</a>
+      <a href="syllabus.php">Syllabus</a>
+      <a href="lessonplan.php">LESSON PLAN</a>
+      <a href="codeofconduct.php">CODE OF CONDUCT</a>
+      <a href="lincoln.php">Lincoln's Letter</a>
+      <a href="activities.php">Activities</a>
+      <a href="ncertbooks.php">NCERT BOOKS</a>
+      <a href="homework.php">Holiday HW</a>
+      <a href="practice.php">Practice Papers</a>
+      <a href="exams.php">Examinations</a>
+      <a href="ioqm.php">Math Olympiad (IOQM)</a>
+      <a href="meetings.php">Subject Committee Meetings</a>
+      <a href="3dshapes.php">3D Shapes</a>
+      <a href="geogebra.php">GeoGebra</a>
+      <a href="robocompass.php">RoboCompass</a>
+      <a href="paper-folding.php">Paper Folding</a>
+      <a href="ppts.php">PPTs</a>
+      <a href="students.php">Students Profile</a>
+      <a href="monitoring.php">Monitoring</a>
+      <a href="board.php">Board Questions</a>
+      <a href="studymaterial.php">STUDY MATERIALS</a>
+      <a href="ptm.php">PTMs</a>
+      <a href="learners.php">LEARNERS LIST</a>
     </div>
 
     <div class="editable" contenteditable="true">
@@ -218,8 +266,38 @@
     </div>
     
     <footer>
-      <strong>TEACHER'S DIGITAL DIARY</strong> &copy; 2023 | Empowering Educators with Creative Tools
+      <strong>TEACHER'S DIGITAL DIARY</strong> &copy; <?php echo date('Y'); ?> | Empowering Educators with Creative Tools
     </footer>
   </div>
+
+  <!-- Logout Button -->
+  <button class="logout-btn" onclick="logout()">Logout</button>
+
+  <script>
+    // Auto-logout after 30 minutes of inactivity
+    let inactivityTime = function() {
+      let time;
+      window.onload = resetTimer;
+      document.onmousemove = resetTimer;
+      document.onkeypress = resetTimer;
+      
+      function logout() {
+        window.location.href = 'logout.php';
+      }
+      
+      function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(logout, 1800000); // 30 minutes
+      }
+    };
+    
+    inactivityTime();
+    
+    // Manual logout function
+    function logout() {
+      fetch('logout.php', { method: 'POST' })
+        .then(() => window.location.href = 'gate.php');
+    }
+  </script>
 </body>
 </html>
