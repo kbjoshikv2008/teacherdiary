@@ -1,22 +1,583 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Time Table</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: #ffcc00;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .back-btn {
+            background: #ffcc00;
+            color: #1a2a6c;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-btn:hover {
+            background: #1a2a6c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .password-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        
+        .password-section h2 {
+            color: #1a2a6c;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .password-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1a2a6c;
+            font-size: 1.2rem;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 15px 15px 15px 50px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .password-input:focus {
+            border-color: #1a2a6c;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.2);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .exam-content {
+            display: none;
+        }
+        
+        .tabs {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 50px;
+            padding: 8px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+            transition: all 0.3s ease;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .exam-table th {
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+            color: white;
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .exam-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .exam-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .exam-table tr:hover {
+            background-color: #f1f2f6;
+        }
+        
+        .action-btn {
+            background: #ffcc00;
+            color: #1a2a6c;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .action-btn:hover {
+            background: #1a2a6c;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .add-test {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .add-test-btn {
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .add-test-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .status-scheduled {
+            background: #ffeaa7;
+            color: #d35400;
+        }
+        
+        .status-completed {
+            background: #d5f5e3;
+            color: #27ae60;
+        }
+        
+        .status-pending {
+            background: #fadbd8;
+            color: #c0392b;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .exam-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>SYLLABUS</h1>
-  <a href="index.html">← Back to Home</a>
-  
-  <div class="editable" contenteditable="true">
-    <table border="1" style="width:100%">
-      <tr>
-        <th>Day</th><th>8:00-9:00</th><th>9:00-10:00</th>
-      </tr>
-      <tr>
-        <td>Monday</td><td>Class 6 Math</td><td>Class 7 Science</td>
-      </tr>
-    </table>
-  </div>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Examination Management System</h1>
+                </div>
+                <a href="index.html">
+                    <button class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </button>
+                </a>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="password-section">
+                <h2><i class="fas fa-lock"></i> Secure Examination Access</h2>
+                <p>Please enter the password to access examination details</p>
+                <form class="password-form" id="passwordForm">
+                    <div class="input-group">
+                        <i class="fas fa-key"></i>
+                        <input type="password" class="password-input" id="password" placeholder="Enter access password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Access Examination System</button>
+                </form>
+                <p id="passwordError" style="color: #e74c3c; margin-top: 15px; display: none;">
+                    <i class="fas fa-exclamation-circle"></i> Incorrect password. Please try again.
+                </p>
+            </div>
+            
+            <div class="exam-content" id="examContent">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="class-test">Class Test</button>
+                    <button class="tab-btn" data-tab="monthly-test">Monthly Test</button>
+                    <button class="tab-btn" data-tab="periodic-test">Periodic Test</button>
+                    <button class="tab-btn" data-tab="half-yearly">Half Yearly</button>
+                    <button class="tab-btn" data-tab="session-ending">Session Ending</button>
+                </div>
+                
+                <!-- Class Test Tab -->
+                <div class="tab-content active" id="class-test">
+                    <h2><i class="fas fa-pencil-alt"></i> Class Test Schedule</h2>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Subject</th>
+                          
+                                <th>Duration</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Class 7-C</td>
+                                <td>Mathematics</td>
+                              
+                                <td>40 min</td>
+                                <td><a href="#">Download</a></td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Class11</td>
+                                <td>Mathematics</td>
+                                
+                                <td>40 min</td>
+                                <td><a href="https://drive.google.com/file/d/1jPJFJzmooIyfOkxCkkjhWwtFzHjGVw8j/view?usp=sharing">Download</a></td>
+                                <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Class 12</td>
+                                <td>Mathematics</td>
+                                
+                                <td>40 min</td>
+                                <td><a href="https://drive.google.com/file/d/1V9XlApm22oQSq0tcQnfTwjHJL6jMOWsh/view?usp=sharing">Download</a></td>
+                                <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Monthly Test Tab -->
+                <div class="tab-content" id="monthly-test">
+                    <h2><i class="fas fa-calendar-alt"></i> Monthly Test Schedule</h2>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Class 11</td>
+                                <td>Mathematics</td>
+                                <td></td>
+                                <td></td>
+                                <td>90 min</td>
+                                <td><a href="#">Download</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Class 12</td>
+                                <td>Mathematics/td>
+                                <td></td>
+                                <td></td>
+                                <td>90 min</td>
+                                <td><a href="#">Download</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Periodic Test Tab -->
+                <div class="tab-content" id="periodic-test">
+                    <h2><i class="fas fa-clipboard-list"></i> Periodic Test Schedule</h2>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Class 11</td>
+                                <td>Mathematics</td>
+                                <td></td>
+                                <td></td>
+                                <td>90 min</td>
+                                <td><a href="#">Download</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Class 12</td>
+                                <td>Mathematics</td>
+                                <td></td>
+                                <td></td>
+                                <td>90 min</td>
+                                <td><a href="#">Download</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="add-test">
+                    <button class="add-test-btn">
+                        <i class="fas fa-plus-circle"></i> Add New Test Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Examination Management System | Secure Portal | All rights reserved</p>
+        </div>
+    </div>
+    
+    <script>
+        // Password Protection
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('passwordError');
+            
+            // Check password (in real application, this would be server-side)
+            if (password === "exam123") {
+                document.getElementById('examContent').style.display = 'block';
+                document.querySelector('.password-section').style.display = 'none';
+            } else {
+                errorElement.style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+                
+                // Hide error after 3 seconds
+                setTimeout(() => {
+                    errorElement.style.display = 'none';
+                }, 3000);
+            }
+        });
+        
+        // Tab Switching
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Add hover effect to table rows
+        const tableRows = document.querySelectorAll('.exam-table tbody tr');
+        tableRows.forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'scale(1.01)';
+                row.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                row.style.transition = 'all 0.3s ease';
+            });
+            
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'scale(1)';
+                row.style.boxShadow = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
