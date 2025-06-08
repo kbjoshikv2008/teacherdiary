@@ -3,360 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Competency-Based Lesson Plan: Sets</title>
+    <title>Competency-Based Lesson Plans - Class 11 Maths</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
             color: #333;
+            line-height: 1.6;
+            padding: 20px;
         }
-        h1 {
-            color: #2c3e50;
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
             text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            margin: 0 10px 10px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tab-btn:hover {
+            background: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tab-btn.active {
+            background: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .lesson-plan {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            display: none;
+        }
+        
+        .lesson-plan.active {
+            display: block;
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .plan-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .chapter-title {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .concept-list {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
+        
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 12px 15px;
             text-align: left;
         }
+        
         th {
-            background-color: #3498db;
+            background: linear-gradient(to bottom, #3498db, #2980b9);
             color: white;
+            font-weight: 600;
         }
+        
         tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .header-table {
             background-color: #f8f9fa;
         }
+        
+        .header-table th {
+            background: linear-gradient(to bottom, #2c3e50, #1a2530);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #3498db;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .key-concepts, .case-study, .assessment {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
         .key-concepts {
-            background-color: #e8f4fc;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #e8f4fc 0%, #d1e8f8 100%);
+            border-left: 5px solid #3498db;
         }
+        
         .case-study {
-            background-color: #fff8e1;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+            border-left: 5px solid #f1c40f;
         }
+        
         .assessment {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #e8f5e9 0%, #d7edda 100%);
+            border-left: 5px solid #2ecc71;
         }
+        
         .math {
+            font-family: 'Cambria Math', serif;
             font-style: italic;
+            font-weight: bold;
+            color: #2980b9;
+        }
+        
+        .facilitator {
+            text-align: right;
+            margin-top: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+        }
+        
+        .competency-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 10px;
+        }
+        
+        .tag {
+            padding: 8px 15px;
+            background: #3498db;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 90%;
+                margin: 0 0 10px 0;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>COMPETENCY-BASED LESSON PLAN</h1>
+    <div class="container">
+        <header>
+            <h1>COMPETENCY-BASED LESSON PLANS</h1>
+            <p class="subtitle">Class 11 Mathematics - Comprehensive Curriculum</p>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="sets">Sets</button>
+            <button class="tab-btn" data-tab="relations">Relations & Functions</button>
+            <button class="tab-btn" data-tab="trigonometry">Trigonometric Functions</button>
+        </div>
+        
+        <!-- Sets Lesson Plan -->
+        <div id="sets" class="lesson-plan active">
+            <div class="plan-header">
+                <h2 class="chapter-title">Chapter 1: Sets</h2>
+                <p class="concept-list">Concepts: Introduction to Sets, Types of Sets, Operations on Sets, Venn Diagrams</p>
+            </div>
+            
+            <table class="header-table">
+                <tr>
+                    <th>Grade</th>
+                    <th>Subject</th>
+                    <th>Chapter</th>
+                    <th>Concept</th>
+                    <th>Total number of days</th>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Maths</td>
+                    <td>1. Sets</td>
+                    <td>1. Introduction to Sets<br>2. Types of Sets<br>3. Operations on Sets<br>4. Venn Diagrams</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th colspan="2">Begins on Date</th>
+                    <th colspan="2">No. of periods</th>
+                </tr>
+                <tr>
+                    <td>01/04/2025</td>
+                    <td colspan="2">01/04/2025</td>
+                    <td colspan="2">10</td>
+                </tr>
+            </table>
 
-    <table class="header-table">
-        <tr>
-            <th>Grade</th>
-            <th>Subject</th>
-            <th>Chapter</th>
-            <th>Concept</th>
-            <th>Total number of days</th>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>Maths</td>
-            <td>1. Sets</td>
-            <td>1. Introduction to Sets<br>2. Types of Sets<br>3. Operations on Sets<br>4. Venn Diagrams</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <th>Date</th>
-            <th colspan="2">Begins on Date</th>
-            <th colspan="2">No. of periods</th>
-        </tr>
-        <tr>
-            <td>01/04/2025</td>
-            <td colspan="2">01/04/2025</td>
-            <td colspan="2">10</td>
-        </tr>
-    </table>
+            <h2>Learning Outcomes:</h2>
+            <p>Students will be able to:</p>
+            <ul>
+                <li>Define sets and represent them in different forms (roster, set-builder).</li>
+                <li>Identify and classify types of sets (empty, finite, infinite, equal, equivalent, subsets).</li>
+                <li>Perform operations on sets (union, intersection, difference, complement).</li>
+                <li>Apply Venn diagrams to visualize set operations and solve problems.</li>
+            </ul>
 
-    <h2>Learning Outcomes:</h2>
-    <p>Students will be able to:</p>
-    <ul>
-        <li>Define sets and represent them in different forms (roster, set-builder).</li>
-        <li>Identify and classify types of sets (empty, finite, infinite, equal, equivalent, subsets).</li>
-        <li>Perform operations on sets (union, intersection, difference, complement).</li>
-        <li>Apply Venn diagrams to visualize set operations and solve problems.</li>
-    </ul>
+            <h2>Resources Required:</h2>
+            <ul>
+                <li>GeoGebra (for interactive Venn diagrams)</li>
+                <li>NCERT Activity Kit</li>
+                <li>Textbook: NCERT Class 11 Mathematics</li>
+                <li>Reference Book: CBSE Exemplar</li>
+            </ul>
 
-    <h2>Resources Required:</h2>
-    <ul>
-        <li>GeoGebra (for interactive Venn diagrams)</li>
-        <li>NCERT Activity Kit</li>
-        <li>Textbook: NCERT Class 11 Mathematics</li>
-        <li>Reference Book: CBSE Exemplar</li>
-    </ul>
+            <h2>Lesson Breakdown:</h2>
+            <table>
+                <tr>
+                    <th>Objective</th>
+                    <th>Teaching Methodology</th>
+                    <th>Skills and Attitude</th>
+                    <th>Competencies</th>
+                </tr>
+                <tr>
+                    <td><strong>Define sets and represent them.</strong></td>
+                    <td>Warm-up: Ask students to list objects in their school bags and group them. Introduction to roster and set-builder notation with examples (e.g., sets of even numbers, vowels).</td>
+                    <td>Logical Reasoning</td>
+                    <td>Conceptual Understanding</td>
+                </tr>
+                <tr>
+                    <td><strong>Classify types of sets (empty, finite, infinite, subsets).</strong></td>
+                    <td>Visual Aids: Use charts to compare finite vs. infinite sets. Case Study: Real-life examples like "set of planets" (finite) vs. "set of stars" (infinite).</td>
+                    <td>Analytical Thinking</td>
+                    <td>Classification</td>
+                </tr>
+                <tr>
+                    <td><strong>Perform operations on sets (union, intersection, difference, complement).</strong></td>
+                    <td>Hands-on Activity: Use colored circles to demonstrate union/intersection. Problem-Solving: Solve NCERT examples step-by-step.</td>
+                    <td>Problem-Solving</td>
+                    <td>Application of Operations</td>
+                </tr>
+                <tr>
+                    <td><strong>Apply Venn diagrams to solve problems.</strong></td>
+                    <td>GeoGebra Demo: Interactive Venn diagrams for overlapping sets. Group Task: Solve problems like "In a class of 50 students, 20 play cricket, 25 play football..."</td>
+                    <td>Visual Interpretation</td>
+                    <td>Critical Thinking</td>
+                </tr>
+            </table>
 
-    <h2>Lesson Breakdown:</h2>
-    <table>
-        <tr>
-            <th>Objective</th>
-            <th>Teaching Methodology</th>
-            <th>Skills and Attitude</th>
-            <th>Competencies</th>
-        </tr>
-        <tr>
-            <td><strong>Define sets and represent them.</strong></td>
-            <td>Warm-up: Ask students to list objects in their school bags and group them. Introduction to roster and set-builder notation with examples (e.g., sets of even numbers, vowels).</td>
-            <td>Logical Reasoning</td>
-            <td>Conceptual Understanding</td>
-        </tr>
-        <tr>
-            <td><strong>Classify types of sets (empty, finite, infinite, subsets).</strong></td>
-            <td>Visual Aids: Use charts to compare finite vs. infinite sets. Case Study: Real-life examples like "set of planets" (finite) vs. "set of stars" (infinite).</td>
-            <td>Analytical Thinking</td>
-            <td>Classification</td>
-        </tr>
-        <tr>
-            <td><strong>Perform operations on sets (union, intersection, difference, complement).</strong></td>
-            <td>Hands-on Activity: Use colored circles to demonstrate union/intersection. Problem-Solving: Solve NCERT examples step-by-step.</td>
-            <td>Problem-Solving</td>
-            <td>Application of Operations</td>
-        </tr>
-        <tr>
-            <td><strong>Apply Venn diagrams to solve problems.</strong></td>
-            <td>GeoGebra Demo: Interactive Venn diagrams for overlapping sets. Group Task: Solve problems like "In a class of 50 students, 20 play cricket, 25 play football..."</td>
-            <td>Visual Interpretation</td>
-            <td>Critical Thinking</td>
-        </tr>
-    </table>
+            <div class="key-concepts">
+                <h2>Key Concepts:</h2>
+                <ol>
+                    <li><strong>Sets</strong>: Collection of well-defined objects.
+                        <ul>
+                            <li><strong>Roster Form</strong>: <span class="math">A = {1, 2, 3}</span>.</li>
+                            <li><strong>Set-Builder Form</strong>: <span class="math">A = {x : x is a natural number ≤ 3}</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Types of Sets</strong>:
+                        <ul>
+                            <li><strong>Empty Set</strong>: <span class="math">∅ = {}</span>.</li>
+                            <li><strong>Subset</strong>: <span class="math">B ⊆ A</span> if every element of <span class="math">B</span> is in <span class="math">A</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Operations</strong>:
+                        <ul>
+                            <li><strong>Union (A ∪ B)</strong>: All elements in <span class="math">A</span> or <span class="math">B</span>.</li>
+                            <li><strong>Intersection (A ∩ B)</strong>: Common elements in <span class="math">A</span> and <span class="math">B</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Venn Diagrams</strong>: Visual tool for set relationships.</li>
+                </ol>
+            </div>
 
-    <div class="key-concepts">
-        <h2>Key Concepts:</h2>
-        <ol>
-            <li><strong>Sets</strong>: Collection of well-defined objects.
+            <div class="case-study">
+                <h2>Case-Based Question:</h2>
+                <p><em>A survey in a class of 40 students found:</em></p>
                 <ul>
-                    <li><strong>Roster Form</strong>: <span class="math">A = {1, 2, 3}</span>.</li>
-                    <li><strong>Set-Builder Form</strong>: <span class="math">A = {x : x is a natural number ≤ 3}</span>.</li>
+                    <li>15 students like Maths.</li>
+                    <li>20 students like Science.</li>
+                    <li>5 like both.</li>
                 </ul>
-            </li>
-            <li><strong>Types of Sets</strong>:
+                <p><strong>Questions:</strong></p>
+                <ol>
+                    <li>Represent this data in a Venn diagram.</li>
+                    <li>Find the number of students who like only Maths.</li>
+                    <li>How many students like neither subject?</li>
+                </ol>
+            </div>
+
+            <div class="assessment">
+                <h2>Assessment:</h2>
+                <ol>
+                    <li>Write the set <span class="math">{2, 4, 6, 8}</span> in set-builder form.</li>
+                    <li>If <span class="math">A = {1, 2, 3}</span> and <span class="math">B = {3, 4, 5}</span>, find <span class="math">A ∩ B</span> and <span class="math">A ∪ B</span>.</li>
+                    <li>Prove that <span class="math">A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</span> using Venn diagrams.</li>
+                    <li>Let <span class="math">U = {1, 2, ..., 10}</span>, <span class="math">A = {2, 4, 6}</span>. Find <span class="math">A'</span> (complement of <span class="math">A</span>).</li>
+                </ol>
+            </div>
+
+            <div class="competency-tags">
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Interpreting and Applying Set Theory</span>
+            </div>
+
+            <div class="facilitator">
+                <p><strong>Name of the Facilitator:</strong> Kirti Ballabh Joshi (PGT Maths)</p>
+            </div>
+            
+            <div class="download-section">
+                <a href="https://drive.google.com/file/d/1pXihAcSiYNvotSXvSuWgJj0M8MaV8i9p/view?usp=sharing" class="download-btn" target="_blank">
+                    Download Full Lesson Plan Document
+                </a>
+            </div>
+        </div>
+        
+        <!-- Relations and Functions Lesson Plan -->
+        <div id="relations" class="lesson-plan">
+            <div class="plan-header">
+                <h2 class="chapter-title">Chapter 2: Relations and Functions</h2>
+                <p class="concept-list">Concepts: Cartesian Products, Relations, Types of Relations, Functions</p>
+            </div>
+            
+            <table class="header-table">
+                <tr>
+                    <th>Grade</th>
+                    <th>Subject</th>
+                    <th>Chapter</th>
+                    <th>Concept</th>
+                    <th>Total number of days</th>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Maths</td>
+                    <td>2. Relations and Functions</td>
+                    <td>1. Cartesian Products<br>2. Relations<br>3. Types of Relations<br>4. Functions</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th colspan="2">Begins on Date</th>
+                    <th colspan="2">No. of periods</th>
+                </tr>
+                <tr>
+                    <td>01/04/2025</td>
+                    <td colspan="2">01/04/2025</td>
+                    <td colspan="2">12</td>
+                </tr>
+            </table>
+
+            <h2>Learning Outcomes:</h2>
+            <p>Students will be able to:</p>
+            <ul>
+                <li>Understand and represent Cartesian products of sets</li>
+                <li>Define and identify different types of relations</li>
+                <li>Determine whether a relation is reflexive, symmetric or transitive</li>
+                <li>Understand the concept of functions and their types</li>
+                <li>Differentiate between relations and functions</li>
+            </ul>
+
+            <h2>Resources Required:</h2>
+            <ul>
+                <li>GeoGebra (for graphical representations)</li>
+                <li>Graph papers and coordinate grids</li>
+                <li>NCERT Activity Kit</li>
+                <li>Textbook: NCERT Class 11 Mathematics</li>
+                <li>Reference Book: CBSE Exemplar</li>
+            </ul>
+
+            <h2>Lesson Breakdown:</h2>
+            <table>
+                <tr>
+                    <th>Objective</th>
+                    <th>Teaching Methodology</th>
+                    <th>Skills and Attitude</th>
+                    <th>Competencies</th>
+                </tr>
+                <tr>
+                    <td><strong>Understand Cartesian Products</strong></td>
+                    <td>Warm-up: Use real-life examples like shirt-pant combinations. Visual demonstration using grid paper to plot ordered pairs. Group activity to create product sets.</td>
+                    <td>Logical Reasoning</td>
+                    <td>Conceptual Understanding</td>
+                </tr>
+                <tr>
+                    <td><strong>Define and represent relations</strong></td>
+                    <td>Case Study: Use student height-weight data to show relations. Arrow diagrams to represent relations. GeoGebra visualization of relations on coordinate plane.</td>
+                    <td>Analytical Thinking</td>
+                    <td>Representation Skills</td>
+                </tr>
+                <tr>
+                    <td><strong>Identify types of relations</strong></td>
+                    <td>Interactive activity: Students classify given relations. Think-Pair-Share: Examples from daily life (family relations, social media connections).</td>
+                    <td>Critical Thinking</td>
+                    <td>Classification</td>
+                </tr>
+                <tr>
+                    <td><strong>Understand functions and their types</strong></td>
+                    <td>Hands-on: Use function machines to demonstrate input-output. Graphical method to identify one-one and onto functions. Real-world examples like temperature conversion.</td>
+                    <td>Problem-Solving</td>
+                    <td>Application</td>
+                </tr>
+            </table>
+
+            <div class="key-concepts">
+                <h2>Key Concepts:</h2>
+                <ol>
+                    <li><strong>Cartesian Product</strong>: 
+                        <ul>
+                            <li><span class="math">A × B = {(a,b): a ∈ A, b ∈ B}</span></li>
+                            <li>Number of elements: n(A × B) = n(A) × n(B)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Relations</strong>:
+                        <ul>
+                            <li>A relation R from A to B is a subset of A × B</li>
+                            <li>Types: Empty, Universal, Identity</li>
+                        </ul>
+                    </li>
+                    <li><strong>Types of Relations</strong>:
+                        <ul>
+                            <li><strong>Reflexive</strong>: <span class="math">(a,a) ∈ R ∀ a ∈ A</span></li>
+                            <li><strong>Symmetric</strong>: <span class="math">(a,b) ∈ R ⇒ (b,a) ∈ R</span></li>
+                            <li><strong>Transitive</strong>: <span class="math">(a,b), (b,c) ∈ R ⇒ (a,c) ∈ R</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Functions</strong>:
+                        <ul>
+                            <li>A relation where each input has exactly one output</li>
+                            <li>Types: One-one (Injective), Onto (Surjective), Bijective</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="case-study">
+                <h2>Case-Based Question:</h2>
+                <p><em>In a school competition, students can participate in multiple events. Let:</em></p>
                 <ul>
-                    <li><strong>Empty Set</strong>: <span class="math">∅ = {}</span>.</li>
-                    <li><strong>Subset</strong>: <span class="math">B ⊆ A</span> if every element of <span class="math">B</span> is in <span class="math">A</span>.</li>
+                    <li>A = {1, 2, 3, 4} represent 4 students</li>
+                    <li>B = {Cricket, Chess, Debate} represent 3 events</li>
+                    <li>R = {(1,Cricket), (2,Chess), (2,Debate), (3,Chess), (4,Cricket)}</li>
                 </ul>
-            </li>
-            <li><strong>Operations</strong>:
-                <ul>
-                    <li><strong>Union (A ∪ B)</strong>: All elements in <span class="math">A</span> or <span class="math">B</span>.</li>
-                    <li><strong>Intersection (A ∩ B)</strong>: Common elements in <span class="math">A</span> and <span class="math">B</span>.</li>
-                </ul>
-            </li>
-            <li><strong>Venn Diagrams</strong>: Visual tool for set relationships.</li>
-        </ol>
-    </div>
+                <p><strong>Questions:</strong></p>
+                <ol>
+                    <li>Represent this relation using an arrow diagram.</li>
+                    <li>Is this relation a function? Justify your answer.</li>
+                    <li>Find the domain and range of R.</li>
+                    <li>If another student joins and only participates in Chess, how does R change?</li>
+                </ol>
+            </div>
 
-    <div class="case-study">
-        <h2>Case-Based Question:</h2>
-        <p><em>A survey in a class of 40 students found:</em></p>
-        <ul>
-            <li>15 students like Maths.</li>
-            <li>20 students like Science.</li>
-            <li>5 like both.</li>
-        </ul>
-        <p><strong>Questions:</strong></p>
-        <ol>
-            <li>Represent this data in a Venn diagram.</li>
-            <li>Find the number of students who like only Maths.</li>
-            <li>How many students like neither subject?</li>
-        </ol>
-    </div>
+            <div class="assessment">
+                <h2>Assessment:</h2>
+                <ol>
+                    <li>If A = {1,2} and B = {3,4}, find A × B and B × A. Are they equal?</li>
+                    <li>Let R be the relation on the set N of natural numbers defined by R = {(x,y): y = x + 5}. Write R in roster form.</li>
+                    <li>Check whether the relation R in R (real numbers) defined by R = {(a,b): a ≤ b} is reflexive, symmetric or transitive.</li>
+                    <li>Let f: R → R be defined by f(x) = x². Is f one-one? Is f onto?</li>
+                    <li>Let A = {1,2,3,...,14}. Define a relation R from A to A by R = {(x,y): 3x - y = 0}. Write its domain and range.</li>
+                </ol>
+            </div>
 
-    <div class="assessment">
-        <h2>Assessment:</h2>
-        <ol>
-            <li>Write the set <span class="math">{2, 4, 6, 8}</span> in set-builder form.</li>
-            <li>If <span class="math">A = {1, 2, 3}</span> and <span class="math">B = {3, 4, 5}</span>, find <span class="math">A ∩ B</span> and <span class="math">A ∪ B</span>.</li>
-            <li>Prove that <span class="math">A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</span> using Venn diagrams.</li>
-            <li>Let <span class="math">U = {1, 2, ..., 10}</span>, <span class="math">A = {2, 4, 6}</span>. Find <span class="math">A'</span> (complement of <span class="math">A</span>).</li>
-        </ol>
-    </div>
+            <div class="competency-tags">
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Mathematical Reasoning</span>
+                <span class="tag">Conceptual Understanding</span>
+            </div>
 
-    <p><strong>Problem Solving</strong> | <strong>Interpreting and Applying Set Theory</strong></p>
+            <div class="facilitator">
+                <p><strong>Name of the Facilitator:</strong> Kirti Ballabh Joshi (PGT Maths)</p>
+            </div>
+            
+            <div class="download-section">
+                <a href="https://drive.google.com/file/d/1UvbIG4vAj6ZdgP1ImvdtRERZs8SzqRJ1/view?usp=sharing" class="download-btn" target="_blank">
+                    Download Full Lesson Plan Document
+                </a>
+            </div>
+        </div>
+        
+        <!-- Trigonometric Functions Lesson Plan -->
+        <div id="trigonometry" class="lesson-plan">
+            <div class="plan-header">
+                <h2 class="chapter-title">Chapter 3: Trigonometric Functions</h2>
+                <p class="concept-list">Concepts: Angles and Radians, Trigonometric Functions, Identities and Formulas, Trigonometric Equations, Graphs and Applications</p>
+            </div>
+            
+            <table class="header-table">
+                <tr>
+                    <th>Grade</th>
+                    <th>Subject</th>
+                    <th>Chapter</th>
+                    <th>Concept</th>
+                    <th>Total number of days</th>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>Maths</td>
+                    <td>3. Trigonometric Functions</td>
+                    <td>1. Angles and Radians<br>2. Trigonometric Functions<br>3. Identities and Formulas<br>4. Trigonometric Equations<br>5. Graphs and Applications</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th colspan="2">Begins on Date</th>
+                    <th colspan="2">No. of periods</th>
+                </tr>
+                <tr>
+                    <td>15/05/2025</td>
+                    <td colspan="2">15/05/2025</td>
+                    <td colspan="2">14</td>
+                </tr>
+            </table>
 
-    <p><strong>Name of the Facilitator:</strong> Kirti Ballabh Joshi (PGT Maths)</p>
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1pXihAcSiYNvotSXvSuWgJj0M8MaV8i9p/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
+            <h2>Learning Outcomes:</h2>
+            <p>Students will be able to:</p>
+            <ul>
+                <li>Convert between degree and radian measures of angles</li>
+                <li>Define trigonometric functions using unit circles and right triangles</li>
+                <li>Apply trigonometric identities to simplify expressions</li>
+                <li>Solve trigonometric equations using algebraic and graphical methods</li>
+                <li>Sketch and analyze graphs of trigonometric functions</li>
+                <li>Solve real-world problems involving periodic phenomena</li>
+            </ul>
+
+            <h2>Resources Required:</h2>
+            <ul>
+                <li>Unit circle charts and protractors</li>
+                <li>GeoGebra for dynamic visualizations</li>
+                <li>Graph papers and coordinate grids</li>
+                <li>NCERT Class 11 Mathematics textbook</li>
+                <li>CBSE Exemplar problems</li>
+                <li>Physical models (strings, circular discs)</li>
+            </ul>
+
+            <h2>Lesson Breakdown:</h2>
+            <table>
+                <tr>
+                    <th>Objective</th>
+                    <th>Teaching Methodology</th>
+                    <th>Skills and Attitude</th>
+                    <th>Competencies</th>
+                </tr>
+                <tr>
+                    <td><strong>Understand angle measurement and conversion</strong></td>
+                    <td>Hands-on: Measure classroom angles with protractors. Activity: Use strings on circular discs to demonstrate radians. GeoGebra simulations for angle conversion.</td>
+                    <td>Quantitative Reasoning</td>
+                    <td>Measurement Conversion</td>
+                </tr>
+                <tr>
+                    <td><strong>Define trig functions and identities</strong></td>
+                    <td>Case Study: Model tides using sine functions. Group Activity: Derive identities geometrically (e.g., sin²θ + cos²θ = 1 using unit circles).</td>
+                    <td>Analytical Thinking</td>
+                    <td>Algebraic Manipulation</td>
+                </tr>
+                <tr>
+                    <td><strong>Apply sum/difference formulas</strong></td>
+                    <td>Think-Pair-Share: Derive cos(x+y) geometrically. Problem-solving: Calculate exact values (e.g., sin15°, tan75°). Real-world examples: Surveying applications.</td>
+                    <td>Logical Deduction</td>
+                    <td>Formula Application</td>
+                </tr>
+                <tr>
+                    <td><strong>Graph trig functions</strong></td>
+                    <td>Hands-on: Plot graphs using tables of values. GeoGebra sliders to explore amplitude, period, and phase shifts. Real-world connection: Sound wave patterns.</td>
+                    <td>Visual Representation</td>
+                    <td>Graphical Analysis</td>
+                </tr>
+                <tr>
+                    <td><strong>Solve trig equations</strong></td>
+                    <td>Puzzle: Match equations to graphs. Case Study: Ferris wheel height equations. Error analysis: Identify and correct solution mistakes.</td>
+                    <td>Critical Thinking</td>
+                    <td>Problem Solving</td>
+                </tr>
+            </table>
+
+            <div class="key-concepts">
+                <h2>Key Concepts:</h2>
+                <ol>
+                    <li><strong>Angle Measurement</strong>
+                        <ul>
+                            <li>Radians: <span class="math">180° = π radians</span></li>
+                            <li>Arc length: <span class="math">l = rθ (θ in radians)</span></li>
+                            <li>Conversions: Degree ⇄ Radian</li>
+                        </ul>
+                    </li>
+                    <li><strong>Trigonometric Functions</strong>
+                        <ul>
+                            <li>Unit circle definitions: <span class="math">sin θ = y/r, cos θ = x/r</span></li>
+                            <li>Signs in quadrants: CAST rule</li>
+                            <li>Fundamental identity: <span class="math">sin²θ + cos²θ = 1</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Sum/Difference Formulas</strong>
+                        <ul>
+                            <li><span class="math">sin(x±y) = sin x cos y ± cos x sin y</span></li>
+                            <li><span class="math">cos(x±y) = cos x cos y ∓ sin x sin y</span></li>
+                            <li><span class="math">tan(x±y) = (tan x ± tan y)/(1 ∓ tan x tan y)</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Multiple Angles</strong>
+                        <ul>
+                            <li>Double angle: <span class="math">sin 2x = 2 sin x cos x, cos 2x = cos²x - sin²x</span></li>
+                            <li>Triple angle: <span class="math">sin 3x = 3 sin x - 4 sin³x</span></li>
+                            <li>Half angle: <span class="math">sin(x/2) = ±√[(1 - cos x)/2]</span></li>
+                        </ul>
+                    </li>
+                    <li><strong>Graphs</strong>
+                        <ul>
+                            <li>Periodicity: <span class="math">sin(x + 2π) = sin x</span></li>
+                            <li>Key features: Amplitude, period, phase shift</li>
+                            <li>Transformations: <span class="math">y = a sin(bx + c) + d</span></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="case-study">
+                <h2>Case-Based Question:</h2>
+                <p><em>Ferris Wheel Dynamics:</em> A Ferris wheel has radius 20m and rotates at 2 radians per minute. At t=0, a seat is at the lowest point (ground level).</p>
+                <p><strong>Questions:</strong></p>
+                <ol>
+                    <li>Model height h(t) above ground</li>
+                    <li>Find height after π/4 minutes</li>
+                    <li>When does seat first reach maximum height?</li>
+                </ol>
+                <p><strong>Solution Approach:</strong></p>
+                <ol>
+                    <li><span class="math">h(t) = 20 - 20 cos(2t)</span></li>
+                    <li>At <span class="math">t = π/4</span>: <span class="math">h = 20 - 20 cos(π/2) = 20m</span></li>
+                    <li>Max height when <span class="math">cos(2t) = -1 ⇒ t = π/2 minutes</span></li>
+                </ol>
+            </div>
+
+            <div class="assessment">
+                <h2>Assessment:</h2>
+                <ol>
+                    <li>Convert 120° to radians and 3π/4 radians to degrees</li>
+                    <li>If <span class="math">sin θ = 3/5</span> and θ is acute, find <span class="math">cos θ</span> and <span class="math">tan θ</span></li>
+                    <li>Prove: <span class="math">(tan θ + sec θ - 1)/(tan θ - sec θ + 1) = (1 + sin θ)/cos θ</span></li>
+                    <li>Sketch <span class="math">y = 2 sin(x - π/4)</span> for <span class="math">x ∈ [0, 2π]</span>. State period and amplitude</li>
+                    <li>Solve: <span class="math">2 cos²θ + 3 sin θ = 0</span> for <span class="math">θ ∈ [0, 2π]</span></li>
+                    <li>Prove: <span class="math">cos²x + cos²(x + π/3) + cos²(x - π/3) = 3/2</span></li>
+                </ol>
+            </div>
+
+            <div class="competency-tags">
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Mathematical Modeling</span>
+                <span class="tag">Graphical Analysis</span>
+            </div>
+
+            <div class="facilitator">
+                <p><strong>Name of the Facilitator:</strong> Kirti Ballabh Joshi (PGT Maths)</p>
+            </div>
+            
+            <div class="download-section">
+                <a href="https://drive.google.com/file/d/1ZU2-7nDgMEvrFnqVxcmQAyKMNcjvlc0K/view?usp=sharing" class="download-btn" target="_blank">
+                    Download Full Lesson Plan Document
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Mathematics Department | Class 11 Lesson Plans | Competency-Based Curriculum</p>
+        </footer>
     </div>
- 
+    
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const lessonPlans = document.querySelectorAll('.lesson-plan');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show target lesson plan
+                    lessonPlans.forEach(plan => {
+                        plan.classList.remove('active');
+                        if (plan.id === targetTab) {
+                            plan.classList.add('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
-</html>
-
-<body>
-    <h1>COMPETENCY-BASED LESSON PLAN</h1>
-
-    <table class="header-table">
-        <tr>
-            <th>Grade</th>
-            <th>Subject</th>
-            <th>Chapter</th>
-            <th>Concept</th>
-            <th>Total number of days</th>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>Maths</td>
-            <td>2. Relations and Functions</td>
-            <td>1. Cartesian Products<br>2. Relations<br>3. Types of Relations<br>4. Functions</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <th>Date</th>
-            <th colspan="2">Begins on Date</th>
-            <th colspan="2">No. of periods</th>
-        </tr>
-        <tr>
-            <td>01/04/2025</td>
-            <td colspan="2">01/04/2025</td>
-            <td colspan="2">12</td>
-        </tr>
-    </table>
-
-    <h2>Learning Outcomes:</h2>
-    <p>Students will be able to:</p>
-    <ul>
-        <li>Understand and represent Cartesian products of sets</li>
-        <li>Define and identify different types of relations</li>
-        <li>Determine whether a relation is reflexive, symmetric or transitive</li>
-        <li>Understand the concept of functions and their types</li>
-        <li>Differentiate between relations and functions</li>
-    </ul>
-
-    <h2>Resources Required:</h2>
-    <ul>
-        <li>GeoGebra (for graphical representations)</li>
-        <li>Graph papers and coordinate grids</li>
-        <li>NCERT Activity Kit</li>
-        <li>Textbook: NCERT Class 11 Mathematics</li>
-        <li>Reference Book: CBSE Exemplar</li>
-    </ul>
-
-    <h2>Lesson Breakdown:</h2>
-    <table>
-        <tr>
-            <th>Objective</th>
-            <th>Teaching Methodology</th>
-            <th>Skills and Attitude</th>
-            <th>Competencies</th>
-        </tr>
-        <tr>
-            <td><strong>Understand Cartesian Products</strong></td>
-            <td>Warm-up: Use real-life examples like shirt-pant combinations. Visual demonstration using grid paper to plot ordered pairs. Group activity to create product sets.</td>
-            <td>Logical Reasoning</td>
-            <td>Conceptual Understanding</td>
-        </tr>
-        <tr>
-            <td><strong>Define and represent relations</strong></td>
-            <td>Case Study: Use student height-weight data to show relations. Arrow diagrams to represent relations. GeoGebra visualization of relations on coordinate plane.</td>
-            <td>Analytical Thinking</td>
-            <td>Representation Skills</td>
-        </tr>
-        <tr>
-            <td><strong>Identify types of relations</strong></td>
-            <td>Interactive activity: Students classify given relations. Think-Pair-Share: Examples from daily life (family relations, social media connections).</td>
-            <td>Critical Thinking</td>
-            <td>Classification</td>
-        </tr>
-        <tr>
-            <td><strong>Understand functions and their types</strong></td>
-            <td>Hands-on: Use function machines to demonstrate input-output. Graphical method to identify one-one and onto functions. Real-world examples like temperature conversion.</td>
-            <td>Problem-Solving</td>
-            <td>Application</td>
-        </tr>
-    </table>
-
-    <div class="key-concepts">
-        <h2>Key Concepts:</h2>
-        <ol>
-            <li><strong>Cartesian Product</strong>: 
-                <ul>
-                    <li><span class="math">A × B = {(a,b): a ∈ A, b ∈ B}</span></li>
-                    <li>Number of elements: n(A × B) = n(A) × n(B)</li>
-                </ul>
-            </li>
-            <li><strong>Relations</strong>:
-                <ul>
-                    <li>A relation R from A to B is a subset of A × B</li>
-                    <li>Types: Empty, Universal, Identity</li>
-                </ul>
-            </li>
-            <li><strong>Types of Relations</strong>:
-                <ul>
-                    <li><strong>Reflexive</strong>: <span class="math">(a,a) ∈ R ∀ a ∈ A</span></li>
-                    <li><strong>Symmetric</strong>: <span class="math">(a,b) ∈ R ⇒ (b,a) ∈ R</span></li>
-                    <li><strong>Transitive</strong>: <span class="math">(a,b), (b,c) ∈ R ⇒ (a,c) ∈ R</span></li>
-                </ul>
-            </li>
-            <li><strong>Functions</strong>:
-                <ul>
-                    <li>A relation where each input has exactly one output</li>
-                    <li>Types: One-one (Injective), Onto (Surjective), Bijective</li>
-                </ul>
-            </li>
-        </ol>
-    </div>
-
-    <div class="case-study">
-        <h2>Case-Based Question:</h2>
-        <p><em>In a school competition, students can participate in multiple events. Let:</em></p>
-        <ul>
-            <li>A = {1, 2, 3, 4} represent 4 students</li>
-            <li>B = {Cricket, Chess, Debate} represent 3 events</li>
-            <li>R = {(1,Cricket), (2,Chess), (2,Debate), (3,Chess), (4,Cricket)}</li>
-        </ul>
-        <p><strong>Questions:</strong></p>
-        <ol>
-            <li>Represent this relation using an arrow diagram.</li>
-            <li>Is this relation a function? Justify your answer.</li>
-            <li>Find the domain and range of R.</li>
-            <li>If another student joins and only participates in Chess, how does R change?</li>
-        </ol>
-    </div>
-
-    <div class="assessment">
-        <h2>Assessment:</h2>
-        <ol>
-            <li>If A = {1,2} and B = {3,4}, find A × B and B × A. Are they equal?</li>
-            <li>Let R be the relation on the set N of natural numbers defined by R = {(x,y): y = x + 5}. Write R in roster form.</li>
-            <li>Check whether the relation R in R (real numbers) defined by R = {(a,b): a ≤ b} is reflexive, symmetric or transitive.</li>
-            <li>Let f: R → R be defined by f(x) = x². Is f one-one? Is f onto?</li>
-            <li>Let A = {1,2,3,...,14}. Define a relation R from A to A by R = {(x,y): 3x - y = 0}. Write its domain and range.</li>
-        </ol>
-    </div>
-
-    <p><strong>Problem Solving</strong> | <strong>Mathematical Reasoning</strong> | <strong>Conceptual Understanding</strong></p>
-
-    <p><strong>Name of the Facilitator:</strong> [Your Name] (PGT Maths)</p>
-
-    <p><em>Note: Use real-world examples like social media connections (relations) and vending machines (functions) to make concepts relatable. Adjust pace based on student understanding.</em></p>
-</body>
-
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1UvbIG4vAj6ZdgP1ImvdtRERZs8SzqRJ1/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
 </html>
