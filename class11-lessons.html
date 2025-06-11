@@ -265,6 +265,66 @@
                 padding: 8px 10px;
             }
         }
+
+        /* New styles for the updated Relations section */
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .prefilled {
+            padding: 5px;
+            background-color: #f9f9f9;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .highlight {
+            background-color: #e3f2fd;
+            padding: 3px;
+            border-radius: 3px;
+        }
+        
+        .period-breakdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .period-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .period-card h4 {
+            color: #1c4587;
+            margin-bottom: 5px;
+        }
+        
+        .content-section {
+            margin-bottom: 15px;
+        }
+        
+        .content-section h3 {
+            color: #1c4587;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -432,7 +492,7 @@
             </div>
         </div>
         
-        <!-- Relations and Functions Lesson Plan -->
+        <!-- Relations and Functions Lesson Plan (Updated) -->
         <div id="relations" class="lesson-plan">
             <div class="plan-header">
                 <h2 class="chapter-title">Chapter 2: Relations and Functions</h2>
@@ -467,115 +527,210 @@
             </table>
 
             <h2>Learning Outcomes:</h2>
-            <p>Students will be able to:</p>
-            <ul>
-                <li>Understand and represent Cartesian products of sets</li>
-                <li>Define and identify different types of relations</li>
-                <li>Determine whether a relation is reflexive, symmetric or transitive</li>
-                <li>Understand the concept of functions and their types</li>
-                <li>Differentiate between relations and functions</li>
-            </ul>
+            <div class="prefilled">
+                <ul>
+                    <li>Students will understand and compute Cartesian products of sets</li>
+                    <li>Students will differentiate between relations and functions</li>
+                    <li>Students will determine domain, range and codomain of relations and functions</li>
+                    <li>Students will represent relations through arrow diagrams, roster form and set-builder form</li>
+                    <li>Students will identify different types of functions and their properties</li>
+                    <li>Students will perform algebraic operations on real functions</li>
+                    <li>Students will solve problems involving relations and functions</li>
+                </ul>
+            </div>
 
             <h2>Resources Required:</h2>
-            <ul>
-                <li>GeoGebra (for graphical representations)</li>
-                <li>Graph papers and coordinate grids</li>
-                <li>NCERT Activity Kit</li>
-                <li>Textbook: NCERT Class 11 Mathematics</li>
-                <li>Reference Book: CBSE Exemplar</li>
-            </ul>
-
-            <h2>Lesson Breakdown:</h2>
-            <table>
-                <tr>
-                    <th>Objective</th>
-                    <th>Teaching Methodology</th>
-                    <th>Skills and Attitude</th>
-                    <th>Competencies</th>
-                </tr>
-                <tr>
-                    <td><strong>Understand Cartesian Products</strong></td>
-                    <td>Warm-up: Use real-life examples like shirt-pant combinations. Visual demonstration using grid paper to plot ordered pairs. Group activity to create product sets.</td>
-                    <td>Logical Reasoning</td>
-                    <td>Conceptual Understanding</td>
-                </tr>
-                <tr>
-                    <td><strong>Define and represent relations</strong></td>
-                    <td>Case Study: Use student height-weight data to show relations. Arrow diagrams to represent relations. GeoGebra visualization of relations on coordinate plane.</td>
-                    <td>Analytical Thinking</td>
-                    <td>Representation Skills</td>
-                </tr>
-                <tr>
-                    <td><strong>Identify types of relations</strong></td>
-                    <td>Interactive activity: Students classify given relations. Think-Pair-Share: Examples from daily life (family relations, social media connections).</td>
-                    <td>Critical Thinking</td>
-                    <td>Classification</td>
-                </tr>
-                <tr>
-                    <td><strong>Understand functions and their types</strong></td>
-                    <td>Hands-on: Use function machines to demonstrate input-output. Graphical method to identify one-one and onto functions. Real-world examples like temperature conversion.</td>
-                    <td>Problem-Solving</td>
-                    <td>Application</td>
-                </tr>
-            </table>
-
-            <div class="key-concepts">
-                <h2>Key Concepts:</h2>
-                <ol>
-                    <li><strong>Cartesian Product</strong>: 
-                        <ul>
-                            <li><span class="math">A × B = {(a,b): a ∈ A, b ∈ B}</span></li>
-                            <li>Number of elements: n(A × B) = n(A) × n(B)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Relations</strong>:
-                        <ul>
-                            <li>A relation R from A to B is a subset of A × B</li>
-                            <li>Types: Empty, Universal, Identity</li>
-                        </ul>
-                    </li>
-                    <li><strong>Types of Relations</strong>:
-                        <ul>
-                            <li><strong>Reflexive</strong>: <span class="math">(a,a) ∈ R ∀ a ∈ A</span></li>
-                            <li><strong>Symmetric</strong>: <span class="math">(a,b) ∈ R ⇒ (b,a) ∈ R</span></li>
-                            <li><strong>Transitive</strong>: <span class="math">(a,b), (b,c) ∈ R ⇒ (a,c) ∈ R</span></li>
-                        </ul>
-                    </li>
-                    <li><strong>Functions</strong>:
-                        <ul>
-                            <li>A relation where each input has exactly one output</li>
-                            <li>Types: One-one (Injective), Onto (Surjective), Bijective</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="case-study">
-                <h2>Case-Based Question:</h2>
-                <p><em>In a school competition, students can participate in multiple events. Let:</em></p>
+            <div class="prefilled">
                 <ul>
-                    <li>A = {1, 2, 3, 4} represent 4 students</li>
-                    <li>B = {Cricket, Chess, Debate} represent 3 events</li>
-                    <li>R = {(1,Cricket), (2,Chess), (2,Debate), (3,Chess), (4,Cricket)}</li>
+                    <li>NCERT Mathematics Textbook (Class 11)</li>
+                    <li>Graph paper and drawing tools</li>
+                    <li>Projector for visual presentations</li>
+                    <li>Online graphing tools (Desmos, GeoGebra)</li>
+                    <li>Printed worksheets for practice problems</li>
+                    <li>Physical manipulatives for set operations</li>
+                    <li>Whiteboard and markers for demonstrations</li>
+                    <li>Digital presentation slides</li>
                 </ul>
-                <p><strong>Questions:</strong></p>
-                <ol>
-                    <li>Represent this relation using an arrow diagram.</li>
-                    <li>Is this relation a function? Justify your answer.</li>
-                    <li>Find the domain and range of R.</li>
-                    <li>If another student joins and only participates in Chess, how does R change?</li>
-                </ol>
             </div>
 
-            <div class="assessment">
-                <h2>Assessment:</h2>
-                <ol>
-                    <li>If A = {1,2} and B = {3,4}, find A × B and B × A. Are they equal?</li>
-                    <li>Let R be the relation on the set N of natural numbers defined by R = {(x,y): y = x + 5}. Write R in roster form.</li>
-                    <li>Check whether the relation R in R (real numbers) defined by R = {(a,b): a ≤ b} is reflexive, symmetric or transitive.</li>
-                    <li>Let f: R → R be defined by f(x) = x². Is f one-one? Is f onto?</li>
-                    <li>Let A = {1,2,3,...,14}. Define a relation R from A to A by R = {(x,y): 3x - y = 0}. Write its domain and range.</li>
-                </ol>
+            <h2>Content and Concepts:</h2>
+            <div class="prefilled">
+                <div class="content-section">
+                    <h3>Core Concepts:</h3>
+                    <ul>
+                        <li>Cartesian Products of Sets (Definition, Properties, Examples)</li>
+                        <li>Relations (Definition, Domain, Range, Codomain, Representation)</li>
+                        <li>Functions (Definition, Domain, Range, Types of Functions)</li>
+                        <li>Algebra of Real Functions (Addition, Subtraction, Multiplication, Division)</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h3>Key Definitions:</h3>
+                    <ul>
+                        <li>Ordered Pair: A pair of elements grouped in a specific order</li>
+                        <li>Cartesian Product: P × Q = {(p,q) : p ∈ P, q ∈ Q}</li>
+                        <li>Relation: A subset of the Cartesian product</li>
+                        <li>Function: A relation where every element of set A has one and only one image in set B</li>
+                    </ul>
+                </div>
+                
+                <div class="content-section">
+                    <h3>Function Types:</h3>
+                    <ul>
+                        <li>Identity Function: f(x) = x</li>
+                        <li>Constant Function: f(x) = c</li>
+                        <li>Polynomial Function: f(x) = a₀ + a₁x + ... + aₙxⁿ</li>
+                        <li>Rational Function: f(x)/g(x) where g(x) ≠ 0</li>
+                        <li>Modulus Function: f(x) = |x|</li>
+                        <li>Signum Function</li>
+                        <li>Greatest Integer Function</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Pedagogical Strategies:</h2>
+            <div class="prefilled">
+                <div class="period-breakdown">
+                    <div class="period-card">
+                        <h4>Periods 1-2: Introduction</h4>
+                        <p>Lecture with real-life examples, group activity for Cartesian products</p>
+                    </div>
+                    <div class="period-card">
+                        <h4>Periods 3-4: Relations</h4>
+                        <p>Visual representations (arrow diagrams), problem-solving in pairs</p>
+                    </div>
+                    <div class="period-card">
+                        <h4>Periods 5-7: Functions</h4>
+                        <p>Interactive graphing activities, function identification exercises</p>
+                    </div>
+                    <div class="period-card">
+                        <h4>Periods 8-10: Function Types</h4>
+                        <p>Graph plotting lab, real-world applications, case studies</p>
+                    </div>
+                    <div class="period-card">
+                        <h4>Period 11: Algebra of Functions</h4>
+                        <p>Step-by-step demonstration, practice worksheets</p>
+                    </div>
+                    <div class="period-card">
+                        <h4>Period 12: Review</h4>
+                        <p>Concept mapping, Q&A session, assessment</p>
+                    </div>
+                </div>
+                
+                <p><br>Teaching Methods: Interactive lectures, group activities, visual demonstrations (graph plotting), problem-solving sessions, real-world applications, digital tools (graphing software)</p>
+            </div>
+
+            <h2>21st Century Skills:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li><span class="highlight">Critical Thinking:</span> Analyzing relations and functions for problem-solving</li>
+                    <li><span class="highlight">Logical Reasoning:</span> Understanding function properties and behavior</li>
+                    <li><span class="highlight">Digital Literacy:</span> Using graphing software/tools for visualization</li>
+                    <li><span class="highlight">Collaboration:</span> Group activities for Cartesian products and relations</li>
+                    <li><span class="highlight">Precision:</span> Attention to detail in mathematical definitions and notations</li>
+                    <li><span class="highlight">Real-world Application:</span> Understanding how functions model real phenomena</li>
+                </ul>
+            </div>
+
+            <h2>Extension / Real life applications:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li>Relations in database systems (mapping elements between sets)</li>
+                    <li>Functions in physics: Position-time, velocity-time relationships</li>
+                    <li>Temperature conversion as a function (Celsius to Fahrenheit)</li>
+                    <li>Economic applications: Demand-supply functions</li>
+                    <li>Computer science: Functions in programming and algorithms</li>
+                    <li>Graphing real-world data to identify functional relationships</li>
+                    <li>Practical exercise: License plate coding example from textbook</li>
+                </ul>
+            </div>
+
+            <h2>Integration with other subjects:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li><span class="highlight">Physics:</span> Motion equations as functions, wave functions</li>
+                    <li><span class="highlight">Computer Science:</span> Functions in programming, relational databases</li>
+                    <li><span class="highlight">Economics:</span> Cost, revenue and profit functions</li>
+                    <li><span class="highlight">Geography:</span> Coordinate systems (Cartesian products in mapping)</li>
+                    <li><span class="highlight">Chemistry:</span> Reaction rates as functions of concentration</li>
+                </ul>
+            </div>
+
+            <h2>Assessment:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li>Formative Assessment: Daily exit tickets, group activity evaluation</li>
+                    <li>Summative Assessment: End-of-chapter test (12 marks)</li>
+                    <li>Quiz 1: Cartesian Products and Relations (10 MCQs)</li>
+                    <li>Quiz 2: Functions and their Properties (10 MCQs)</li>
+                    <li>Practical: Graphing different types of functions</li>
+                    <li>Problem-solving: Domain and range determination</li>
+                    <li>Real-world application: Creating function models for simple phenomena</li>
+                </ul>
+            </div>
+
+            <h2>Objectives:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li>To establish foundational understanding of relations and functions</li>
+                    <li>To develop skills in representing mathematical relationships</li>
+                    <li>To enable students to distinguish between relations and functions</li>
+                    <li>To build proficiency in determining domain and range</li>
+                    <li>To introduce various types of functions and their characteristics</li>
+                    <li>To apply concepts to solve real-world problems</li>
+                    <li>To prepare students for advanced mathematical concepts</li>
+                </ul>
+            </div>
+
+            <h2>Teaching Methodology:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li><span class="highlight">Structured Progression:</span> Begin with concrete examples → abstract concepts</li>
+                    <li><span class="highlight">Visual Learning:</span> Extensive use of graphs and diagrams</li>
+                    <li><span class="highlight">Collaborative Learning:</span> Group activities for Cartesian products</li>
+                    <li><span class="highlight">Differentiated Instruction:</span> Tiered worksheets for varied skill levels</li>
+                    <li><span class="highlight">Technology Integration:</span> Graphing software demonstrations</li>
+                    <li><span class="highlight">Problem-Based Learning:</span> Real-world application scenarios</li>
+                    <li><span class="highlight">Formative Assessment:</span> Regular checks for understanding</li>
+                </ul>
+            </div>
+
+            <h2>Skills and Attitude:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li><span class="highlight">Analytical Skills:</span> Breaking down complex relations</li>
+                    <li><span class="highlight">Precision:</span> Accurate mathematical notation and definitions</li>
+                    <li><span class="highlight">Visualization:</span> Interpreting graphical representations</li>
+                    <li><span class="highlight">Critical Thinking:</span> Evaluating function properties</li>
+                    <li><span class="highlight">Growth Mindset:</span> Embracing challenging concepts</li>
+                    <li><span class="highlight">Collaborative Spirit:</span> Working effectively in groups</li>
+                    <li><span class="highlight">Curiosity:</span> Exploring real-world applications</li>
+                </ul>
+            </div>
+
+            <h2>Competency Based Lesson Plan:</h2>
+            <div class="prefilled">
+                <ul>
+                    <li><span class="highlight">Conceptual Understanding:</span> Deep comprehension of relations vs. functions</li>
+                    <li><span class="highlight">Procedural Fluency:</span> Skill in computing Cartesian products and function operations</li>
+                    <li><span class="highlight">Problem Solving:</span> Applying concepts to diverse mathematical situations</li>
+                    <li><span class="highlight">Mathematical Reasoning:</span> Logical analysis of function properties</li>
+                    <li><span class="highlight">Representational Skills:</span> Multiple representations (algebraic, graphical, numerical)</li>
+                </ul>
+            </div>
+
+            <h2>Post Teaching Reflection:</h2>
+            <div class="prefilled">
+                <p><strong>No. of periods required:</strong> 12</p>
+                <p><strong>Planning for remedial teaching:</strong> Additional practice sessions for students struggling with function concepts</p>
+                <p><strong>Concepts for which remedial classes are required:</strong></p>
+                <ul>
+                    <li>Distinguishing relations from functions</li>
+                    <li>Domain and range determination</li>
+                    <li>Graphing different function types</li>
+                    <li>Algebra of functions operations</li>
+                </ul>
             </div>
 
             <div class="competency-tags">
