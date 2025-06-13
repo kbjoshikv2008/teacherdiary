@@ -3,268 +3,1290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade 7 Maths Lesson Plan - Large Numbers Around Us</title>
+    <title>Class 7 Math Lesson Plans</title>
     <style>
-        body {
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1c4587 0%, #4a86e8 100%);
+            color: white;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .header h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+        
+        .lesson-plan-container {
+            width: 29.7cm; /* A4 width */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .lesson-title {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .lesson-title h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .lesson-title h2 {
             color: #333;
+            font-size: 20px;
+            font-weight: normal;
         }
-        h1, h2, h3 {
-            color: #2c3e50;
-            margin-top: 30px;
-        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
+            margin-bottom: 10px;
         }
+        
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            border: 1px solid #ccc;
+            padding: 8px;
             text-align: left;
+            vertical-align: top;
         }
+        
         th {
-            background-color: #f2f2f2;
+            background-color: #e3eaf3;
+            font-weight: bold;
         }
-        .header-table {
-            margin-bottom: 30px;
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
         }
-        .learning-outcomes, .assessment {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            margin: 20px 0;
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
         }
-        .activity {
-            margin-bottom: 25px;
-            padding: 15px;
-            background-color: #f0f7ff;
-            border-radius: 5px;
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
         }
-        .activity h4 {
-            margin-top: 0;
-            color: #2980b9;
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
         }
-        .activity ul {
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
             margin-top: 5px;
         }
-        .math-example {
-            font-family: monospace;
-            background-color: #f5f5f5;
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .no-print {
+                display: none;
+            }
+            
+            .lesson-plan-container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+                height: auto;
+                margin-bottom: 0;
+                page-break-after: always;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .filled-content {
+            padding: 5px;
+            font-size: 14px;
+            min-height: 30px;
+            background-color: #f9f9f9;
+            border-radius: 3px;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
             padding: 2px 5px;
             border-radius: 3px;
+        }
+        
+        .plan-divider {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .plan-divider span {
+            background-color: #1c4587;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .filled-content ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .filled-content li {
+            margin-bottom: 5px;
+        }
+        
+        .topic-tag {
+            display: inline-block;
+            background-color: #e3eaf3;
+            color: #1c4587;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin: 0 5px 5px 0;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>Grade 7 Maths Lesson Plan - Large Numbers Around Us</h1>
+    <button class="print-btn no-print" onclick="window.print()">Print Both Lesson Plans</button>
     
-    <h2>COMPETENCY-BASED LESSON PLAN</h2>
+    <div class="header">
+        <h1>Class 7 Mathematics Lesson Plans</h1>
+        <h2>कक्षा 7 गणित पाठ योजनाएँ</h2>
+        <div>
+            
+            <span class="topic-tag">Large Numbers Around Us</span>
+            <span class="topic-tag">Arithmetic Expressions</span>
+        </div>
+    </div>
+
     
-    <table class="header-table">
-        <tr>
-            <th>Grade:</th>
-            <td>7</td>
-            <th>Subject:</th>
-            <td>Maths</td>
-        </tr>
-        <tr>
-            <th>Chapter:</th>
-            <td>Large Numbers Around Us</td>
-            <th>Concept:</th>
-            <td>Lakhs, Crores, Operations, Estimation</td>
-        </tr>
-        <tr>
-            <th>Total Days:</th>
-            <td>5</td>
-            <th>No. of Periods:</th>
-            <td>6</td>
-        </tr>
-        <tr>
-            <th>Date:</th>
-            <td>15/04/2025</td>
-            <th>Begins on:</th>
-            <td>16/04/2025</td>
-        </tr>
-        <tr>
-            <th>Resources Required:</th>
-            <td colspan="3">NCERT Textbook, CBSE Exemplar, Number Charts, Activity Sheets, GeoGebra</td>
-        </tr>
-    </table>
-    
-    <div class="learning-outcomes">
-        <h3>Learning Outcomes:</h3>
-        <p>Students will be able to:</p>
-        <ul>
-            <li>Read/write numbers in Indian (lakhs, crores) and International systems (millions, billions)</li>
-            <li>Perform operations (+, –, ×) with large numbers using shortcuts</li>
-            <li>Round off and estimate real-life quantities (e.g., population, distances)</li>
-            <li>Solve contextual problems (e.g., "Can 1 lakh buses fit Mumbai's population?")</li>
-        </ul>
+    <!-- Lesson Plan 2: Large Numbers Around Us -->
+    <div class="lesson-plan-container">
+        <div class="lesson-title">
+            <h1>Large Numbers Around Us</h1>
+            <h2>हमारे आसपास बड़ी संख्याएँ</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2023-10-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="Grade 7A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="35"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Large Numbers Around Us"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-16"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="6"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source2" checked>
+                        <label for="self-source2">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool2">
+                        <label for="resource-pool2">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Teacher"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Understanding large numbers (lakh, crore, million, billion)</li>
+                            <li>Indian and International number systems and place values</li>
+                            <li>Reading and writing large numbers in both systems</li>
+                            <li>Rounding and approximating large numbers</li>
+                            <li>Real-world applications of large numbers (populations, distances, quantities)</li>
+                            <li>Patterns in multiplication with large numbers</li>
+                            <li>Problem-solving with large numbers</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Students will understand the concept of large numbers (lakh, crore)</li>
+                            <li>Students will be able to read and write large numbers in Indian and International systems</li>
+                            <li>Students will develop estimation skills with large numbers</li>
+                            <li>Students will solve real-world problems involving large numbers</li>
+                            <li>Students will recognize patterns in multiplication with large numbers</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Think-Pair-Share:</span> Students think individually, discuss in pairs, and share with class</li>
+                            <li><span class="highlight">Real-world examples:</span> Use census data, distances, and other real applications</li>
+                            <li><span class="highlight">Visual representation:</span> Place value charts and number lines for large numbers</li>
+                            <li><span class="highlight">Problem-based learning:</span> Solve problems from textbook and create new ones</li>
+                            <li><span class="highlight">Group activities:</span> Comparing city populations, calculating distances</li>
+                            <li><span class="highlight">Digital tools:</span> Online calculators and population databases</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Critical thinking:</span> Estimating and approximating large quantities</li>
+                            <li><span class="highlight">Numerical literacy:</span> Understanding large-scale statistics</li>
+                            <li><span class="highlight">Problem solving:</span> Real-world applications with large numbers</li>
+                            <li><span class="highlight">Cultural awareness:</span> Understanding different numbering systems</li>
+                            <li><span class="highlight">Environmental awareness:</span> Understanding large-scale environmental data</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Analyzing census data and population growth</li>
+                            <li>Calculating astronomical distances (Earth to Sun, Earth to Moon)</li>
+                            <li>Understanding large quantities in nature (fish eggs, bacteria in soil)</li>
+                            <li>Environmental applications (water flow in rivers, plastic waste)</li>
+                            <li>Economic applications (national budgets, large-scale production)</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Geography:</span> Population distribution, distances between places</li>
+                            <li><span class="highlight">Science:</span> Astronomical distances, quantities in nature</li>
+                            <li><span class="highlight">Environmental Science:</span> Water flow, waste production</li>
+                            <li><span class="highlight">Social Studies:</span> Census data, city populations</li>
+                            <li><span class="highlight">Economics:</span> Large-scale production and budgets</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Formative:</span> Class participation, group activities, worksheets</li>
+                            <li><span class="highlight">Summative:</span> End-of-chapter test with problems:
+                                <ul>
+                                    <li>Converting between Indian and International systems</li>
+                                    <li>Reading and writing large numbers</li>
+                                    <li>Solving real-world problems with large numbers</li>
+                                    <li>Estimating and rounding large numbers</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Project:</span> Research and present a real-world application of large numbers</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Textbook: Ganita Prakash Grade 7</li>
+                            <li>Place value charts and number cards</li>
+                            <li>Calculators</li>
+                            <li>Projector for displaying large numbers and examples</li>
+                            <li>Internet access for population databases</li>
+                            <li>Worksheets with problems from textbook</li>
+                            <li>World map for distance calculations</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>To help students understand the magnitude of large numbers</li>
+                            <li>To develop proficiency in reading and writing large numbers</li>
+                            <li>To enable students to convert between Indian and International number systems</li>
+                            <li>To develop estimation and approximation skills</li>
+                            <li>To apply large number concepts to real-world situations</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Session 1:</span> Introduction to lakh and crore with real examples</li>
+                            <li><span class="highlight">Session 2:</span> Indian vs International number systems</li>
+                            <li><span class="highlight">Session 3:</span> Reading and writing large numbers</li>
+                            <li><span class="highlight">Session 4:</span> Rounding and approximation techniques</li>
+                            <li><span class="highlight">Session 5:</span> Real-world applications and problem solving</li>
+                            <li><span class="highlight">Session 6:</span> Patterns in multiplication and review</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Numeracy skills with large numbers</li>
+                            <li>Analytical thinking for estimation</li>
+                            <li>Collaboration in group activities</li>
+                            <li>Curiosity about large-scale phenomena</li>
+                            <li>Precision in mathematical representation</li>
+                            <li>Appreciation for real-world applications of mathematics</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Conceptual understanding:</span> Place value systems, magnitude of large numbers</li>
+                            <li><span class="highlight">Procedural fluency:</span> Converting between systems, rounding numbers</li>
+                            <li><span class="highlight">Problem solving:</span> Applying large number concepts to real situations</li>
+                            <li><span class="highlight">Reasoning:</span> Estimating and justifying approximations</li>
+                            <li><span class="highlight">Mathematical communication:</span> Expressing large numbers correctly in words</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field" value="6"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field" value="Extra practice on place value conversion"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Distinguishing between Indian and International systems</li>
+                            <li>Rounding large numbers to nearest lakh/crore</li>
+                            <li>Real-world application problems</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        <!-- Lesson Plan 1: Arithmetic Expressions -->
+    <div class="lesson-plan-container">
+        <div class="lesson-title">
+            <h1>Arithmetic Expressions</h1>
+            <h2>अंकगणितीय व्यंजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2023-10-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="Class 7, Section A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Arithmetic Expressions"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-16"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="2"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-17"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source1" checked>
+                        <label for="self-source1">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool1">
+                        <label for="resource-pool1">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. Introduction to arithmetic expressions and their values</p>
+                        <p>2. Comparing expressions using reasoning instead of direct calculation</p>
+                        <p>3. Complex expressions and the need for brackets</p>
+                        <p>4. Terms in expressions and their identification</p>
+                        <p>5. Properties of expressions: Commutative and Associative properties of addition</p>
+                        <p>6. Distributive property: a × (b + c) = a × b + a × c</p>
+                        <p>7. Evaluating expressions with multiple operations</p>
+                        <p>8. Real-life applications of arithmetic expressions</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. Students will understand the concept of arithmetic expressions and their values</p>
+                        <p>2. Students will be able to compare expressions using reasoning</p>
+                        <p>3. Students will learn to use brackets to clarify the order of operations</p>
+                        <p>4. Students will identify terms in expressions and understand their properties</p>
+                        <p>5. Students will apply commutative and associative properties in expression evaluation</p>
+                        <p>6. Students will understand and apply the distributive property</p>
+                        <p>7. Students will create expressions to represent real-life situations</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Real-life scenarios:</strong> Use situations like shopping, games to explain expressions</p>
+                        <p>2. <strong>Visual aids:</strong> Use tokens, number lines to demonstrate properties</p>
+                        <p>3. <strong>Group activities:</strong> Students create expressions for given situations</p>
+                        <p>4. <strong>Problem-solving:</strong> Solve problems without direct calculation</p>
+                        <p>5. <strong>Think-Pair-Share:</strong> Students reason expressions then discuss with partners</p>
+                        <p>6. <strong>Whiteboard practice:</strong> Students solve expressions step-by-step</p>
+                        <p>7. <strong>Digital tools:</strong> Use online expression evaluators for practice</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Critical thinking:</strong> Comparing expressions without direct calculation</p>
+                        <p>2. <strong>Problem-solving:</strong> Creating expressions for real-world situations</p>
+                        <p>3. <strong>Financial literacy:</strong> Understanding transactions through expressions</p>
+                        <p>4. <strong>Collaboration:</strong> Working in groups to solve expression challenges</p>
+                        <p>5. <strong>Logical reasoning:</strong> Applying properties to simplify expressions</p>
+                        <p>6. <strong>Digital literacy:</strong> Using online tools for expression evaluation</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Shopping transactions:</strong> Calculating total costs and change</p>
+                        <p>2. <strong>Time management:</strong> Calculating time spent on activities</p>
+                        <p>3. <strong>Budgeting:</strong> Creating expressions for income and expenses</p>
+                        <p>4. <strong>Sports statistics:</strong> Calculating player scores and averages</p>
+                        <p>5. <strong>Recipe scaling:</strong> Adjusting ingredient quantities</p>
+                        <p>6. <strong>Travel planning:</strong> Calculating distances and travel times</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Science:</strong> Calculating measurements in experiments</p>
+                        <p>2. <strong>Social Studies:</strong> Population growth calculations</p>
+                        <p>3. <strong>Economics:</strong> Understanding profit/loss expressions</p>
+                        <p>4. <strong>Computer Science:</strong> Writing expressions in programming</p>
+                        <p>5. <strong>Physical Education:</strong> Calculating scores in games</p>
+                        <p>6. <strong>Home Science:</strong> Adjusting recipe quantities</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Formative:</strong> Class participation, group activities, whiteboard exercises</p>
+                        <p>2. <strong>Quiz:</strong> Short quiz on expression comparison and evaluation</p>
+                        <p>3. <strong>Worksheet:</strong> Problem-solving sheet with expression challenges</p>
+                        <p>4. <strong>Real-world application:</strong> Create expressions for given scenarios</p>
+                        <p>5. <strong>Peer assessment:</strong> Students evaluate each other's expression solutions</p>
+                        <p>6. <strong>Digital assessment:</strong> Online quizzes on expression properties</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. Textbook: Ganita Prakash Grade 7 (Pages 27-45)</p>
+                        <p>2. Whiteboard and markers</p>
+                        <p>3. Number cards and tokens</p>
+                        <p>4. Worksheets with expression problems</p>
+                        <p>5. Online expression evaluator tools</p>
+                        <p>6. Projector for displaying examples</p>
+                        <p>7. Shopping scenario props (play money, product labels)</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. Students will be able to define arithmetic expressions and identify their values</p>
+                        <p>2. Students will compare expressions using reasoning rather than direct calculation</p>
+                        <p>3. Students will correctly use brackets to specify order of operations</p>
+                        <p>4. Students will identify terms in expressions and apply commutative/associative properties</p>
+                        <p>5. Students will apply distributive property in expression evaluation</p>
+                        <p>6. Students will create expressions to represent real-world scenarios</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p><strong>Period 1 (45 mins):</strong></p>
+                        <p>1. Introduction (5 mins): Real-life examples of expressions (shopping, games)</p>
+                        <p>2. Concept explanation (10 mins): Simple expressions and their values</p>
+                        <p>3. Activity (10 mins): Students create expressions for given values</p>
+                        <p>4. Group work (10 mins): Compare expressions using reasoning</p>
+                        <p>5. Discussion (5 mins): Share comparison strategies</p>
+                        <p>6. Worksheet (5 mins): Quick practice on expression comparison</p>
+                        
+                        <p><strong>Period 2 (45 mins):</strong></p>
+                        <p>1. Recap (5 mins): Review previous concepts</p>
+                        <p>2. Demonstration (10 mins): Need for brackets in complex expressions</p>
+                        <p>3. Activity (10 mins): Identify terms in expressions using token model</p>
+                        <p>4. Explanation (10 mins): Properties of expressions (commutative, associative, distributive)</p>
+                        <p>5. Practice (7 mins): Expression evaluation using properties</p>
+                        <p>6. Wrap-up (3 mins): Summary and real-world connections</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Analytical skills:</strong> Breaking down complex expressions</p>
+                        <p>2. <strong>Logical reasoning:</strong> Applying properties to simplify problems</p>
+                        <p>3. <strong>Collaborative attitude:</strong> Working in groups to solve problems</p>
+                        <p>4. <strong>Confidence:</strong> Solving problems without direct calculation</p>
+                        <p>5. <strong>Curiosity:</strong> Exploring different ways to express values</p>
+                        <p>6. <strong>Persistence:</strong> Working through challenging expressions</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p>1. <strong>Numeracy:</strong> Understanding and manipulating numerical expressions</p>
+                        <p>2. <strong>Critical thinking:</strong> Evaluating and comparing expressions logically</p>
+                        <p>3. <strong>Problem-solving:</strong> Creating expressions for real-life situations</p>
+                        <p>4. <strong>Communication:</strong> Explaining reasoning behind expression solutions</p>
+                        <p>5. <strong>Digital literacy:</strong> Using online tools for expression evaluation</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field" placeholder="Enter after teaching"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field" placeholder="Enter after teaching"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field" placeholder="Enter after teaching"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
     </div>
     
-    <h2>Lesson Plan</h2>
-    <table>
-        <tr>
-            <th>Objective</th>
-            <th>Teaching Methodology</th>
-            <th>Skills & Attitude</th>
-            <th>Competencies</th>
-        </tr>
-        <tr>
-            <td>Understand place value of lakhs/crores</td>
-            <td>
-                <strong>Warm-up:</strong> Discuss "How big is 1 lakh?" using examples (rice varieties, stadium capacity)<br>
-                <strong>Activity:</strong> Fill in place value charts for numbers like 5,04,085 vs. 504,085
-            </td>
-            <td>Curiosity, Accuracy</td>
-            <td>Numeracy, Logical Reasoning</td>
-        </tr>
-        <tr>
-            <td>Perform operations with large numbers</td>
-            <td>
-                <strong>Case Study:</strong> "Land of Tens" calculator activity (e.g., "+1000 pressed 53 times = 53,000")<br>
-                <strong>Shortcut:</strong> Multiply 25 × 240 as <span class="math-example">(1000 ÷ 4) × 240 = 60,000</span>
-            </td>
-            <td>Problem-Solving</td>
-            <td>Analytical Thinking</td>
-        </tr>
-        <tr>
-            <td>Apply rounding/estimation</td>
-            <td>
-                <strong>Real-Life Task:</strong> Round Chintamani's population (75,000 vs. 1,06,000)<br>
-                <strong>Debate:</strong> "Is 1 lakh big or small?" using textbook examples (hairs, fish eggs)
-            </td>
-            <td>Critical Thinking</td>
-            <td>Decision-Making</td>
-        </tr>
-        <tr>
-            <td>Solve real-world problems</td>
-            <td>
-                <strong>Group Work:</strong> Calculate if 1 lakh buses (50 people/bus) can transport Mumbai's 1.24 crore population<br>
-                <strong>Math Talk:</strong> "How many years to count 1 million coins at 1/sec?"
-            </td>
-            <td>Collaboration</td>
-            <td>Application</td>
-        </tr>
-        <tr>
-            <td>Creative exploration</td>
-            <td>
-                <strong>Activity:</strong> "Toothpick Digits" – Make the largest number with 24 sticks<br>
-                <strong>Reflection:</strong> "Write a 7-digit number name with maximum letters (e.g., 77,77,777)"
-            </td>
-            <td>Creativity</td>
-            <td>Innovation</td>
-        </tr>
-    </table>
-    
-    <h2>ACTIVITIES</h2>
-    
-    <div class="activity">
-        <h4>1. Place Value and Number Systems</h4>
-        <ul>
-            <li><strong>Indian vs. International System Chart</strong>
-                <ul>
-                    <li>Students create a comparison chart showing how numbers like 1,00,000 (1 lakh) and 1,000,000 (1 million) are written and read in both systems.</li>
-                    <li><strong>Materials:</strong> Number cards, place value charts.</li>
-                </ul>
-            </li>
-            <li><strong>Toothpick Digits</strong>
-                <ul>
-                    <li>Use toothpicks to form digits (e.g., digit "7" requires 3 sticks). Students create the largest/smallest number possible with 24 sticks.</li>
-                    <li><strong>Extension:</strong> Rearrange sticks to change numbers (e.g., turn "42,019" into "42,078").</li>
-                </ul>
-            </li>
-        </ul>
+    <div class="plan-divider">
+        <span>Next Lesson Plan</span>
     </div>
     
-    <div class="activity">
-        <h4>2. Operations with Large Numbers</h4>
-        <ul>
-            <li><strong>Land of Tens Calculator Game</strong>
-                <ul>
-                    <li>Simulate calculators with only "+1000" or "+10" buttons. Students calculate how many presses are needed to reach numbers like 53,000 or 1 lakh.</li>
-                    <li><strong>Example:</strong> "Press +1000 53 times to get 53,000."</li>
-                </ul>
-            </li>
-            <li><strong>Multiplication Shortcuts</strong>
-                <ul>
-                    <li>Solve problems like 25 × 240 by breaking into <span class="math-example">(1000 ÷ 4) × 240</span>.</li>
-                    <li><strong>Worksheet:</strong> Include problems like 72 × 125 (using <span class="math-example">125 = 1000 ÷ 8</span>).</li>
-                </ul>
-            </li>
-        </ul>
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
     </div>
     
-    <div class="activity">
-        <h4>3. Estimation and Rounding</h4>
-        <ul>
-            <li><strong>Population Round-Off</strong>
-                <ul>
-                    <li>Given real data (e.g., Chintamani's population: 75,000 vs. 1,06,000), students round to nearest lakh/thousand and justify choices.</li>
-                    <li><strong>Discussion:</strong> When to round up (e.g., event planning) vs. down (e.g., budgeting).</li>
-                </ul>
-            </li>
-            <li><strong>Estimate the Sum</strong>
-                <ul>
-                    <li>Groups estimate sums like 4,63,128 + 4,19,682 and check actual results. Discuss strategies (e.g., rounding to lakhs first).</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="activity">
-        <h4>4. Real-World Applications</h4>
-        <ul>
-            <li><strong>Can 1 Lakh Buses Fit Mumbai?</strong>
-                <ul>
-                    <li>Calculate: If 1 bus carries 50 people, how many buses needed for Mumbai's 1.24 crore population?</li>
-                    <li><strong>Math Talk:</strong> "Why might exact numbers matter here?"</li>
-                </ul>
-            </li>
-            <li><strong>Distance to the Moon</strong>
-                <ul>
-                    <li>Convert 3,84,400 km into days of travel (e.g., "If you travel 100 km/day, how many years to reach the Moon?").</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="activity">
-        <h4>5. Creative and Collaborative Tasks</h4>
-        <ul>
-            <li><strong>Large Number Fact Posters</strong>
-                <ul>
-                    <li>Research/create posters on facts like "Amazon River discharges 4,00,00,000 liters/sec" or "Purandaradasa composed 4,75,000 songs."</li>
-                    <li><strong>Presentation:</strong> Students explain the math behind the facts.</li>
-                </ul>
-            </li>
-            <li><strong>Number Name Challenge</strong>
-                <ul>
-                    <li>Write 7-digit number names with maximum letters (e.g., 77,77,777 = "Seventy-seven lakh seventy-seven thousand seven hundred seventy-seven").</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="assessment">
-        <h2>Assessment Tasks</h2>
-        <ol>
-            <li>Write in words: 27,30,000 (Indian system) vs. 2,730,000 (International)</li>
-            <li>Estimate: Is 4,63,128 + 4,19,682 closer to 8 or 9 lakhs?</li>
-            <li>Solve: If Purandaradasa composed 4,75,000 songs in 50 years, songs/year?</li>
-            <li>Create: Largest number using 24 toothpicks (e.g., 98,711 uses 23 sticks)</li>
-        </ol>
-    </div>
-    
-    <p><strong>Facilitator:</strong> Kirti Ballabh Joshi (PGT Mathematics)</p>
+    <script>
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+        
+        // Set today's date in date fields
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(dateInput => {
+            if(!dateInput.value) dateInput.value = today;
+        });
+    </script>
 </body>
 </html>
-
-<div class="download-link">
-      <a href="https://drive.google.com/file/d/1hjm_kjSpLcAjJDcu0CyepxQLdSzryi6q/view?usp=sharing" class="download-btn" target="_blank">
-        Download Full Lesson Plan Document
-      </a>
-    </div>
