@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 12 Mathematics Lesson Plan</title>
+    <title>Class 12 Mathematics Lesson Plan Organizer</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
+            background-color: #f0f7ff;
             padding: 20px;
             display: flex;
             justify-content: center;
@@ -28,10 +28,9 @@
         
         .container {
             width: 29.7cm; /* A4 width */
-            height: auto;  /* Auto height for multiple pages */
-            min-height: 21cm; /* A4 height */
+            min-height: 21cm;  /* A4 height */
             background-color: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
             padding: 1.5cm;
             display: flex;
             flex-direction: column;
@@ -40,40 +39,42 @@
         .title-section {
             text-align: center;
             margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #1c4587;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
         }
         
         .title-section h1 {
             color: #1c4587;
-            font-size: 28px;
-            margin-bottom: 5px;
+            font-size: 32px;
+            margin-bottom: 8px;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
         
         .title-section h2 {
-            color: #333;
-            font-size: 20px;
+            color: #2a5298;
+            font-size: 22px;
             font-weight: normal;
         }
         
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             page-break-inside: avoid;
         }
         
         th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
+            border: 1px solid #a4c2f4;
+            padding: 10px;
             text-align: left;
             vertical-align: top;
         }
         
         th {
-            background-color: #e3eaf3;
+            background-color: #d9e3fc;
             font-weight: bold;
+            color: #1c4587;
         }
         
         .bilingual {
@@ -84,59 +85,63 @@
         .english {
             font-weight: bold;
             color: #1c4587;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
+            font-size: 15px;
         }
         
         .hindi {
             font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
-            color: #333;
-            font-size: 16px;
+            color: #2d2d2d;
+            font-size: 15px;
         }
         
         .input-field {
             width: 100%;
             border: none;
-            padding: 5px;
+            padding: 8px;
             font-size: 14px;
             background-color: transparent;
         }
         
         .input-field:focus {
-            outline: 1px solid #4a86e8;
+            outline: 2px solid #4a86e8;
+            background-color: #f0f7ff;
         }
         
         textarea.input-field {
-            height: 60px;
-            resize: none;
+            height: 80px;
+            resize: vertical;
+            line-height: 1.5;
         }
         
         .checkbox-group {
             display: flex;
             align-items: center;
-            margin-top: 5px;
+            margin-top: 6px;
         }
         
         .checkbox-group input {
-            margin-right: 5px;
+            margin-right: 8px;
         }
         
         .signature-row {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 25px;
         }
         
         .signature-box {
             width: 45%;
-            padding: 15px;
-            border: 1px dashed #999;
+            padding: 18px;
+            border: 1px dashed #6c8dcd;
             text-align: center;
+            background-color: #f5f9ff;
         }
         
         .signature-box p {
             margin: 0;
             font-weight: bold;
-            color: #555;
+            color: #3a5a9c;
         }
         
         @media print {
@@ -144,7 +149,7 @@
                 box-shadow: none;
                 padding: 1cm;
                 width: 100%;
-                height: 100%;
+                height: auto;
             }
             
             .no-print {
@@ -156,36 +161,93 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background-color: #1c4587;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 12px 25px;
+            border-radius: 6px;
             cursor: pointer;
             z-index: 1000;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
         
         .print-btn:hover {
-            background-color: #0d3268;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
         .required:after {
             content: " *";
-            color: red;
+            color: #e53935;
         }
         
         .chapter-title {
-            background-color: #1c4587;
+            background: linear-gradient(to right, #1c4587, #3a6ea5);
             color: white;
-            padding: 8px 12px;
-            margin: 20px 0 10px;
-            border-radius: 4px;
-            font-size: 18px;
+            padding: 12px 20px;
+            margin: 30px 0 15px;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
         
         .chapter-content {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             page-break-inside: avoid;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .tab-btn {
+            flex: 1;
+            padding: 12px 5px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: bold;
+            color: #3a5a9c;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            background: #1c4587;
+            color: white;
+        }
+        
+        .chapter-content {
+            display: none;
+        }
+        
+        .chapter-content.active {
+            display: block;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 25px;
+            color: #5a7bb5;
+            font-size: 14px;
+            padding-top: 15px;
+            border-top: 1px solid #d9e3fc;
+        }
+        
+        .filled-data {
+            background-color: #f0f7ff;
+            padding: 8px;
+            border-radius: 4px;
+            min-height: 30px;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -194,8 +256,8 @@
     
     <div class="container">
         <div class="title-section">
-            <h1>Lesson Plan Organiser</h1>
-            <h2>शिक्षण योजना आयोजक</h2>
+            <h1>Mathematics Lesson Plan Organizer</h1>
+            <h2>गणित पाठ योजना आयोजक</h2>
         </div>
         
         <!-- General Facts Section -->
@@ -211,7 +273,7 @@
                     <div class="english required">Date</div>
                     <div class="hindi">दिनांक</div>
                 </td>
-                <td width="25%"><input type="date" class="input-field"></td>
+                <td width="25%"><input type="date" class="input-field" id="current-date"></td>
                 <td width="25%" class="bilingual">
                     <div class="english required">Class and Section</div>
                     <div class="hindi">कक्षा एवं अनुभाग</div>
@@ -225,7 +287,7 @@
                 </td>
                 <td><input type="text" class="input-field" value="Mathematics"></td>
                 <td class="bilingual">
-                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="english required">Number of Students</div>
                     <div class="hindi">नामांकित छात्रों की संख्या</div>
                 </td>
                 <td><input type="number" class="input-field" value="42"></td>
@@ -235,23 +297,38 @@
                     <div class="english required">Chapter/Topic</div>
                     <div class="hindi">अध्याय/विषय</div>
                 </td>
-                <td colspan="3"><input type="text" class="input-field" value="1. Relations and Functions, 2. Inverse Trigonometric Functions, 3. Matrices, 4. Determinants, 5. Continuity and Differentiability, 6. Applications of Derivatives"></td>
+                <td colspan="3">
+                    <div class="tabs no-print">
+                        <button class="tab-btn active" data-tab="chapter1">Relations</button>
+                        <button class="tab-btn" data-tab="chapter2">Inverse Trig</button>
+                        <button class="tab-btn" data-tab="chapter3">Matrices</button>
+                        <button class="tab-btn" data-tab="chapter4">Determinants</button>
+                        <button class="tab-btn" data-tab="chapter5">Continuity</button>
+                        <button class="tab-btn" data-tab="chapter6">Applications</button>
+                    </div>
+                    <div class="filled-data">1. Relations and Functions, 2. Inverse Trigonometric Functions, 3. Matrices, 4. Determinants, 5. Continuity and Differentiability, 6. Applications of Derivatives</div>
+                </td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english required">Date of Commencement</div>
                     <div class="hindi">प्रारंभ करने की तिथि</div>
                 </td>
-                <td><input type="date" class="input-field"></td>
+                <td><input type="date" class="input-field" id="start-date"></td>
                 <td class="bilingual">
-                    <div class="english">Actual Date of Completion</div>
+                    <div class="english">Actual Completion Date</div>
                     <div class="hindi">वास्तविक पूर्णता तिथि</div>
                 </td>
                 <td><input type="date" class="input-field"></td>
             </tr>
             <tr>
                 <td class="bilingual">
-                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="english required">Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="40"></td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Source</div>
                     <div class="hindi">पाठ योजना का स्रोत</div>
                 </td>
                 <td>
@@ -264,17 +341,19 @@
                         <label for="resource-pool">Resource Pool | संसाधन पूल</label>
                     </div>
                 </td>
+            </tr>
+            <tr>
                 <td class="bilingual">
                     <div class="english">Lesson Plan Developer</div>
                     <div class="hindi">पाठ योजना विकासकर्ता</div>
                 </td>
-                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+                <td colspan="3"><input type="text" class="input-field" value="Mathematics Department"></td>
             </tr>
         </table>
         
         <!-- Chapter 1: Relations and Functions -->
         <div class="chapter-title">Chapter 1: Relations and Functions (संबंध एवं फलन)</div>
-        <div class="chapter-content">
+        <div class="chapter-content active" id="chapter1">
             <!-- Content and Concepts -->
             <table>
                 <tr>
@@ -285,7 +364,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <textarea class="input-field">Types of relations: Empty, universal, reflexive, symmetric, transitive, equivalence relations. Types of functions: One-one, onto, bijective functions. Composition of functions, invertible functions, binary operations.</textarea>
+                        <textarea class="input-field">Types of relations: empty, universal, reflexive, symmetric, transitive, equivalence relations. Types of functions: one-one, onto, bijective. Composition of functions, invertible functions, binary operations. Practical examples from real life.</textarea>
                     </td>
                 </tr>
             </table>
@@ -299,11 +378,11 @@
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Understand different types of relations and functions
-- Prove equivalence relations and find equivalence classes
+                    <td><textarea class="input-field">- Understand and classify different types of relations
+- Identify equivalence relations and partitions
 - Determine if a function is injective, surjective or bijective
 - Find composite and inverse functions
-- Understand binary operations and their properties</textarea></td>
+- Apply concepts to solve real-world problems</textarea></td>
                 </tr>
             </table>
             
@@ -316,11 +395,11 @@
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Interactive lectures with real-world examples (social networks for relations)
-- Group activities: Classify relations and functions
-- Visual aids: Venn diagrams, function mapping diagrams
-- Problem-solving sessions with worksheets
-- Digital tools: GeoGebra for function visualization</textarea></td>
+                    <td><textarea class="input-field">- Interactive lectures with real-world examples (social networks)
+- Group activities: Classify relations using Venn diagrams
+- Visual aids: Function mapping diagrams
+- Digital tools: GeoGebra for visualization
+- Problem-solving worksheets and peer teaching</textarea></td>
                 </tr>
             </table>
             
@@ -328,16 +407,16 @@
             <table>
                 <tr>
                     <th class="bilingual">
-                        <div class="english">21st Century Skills / Value Education / Vocational skills</div>
-                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
                     </th>
                 </tr>
                 <tr>
                     <td><textarea class="input-field">- Critical thinking: Analyzing relation properties
-- Logical reasoning: Proving equivalence relations
 - Collaboration: Group problem solving
 - Digital literacy: Using graphing tools
-- Ethical values: Understanding social relations mathematically</textarea></td>
+- Logical reasoning: Proofs of equivalence
+- Ethical values: Understanding social relations</textarea></td>
                 </tr>
             </table>
             
@@ -367,11 +446,11 @@
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Computer Science: Database design, algorithms
-- Physics: Functional relationships in laws of motion
-- Economics: Input-output relationships
-- Social Sciences: Modeling social relationships
-- Biology: Classification systems and taxonomies</textarea></td>
+                    <td><textarea class="input-field">- Computer Science: Database design
+- Physics: Functional relationships in motion
+- Economics: Input-output models
+- Social Sciences: Social network analysis
+- Biology: Classification systems</textarea></td>
                 </tr>
             </table>
             
@@ -387,8 +466,8 @@
                     <td><textarea class="input-field">- MCQs: Identifying relation types
 - Short answer: Proving relation properties
 - Long answer: Finding inverse functions
-- Real-world problems: Applying equivalence relations
-- Group project: Creating function composition examples</textarea></td>
+- Real-world problems: Applying equivalence
+- Group project: Creating function examples</textarea></td>
                 </tr>
             </table>
             
@@ -406,7 +485,7 @@
 - Khan Academy videos on relations
 - Worksheets with practice problems
 - Online quizzes for self-assessment
-- Physical manipulatives for relation examples</textarea></td>
+- Physical manipulatives for relations</textarea></td>
                 </tr>
             </table>
             
@@ -419,11 +498,11 @@
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Classify different types of relations and functions
+                    <td><textarea class="input-field">- Classify different types of relations
 - Prove properties of equivalence relations
 - Determine if functions are invertible
 - Compose functions and find inverses
-- Apply concepts to solve real-world problems</textarea></td>
+- Apply concepts to solve problems</textarea></td>
                 </tr>
             </table>
             
@@ -453,9 +532,9 @@
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Analytical skills for relation classification
+                    <td><textarea class="input-field">- Analytical skills for classification
 - Precision in mathematical proofs
-- Collaborative approach to problem solving
+- Collaborative problem solving
 - Growth mindset towards abstract concepts
 - Appreciation for mathematical structures</textarea></td>
                 </tr>
@@ -495,7 +574,7 @@ Session 5: Application and assessment (2 periods)
         
         <!-- Chapter 2: Inverse Trigonometric Functions -->
         <div class="chapter-title">Chapter 2: Inverse Trigonometric Functions (प्रतिलोम त्रिकोणमितीय फलन)</div>
-        <div class="chapter-content">
+        <div class="chapter-content" id="chapter2">
             <!-- Content and Concepts -->
             <table>
                 <tr>
@@ -506,7 +585,7 @@ Session 5: Application and assessment (2 periods)
                 </tr>
                 <tr>
                     <td>
-                        <textarea class="input-field">Definition, range, domain, principal value branches of inverse trigonometric functions. Properties of inverse trigonometric functions. Simplification of expressions involving inverse trig functions.</textarea>
+                        <textarea class="input-field">Definition, range, domain, principal value branches. Properties of inverse trigonometric functions. Simplification of expressions. Solving equations involving inverse trig functions. Graphical representations.</textarea>
                     </td>
                 </tr>
             </table>
@@ -537,11 +616,11 @@ Session 5: Application and assessment (2 periods)
                     </th>
                 </tr>
                 <tr>
-                    <td><textarea class="input-field">- Graphical approach: Plotting trig functions and their inverses
+                    <td><textarea class="input-field">- Graphical approach: Plotting trig functions and inverses
 - Mnemonics for remembering principal values
 - Problem-based learning: Real-world angle problems
 - Interactive applets for visualization
-- Peer teaching for difficult concepts</textarea></td>
+- Step-by-step simplification techniques</textarea></td>
                 </tr>
             </table>
             
@@ -549,8 +628,8 @@ Session 5: Application and assessment (2 periods)
             <table>
                 <tr>
                     <th class="bilingual">
-                        <div class="english">21st Century Skills / Value Education / Vocational skills</div>
-                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
                     </th>
                 </tr>
                 <tr>
@@ -714,51 +793,886 @@ Session 5: Assessment and review (2 periods)
             </table>
         </div>
         
-        <!-- Chapters 3-6: Placeholder for other chapters -->
+        <!-- Chapter 3: Matrices -->
         <div class="chapter-title">Chapter 3: Matrices (आव्यूह)</div>
-        <div class="chapter-content">
+        <div class="chapter-content" id="chapter3">
+            <!-- Content and Concepts -->
             <table>
                 <tr>
-                    <td style="text-align: center; padding: 30px; background-color: #f9f9f9;">
-                        <p>Complete lesson plan follows the same structure as previous chapters</p>
-                        <p>पिछले अध्यायों के समान संरचना में संपूर्ण पाठ योजना शामिल है</p>
+                    <th class="bilingual">
+                        <div class="english">Content and Concepts</div>
+                        <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="input-field">Matrix definition, order, types of matrices. Matrix operations: addition, multiplication, transpose. Symmetric and skew-symmetric matrices. Elementary operations. Invertible matrices and applications.</textarea>
                     </td>
+                </tr>
+            </table>
+            
+            <!-- Learning Outcomes -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Learning Outcomes (NCERT)</div>
+                        <div class="hindi">अधिगम उपलब्धियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Understand matrix notation and types
+- Perform matrix operations: addition, multiplication
+- Find transpose and verify symmetric properties
+- Apply elementary operations
+- Determine inverse of matrices</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Pedagogical Strategies -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Pedagogical Strategies</div>
+                        <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Real-world examples: Spreadsheets, computer graphics
+- Step-by-step matrix operations
+- Visual representations of matrix transformations
+- Group activities: Matrix operations practice
+- Digital tools: Matrix calculators</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- 21st Century Skills -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Computational thinking: Matrix operations
+- Problem-solving: Solving systems of equations
+- Digital literacy: Using matrix software
+- Precision: Accurate computation
+- Application: Real-world data representation</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Extension Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Extension / Real life applications</div>
+                        <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Computer graphics: Transformations
+- Economics: Input-output models
+- Statistics: Data organization
+- Engineering: Systems of linear equations
+- Cryptography: Encoding and decoding messages</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Integration Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Integration with other subjects</div>
+                        <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Computer Science: Graphics programming
+- Economics: Leontief input-output models
+- Physics: Quantum mechanics matrices
+- Statistics: Multivariate data analysis
+- Engineering: Structural analysis</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Assessment Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Assessment (Item Format)</div>
+                        <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Matrix operations practice
+- Finding inverse matrices
+- Solving systems of equations
+- Application problems in economics
+- Project: Matrix transformations in graphics</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Resources Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Resources / Digital / Physical</div>
+                        <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- NCERT textbooks
+- Matrix operation worksheets
+- Graphing calculators
+- Computer algebra systems
+- Online matrix calculators
+- Physical grid boards for matrix representation</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Objectives Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Objectives</div>
+                        <div class="hindi">उद्देश्य</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Perform matrix operations accurately
+- Identify different types of matrices
+- Find transpose and verify properties
+- Apply elementary operations
+- Determine inverse of matrices</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Teaching Methodology -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Teaching Methodology</div>
+                        <div class="hindi">शिक्षण पद्धति</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Step-by-step demonstrations
+- Practice worksheets with increasing difficulty
+- Real-world application examples
+- Group problem-solving sessions
+- Digital tools for visualization</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Skills and Attitude -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Skills and Attitude</div>
+                        <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Computational accuracy
+- Logical organization of data
+- Systematic approach to problem-solving
+- Patience with complex calculations
+- Appreciation for structured data</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Competency Based Lesson Plan -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Competency Based Lesson Plan</div>
+                        <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">Session 1: Matrix fundamentals (2 periods)
+- Activity: Matrix creation and identification
+- Outcome: Understand matrix types and operations
+
+Session 2: Matrix operations (2 periods)
+- Activity: Addition, multiplication practice
+- Outcome: Perform matrix operations accurately
+
+Session 3: Special matrices (2 periods)
+- Activity: Identify symmetric and skew-symmetric
+- Outcome: Verify matrix properties
+
+Session 4: Inverse matrices (2 periods)
+- Activity: Finding inverse matrices
+- Outcome: Solve systems using matrices
+
+Session 5: Applications (2 periods)
+- Activity: Real-world matrix applications
+- Outcome: Apply matrices to solve problems</textarea></td>
                 </tr>
             </table>
         </div>
         
+        <!-- Chapter 4: Determinants -->
         <div class="chapter-title">Chapter 4: Determinants (सारणिक)</div>
-        <div class="chapter-content">
+        <div class="chapter-content" id="chapter4">
+            <!-- Content and Concepts -->
             <table>
                 <tr>
-                    <td style="text-align: center; padding: 30px; background-color: #f9f9f9;">
-                        <p>Complete lesson plan follows the same structure as previous chapters</p>
-                        <p>पिछले अध्यायों के समान संरचना में संपूर्ण पाठ योजना शामिल है</p>
+                    <th class="bilingual">
+                        <div class="english">Content and Concepts</div>
+                        <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="input-field">Determinant definition and properties. Calculating determinants of 2x2 and 3x3 matrices. Minors and cofactors. Adjoint and inverse of a matrix. Applications of determinants: area of triangles, system of linear equations.</textarea>
                     </td>
+                </tr>
+            </table>
+            
+            <!-- Learning Outcomes -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Learning Outcomes (NCERT)</div>
+                        <div class="hindi">अधिगम उपलब्धियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Calculate determinants of matrices
+- Understand properties of determinants
+- Find minors and cofactors
+- Compute adjoint and inverse using determinants
+- Apply determinants to solve linear equations</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Pedagogical Strategies -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Pedagogical Strategies</div>
+                        <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Geometric interpretation of determinants
+- Step-by-step calculation methods
+- Visual aids: Area representation
+- Problem-solving drills
+- Digital tools: Determinant calculators</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- 21st Century Skills -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Analytical thinking: Properties application
+- Computational skills: Determinant calculation
+- Problem-solving: System solutions
+- Precision: Accurate computation
+- Application: Geometric interpretations</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Extension Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Extension / Real life applications</div>
+                        <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Engineering: Solving circuit equations
+- Economics: Equilibrium price determination
+- Computer graphics: Area calculations
+- Physics: Moment of inertia calculations
+- Cryptography: Encryption algorithms</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Integration Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Integration with other subjects</div>
+                        <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Physics: Vector cross products
+- Economics: Market equilibrium models
+- Computer Science: Graphics rendering
+- Engineering: Structural analysis
+- Geometry: Area and volume calculations</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Assessment Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Assessment (Item Format)</div>
+                        <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Determinant calculation problems
+- Applying properties of determinants
+- Finding inverse using adjoint method
+- Solving system of linear equations
+- Application problems in geometry</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Resources Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Resources / Digital / Physical</div>
+                        <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- NCERT textbooks
+- Practice worksheets
+- Graphing calculators
+- Online determinant calculators
+- Geometric models for area visualization
+- Computer algebra systems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Objectives Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Objectives</div>
+                        <div class="hindi">उद्देश्य</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Calculate determinants of various matrices
+- Apply properties of determinants
+- Find minors and cofactors
+- Compute adjoint and inverse matrices
+- Apply determinants to solve equations</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Teaching Methodology -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Teaching Methodology</div>
+                        <div class="hindi">शिक्षण पद्धति</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Step-by-step calculation demonstrations
+- Geometric interpretation activities
+- Problem-solving drills
+- Collaborative group work
+- Digital tools for verification</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Skills and Attitude -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Skills and Attitude</div>
+                        <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Computational accuracy
+- Analytical application of properties
+- Systematic approach to problem-solving
+- Patience with complex calculations
+- Appreciation for algebraic structures</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Competency Based Lesson Plan -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Competency Based Lesson Plan</div>
+                        <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">Session 1: Determinant basics (2 periods)
+- Activity: Calculating 2x2 and 3x3 determinants
+- Outcome: Master determinant calculation methods
+
+Session 2: Properties of determinants (2 periods)
+- Activity: Applying properties to simplify
+- Outcome: Efficient determinant calculation
+
+Session 3: Minors and cofactors (2 periods)
+- Activity: Finding minors and cofactors
+- Outcome: Understand matrix component relationships
+
+Session 4: Adjoint and inverse (2 periods)
+- Activity: Computing adjoint and inverse
+- Outcome: Solve systems using matrix inverse
+
+Session 5: Applications (2 periods)
+- Activity: Real-world application problems
+- Outcome: Apply determinants to solve problems</textarea></td>
                 </tr>
             </table>
         </div>
         
+        <!-- Chapter 5: Continuity and Differentiability -->
         <div class="chapter-title">Chapter 5: Continuity and Differentiability (सांतत्य तथा अवकलनीयता)</div>
-        <div class="chapter-content">
+        <div class="chapter-content" id="chapter5">
+            <!-- Content and Concepts -->
             <table>
                 <tr>
-                    <td style="text-align: center; padding: 30px; background-color: #f9f9f9;">
-                        <p>Complete lesson plan follows the same structure as previous chapters</p>
-                        <p>पिछले अध्यायों के समान संरचना में संपूर्ण पाठ योजना शामिल है</p>
+                    <th class="bilingual">
+                        <div class="english">Content and Concepts</div>
+                        <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="input-field">Continuity of functions. Differentiability. Derivatives of composite, implicit, trigonometric, inverse trigonometric, exponential and logarithmic functions. Logarithmic differentiation. Derivatives of parametric forms. Second order derivatives. Mean Value Theorem.</textarea>
                     </td>
+                </tr>
+            </table>
+            
+            <!-- Learning Outcomes -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Learning Outcomes (NCERT)</div>
+                        <div class="hindi">अधिगम उपलब्धियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Determine continuity of functions
+- Find derivatives using various methods
+- Apply chain rule for composite functions
+- Use logarithmic differentiation
+- Find second order derivatives</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Pedagogical Strategies -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Pedagogical Strategies</div>
+                        <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Graphical approach to continuity and differentiability
+- Step-by-step derivative calculations
+- Real-world rate of change examples
+- Digital tools: Graphing software
+- Problem-solving workshops</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- 21st Century Skills -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Analytical thinking: Function behavior analysis
+- Problem-solving: Complex derivative calculations
+- Technical skills: Using mathematical software
+- Precision: Accurate computation
+- Application: Real-world rate problems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Extension Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Extension / Real life applications</div>
+                        <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Physics: Motion and velocity calculations
+- Economics: Marginal cost and revenue
+- Engineering: Rate of change in systems
+- Biology: Population growth models
+- Medicine: Drug concentration rates</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Integration Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Integration with other subjects</div>
+                        <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Physics: Kinematics and dynamics
+- Economics: Optimization problems
+- Biology: Growth rate calculations
+- Chemistry: Reaction rates
+- Engineering: System response rates</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Assessment Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Assessment (Item Format)</div>
+                        <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Checking continuity of functions
+- Calculating derivatives using various methods
+- Applying chain rule and implicit differentiation
+- Solving problems using logarithmic differentiation
+- Finding second order derivatives</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Resources Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Resources / Digital / Physical</div>
+                        <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- NCERT textbooks
+- Graphing calculators
+- Desmos or GeoGebra for visualization
+- Practice worksheets
+- Online derivative calculators
+- Real-world rate problem examples</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Objectives Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Objectives</div>
+                        <div class="hindi">उद्देश्य</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Determine continuity at a point
+- Calculate derivatives using first principles
+- Apply differentiation rules effectively
+- Use logarithmic differentiation
+- Find second order derivatives</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Teaching Methodology -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Teaching Methodology</div>
+                        <div class="hindi">शिक्षण पद्धति</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Graphical demonstrations of continuity
+- Step-by-step derivative calculations
+- Real-world application examples
+- Differentiated practice problems
+- Technology-enhanced learning</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Skills and Attitude -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Skills and Attitude</div>
+                        <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Analytical approach to functions
+- Computational accuracy
+- Problem-solving with multiple methods
+- Persistence with complex problems
+- Appreciation for calculus concepts</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Competency Based Lesson Plan -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Competency Based Lesson Plan</div>
+                        <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">Session 1: Continuity (2 periods)
+- Activity: Checking continuity graphically and algebraically
+- Outcome: Determine continuity at points
+
+Session 2: Basic differentiation (2 periods)
+- Activity: Calculating derivatives using first principles
+- Outcome: Understand derivative fundamentals
+
+Session 3: Differentiation rules (2 periods)
+- Activity: Applying product, quotient and chain rules
+- Outcome: Differentiate complex functions
+
+Session 4: Special methods (2 periods)
+- Activity: Logarithmic and parametric differentiation
+- Outcome: Master specialized differentiation techniques
+
+Session 5: Higher order derivatives (2 periods)
+- Activity: Finding second order derivatives
+- Outcome: Solve problems involving acceleration</textarea></td>
                 </tr>
             </table>
         </div>
         
+        <!-- Chapter 6: Applications of Derivatives -->
         <div class="chapter-title">Chapter 6: Applications of Derivatives (अवकलज के अनुप्रयोग)</div>
-        <div class="chapter-content">
+        <div class="chapter-content" id="chapter6">
+            <!-- Content and Concepts -->
             <table>
                 <tr>
-                    <td style="text-align: center; padding: 30px; background-color: #f9f9f9;">
-                        <p>Complete lesson plan follows the same structure as previous chapters</p>
-                        <p>पिछले अध्यायों के समान संरचना में संपूर्ण पाठ योजना शामिल है</p>
+                    <th class="bilingual">
+                        <div class="english">Content and Concepts</div>
+                        <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea class="input-field">Rate of change. Increasing and decreasing functions. Tangents and normals. Approximations. Maxima and minima. Practical optimization problems. Rolle's Theorem and Mean Value Theorem applications.</textarea>
                     </td>
+                </tr>
+            </table>
+            
+            <!-- Learning Outcomes -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Learning Outcomes (NCERT)</div>
+                        <div class="hindi">अधिगम उपलब्धियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Solve rate of change problems
+- Determine intervals of increase/decrease
+- Find equations of tangents and normals
+- Use derivatives for approximations
+- Solve optimization problems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Pedagogical Strategies -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Pedagogical Strategies</div>
+                        <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Real-world optimization examples
+- Graphical analysis of functions
+- Step-by-step problem solving
+- Hands-on optimization activities
+- Case studies from various fields</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- 21st Century Skills -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">21st Century Skills / Value Education</div>
+                        <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Critical thinking: Optimization strategies
+- Problem-solving: Real-world applications
+- Analytical skills: Function behavior analysis
+- Decision-making: Optimal solutions
+- Application: Multidisciplinary problems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Extension Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Extension / Real life applications</div>
+                        <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Business: Profit maximization
+- Engineering: Optimal design parameters
+- Physics: Motion optimization
+- Medicine: Drug dosage optimization
+- Environmental science: Resource management</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Integration Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Integration with other subjects</div>
+                        <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Economics: Cost minimization
+- Physics: Projectile motion optimization
+- Biology: Optimal foraging theory
+- Business: Inventory management
+- Engineering: Structural efficiency</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Assessment Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Assessment (Item Format)</div>
+                        <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Rate of change problems
+- Determining function behavior
+- Finding tangents and normals
+- Approximation calculations
+- Optimization word problems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Resources Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Resources / Digital / Physical</div>
+                        <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- NCERT textbooks
+- Graphing software
+- Optimization case studies
+- Real-world problem sets
+- Online graphing tools
+- Measurement tools for experiments</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Objectives Section -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Objectives</div>
+                        <div class="hindi">उद्देश्य</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Solve rate of change problems
+- Determine increasing/decreasing intervals
+- Find equations of tangents and normals
+- Use derivatives for approximation
+- Solve optimization problems</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Teaching Methodology -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Teaching Methodology</div>
+                        <div class="hindi">शिक्षण पद्धति</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Real-world case studies
+- Graphical analysis activities
+- Step-by-step optimization solutions
+- Collaborative problem-solving
+- Technology-enhanced visualization</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Skills and Attitude -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Skills and Attitude</div>
+                        <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">- Analytical approach to optimization
+- Practical application of calculus
+- Problem-solving with real-world context
+- Critical evaluation of solutions
+- Appreciation for mathematical modeling</textarea></td>
+                </tr>
+            </table>
+            
+            <!-- Competency Based Lesson Plan -->
+            <table>
+                <tr>
+                    <th class="bilingual">
+                        <div class="english">Competency Based Lesson Plan</div>
+                        <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td><textarea class="input-field">Session 1: Rate of change (2 periods)
+- Activity: Solving real-world rate problems
+- Outcome: Apply derivatives to rate problems
+
+Session 2: Function behavior (2 periods)
+- Activity: Determining increasing/decreasing intervals
+- Outcome: Analyze function behavior using derivatives
+
+Session 3: Tangents and normals (2 periods)
+- Activity: Finding equations of tangents and normals
+- Outcome: Apply derivatives to geometry problems
+
+Session 4: Approximation (2 periods)
+- Activity: Using derivatives for approximations
+- Outcome: Solve approximation problems
+
+Session 5: Optimization (2 periods)
+- Activity: Solving optimization problems
+- Outcome: Apply calculus to maximize/minimize</textarea></td>
                 </tr>
             </table>
         </div>
@@ -787,13 +1701,14 @@ Session 5: Assessment and review (2 periods)
             </tr>
             <tr>
                 <td class="bilingual">
-                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="english">Concepts needing remedial classes</div>
                     <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
                 </td>
                 <td><textarea class="input-field">- Matrix multiplication and properties
 - Properties of determinants
 - Chain rule for derivatives
-- Applications of derivatives in optimization</textarea></td>
+- Applications of derivatives in optimization
+- Inverse trigonometric function properties</textarea></td>
             </tr>
         </table>
         
@@ -889,12 +1804,37 @@ Session 5: Assessment and review (2 periods)
             </div>
         </div>
         
-        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+        <p class="footer-note">
             Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
         </p>
     </div>
     
     <script>
+        // Set today's date as default
+        const today = new Date();
+        document.getElementById('current-date').valueAsDate = today;
+        
+        // Set commencement date to next Monday
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() + (1 + 7 - today.getDay()) % 7);
+        document.getElementById('start-date').valueAsDate = startDate;
+        
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.chapter-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
         // Prevent form submission on enter key
         document.querySelectorAll('.input-field').forEach(input => {
             input.addEventListener('keydown', function(e) {
@@ -902,14 +1842,6 @@ Session 5: Assessment and review (2 periods)
                     e.preventDefault();
                 }
             });
-        });
-        
-        // Set today's date as default
-        const today = new Date().toISOString().split('T')[0];
-        document.querySelectorAll('input[type="date"]').forEach(dateInput => {
-            if (!dateInput.value) {
-                dateInput.value = today;
-            }
         });
     </script>
 </body>
