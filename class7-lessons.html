@@ -252,23 +252,31 @@
             margin: 0 5px 5px 0;
             font-weight: bold;
         }
+        
+        .math-example {
+            font-family: 'Cambria Math', serif;
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #f0f7ff;
+            border-left: 3px solid #4a86e8;
+        }
     </style>
 </head>
 <body>
-    <button class="print-btn no-print" onclick="window.print()">Print Both Lesson Plans</button>
+    <button class="print-btn no-print" onclick="window.print()">Print All Lesson Plans</button>
     
     <div class="header">
         <h1>Class 7 Mathematics Lesson Plans</h1>
         <h2>कक्षा 7 गणित पाठ योजनाएँ</h2>
         <div>
-            
             <span class="topic-tag">Large Numbers Around Us</span>
             <span class="topic-tag">Arithmetic Expressions</span>
+            <span class="topic-tag">A Peek Beyond the Point</span>
         </div>
     </div>
 
-    
-    <!-- Lesson Plan 2: Large Numbers Around Us -->
+    <!-- Lesson Plan 1: Large Numbers Around Us -->
     <div class="lesson-plan-container">
         <div class="lesson-title">
             <h1>Large Numbers Around Us</h1>
@@ -772,7 +780,13 @@
                 <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
             </div>
         </div>
-        <!-- Lesson Plan 1: Arithmetic Expressions -->
+    </div>
+
+    <div class="plan-divider">
+        <span>Next Lesson Plan</span>
+    </div>
+
+    <!-- Lesson Plan 2: Arithmetic Expressions -->
     <div class="lesson-plan-container">
         <div class="lesson-title">
             <h1>Arithmetic Expressions</h1>
@@ -1257,16 +1271,542 @@
                 <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
             </div>
         </div>
-        
-        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
-            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
-        </p>
     </div>
-    
+
     <div class="plan-divider">
         <span>Next Lesson Plan</span>
     </div>
-    
+
+    <!-- Lesson Plan 3: A Peek Beyond the Point (Decimals) -->
+    <div class="lesson-plan-container">
+        <div class="lesson-title">
+            <h1>Lesson Plan: A Peek Beyond the Point</h1>
+            <h2>बिंदु से परे एक झलक (दशमलव)</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2023-10-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="Class 7, Section A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="A Peek Beyond the Point (Decimals)"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-16"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="6"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-23"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Understanding the need for smaller units in measurement</li>
+                            <li>Tenths and hundredths as fractional parts</li>
+                            <li>Decimal place value system: units, tenths, hundredths</li>
+                            <li>Reading and writing decimal numbers</li>
+                            <li>Comparing and ordering decimals</li>
+                            <li>Addition and subtraction of decimals</li>
+                            <li>Real-world applications of decimals</li>
+                            <li>Decimal notation in measurement (length, weight, money)</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Students will understand the concept of decimals as an extension of the place value system</li>
+                            <li>Students will be able to convert between fractions and decimals</li>
+                            <li>Students will read, write, and interpret decimal numbers</li>
+                            <li>Students will compare and order decimal numbers</li>
+                            <li>Students will perform addition and subtraction with decimals</li>
+                            <li>Students will apply decimal concepts to real-life measurement situations</li>
+                            <li>Students will understand the importance of decimal point placement</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Real-life scenarios:</span> Using screws, paper folding to demonstrate need for smaller units</li>
+                            <li><span class="highlight">Visual aids:</span> Place value charts, number lines, ruler measurements</li>
+                            <li><span class="highlight">Manipulatives:</span> Base-10 blocks to demonstrate tenths and hundredths</li>
+                            <li><span class="highlight">Think-Pair-Share:</span> Students solve problems individually then discuss in pairs</li>
+                            <li><span class="highlight">Measurement activities:</span> Measuring everyday objects to the nearest mm/cm</li>
+                            <li><span class="highlight">Problem-solving:</span> Solving real-world decimal problems (shopping, measurement)</li>
+                            <li><span class="highlight">Digital tools:</span> Online decimal manipulatives and interactive number lines</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Critical thinking:</span> Understanding real-world implications of decimal errors</li>
+                            <li><span class="highlight">Financial literacy:</span> Calculating money with decimals (rupees and paise)</li>
+                            <li><span class="highlight">Measurement skills:</span> Applying decimals to length, weight, and volume</li>
+                            <li><span class="highlight">Accuracy and precision:</span> Importance of correct decimal placement</li>
+                            <li><span class="highlight">Digital literacy:</span> Using online tools for decimal operations</li>
+                            <li><span class="highlight">Problem-solving:</span> Solving real-life measurement challenges</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><strong>Precision engineering:</strong> Importance of decimals in manufacturing</li>
+                            <li><strong>Financial transactions:</strong> Calculating money with decimals</li>
+                            <li><strong>Scientific measurement:</strong> Using decimals in lab experiments</li>
+                            <li><strong>Medical dosages:</strong> Critical importance of decimal accuracy</li>
+                            <li><strong>Sports statistics:</strong> Recording measurements with decimals</li>
+                            <li><strong>Architecture and construction:</strong> Precise measurements with decimals</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><strong>Science:</strong> Measurement in experiments (mass, volume, length)</li>
+                            <li><strong>Geography:</strong> Map scales and coordinate systems</li>
+                            <li><strong>Economics:</strong> Financial calculations with decimals</li>
+                            <li><strong>Computer Science:</strong> Decimal representation in programming</li>
+                            <li><strong>Home Science:</strong> Precise measurement in cooking</li>
+                            <li><strong>Physical Education:</strong> Recording sports performance metrics</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><strong>Formative:</strong> Class participation, measurement activities, worksheets</li>
+                            <li><strong>Quiz:</strong> Decimal place value, conversion, comparison</li>
+                            <li><strong>Practical:</strong> Measuring objects and recording with decimals</li>
+                            <li><strong>Problem-solving:</strong> Real-world decimal application problems</li>
+                            <li><strong>Digital assessment:</strong> Online quizzes on decimal operations</li>
+                            <li><strong>Summative:</strong> End-of-chapter test covering all concepts</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Textbook: Ganita Prakash Grade 7 (Pages 47-80)</li>
+                            <li>Rulers with mm/cm markings</li>
+                            <li>Base-10 blocks (units, tenths, hundredths)</li>
+                            <li>Number lines with decimal divisions</li>
+                            <li>Measuring tapes and weighing scales</li>
+                            <li>Online decimal manipulatives and games</li>
+                            <li>Projector for displaying examples and diagrams</li>
+                            <li>Worksheets with real-life decimal problems</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li>Students will explain the need for decimals in precise measurement</li>
+                            <li>Students will convert between fractional and decimal representations</li>
+                            <li>Students will read and write decimal numbers correctly</li>
+                            <li>Students will compare and order decimal numbers</li>
+                            <li>Students will perform addition and subtraction with decimals</li>
+                            <li>Students will apply decimal concepts to measurement conversions</li>
+                            <li>Students will understand real-world consequences of decimal errors</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <p><strong>Period 1 (45 mins): The Need for Smaller Units</strong></p>
+                        <p>1. Introduction (10 mins): Real-life example with screws of slightly different sizes</p>
+                        <p>2. Activity (15 mins): Measuring objects with rulers, recording lengths with decimals</p>
+                        <p>3. Discussion (10 mins): Why we need units smaller than whole numbers</p>
+                        <p>4. Concept explanation (10 mins): Tenths as fractions and decimals</p>
+                        
+                        <p><strong>Period 2 (45 mins): Decimal Place Value</strong></p>
+                        <p>1. Recap (5 mins): Review tenths concept</p>
+                        <p>2. Demonstration (15 mins): Place value chart extension to tenths and hundredths</p>
+                        <p>3. Activity (15 mins): Base-10 blocks to represent decimals</p>
+                        <p>4. Practice (10 mins): Reading and writing decimal numbers</p>
+                        
+                        <p><strong>Period 3 (45 mins): Comparing and Ordering Decimals</strong></p>
+                        <p>1. Recap (5 mins): Decimal place value review</p>
+                        <p>2. Activity (15 mins): Number line exercises with decimals</p>
+                        <p>3. Demonstration (15 mins): Comparing decimals using place value</p>
+                        <p>4. Practice (10 mins): Ordering sets of decimal numbers</p>
+                        
+                        <p><strong>Period 4 (45 mins): Adding and Subtracting Decimals</strong></p>
+                        <p>1. Recap (5 mins): Decimal place value alignment</p>
+                        <p>2. Demonstration (15 mins): Addition and subtraction with decimals</p>
+                        <p>3. Activity (15 mins): Shopping scenario money calculations</p>
+                        <p>4. Practice (10 mins): Worksheet problems</p>
+                        
+                        <p><strong>Period 5 (45 mins): Measurement Applications</strong></p>
+                        <p>1. Recap (5 mins): Decimal operations review</p>
+                        <p>2. Activity (20 mins): Measurement stations (length, weight, volume)</p>
+                        <p>3. Application (15 mins): Conversion between units (mm-cm-m, g-kg)</p>
+                        <p>4. Discussion (5 mins): Importance of decimal accuracy</p>
+                        
+                        <p><strong>Period 6 (45 mins): Real-world Connections</strong></p>
+                        <p>1. Case studies (15 mins): Decimal errors in engineering, medicine, aviation</p>
+                        <p>2. Activity (15 mins): Currency conversion (rupees and paise)</p>
+                        <p>3. Review (10 mins): Key concepts and common mistakes</p>
+                        <p>4. Assessment (5 mins): Quick quiz on decimal concepts</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><strong>Precision:</strong> Attention to detail in decimal placement</li>
+                            <li><strong>Analytical thinking:</strong> Understanding place value relationships</li>
+                            <li><strong>Practical application:</strong> Applying decimals to real measurements</li>
+                            <li><strong>Collaboration:</strong> Working in groups on measurement activities</li>
+                            <li><strong>Critical awareness:</strong> Understanding consequences of decimal errors</li>
+                            <li><strong>Numerical confidence:</strong> Working comfortably with decimals</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="filled-content">
+                        <ul>
+                            <li><span class="highlight">Conceptual understanding:</span> Decimal as extension of place value system</li>
+                            <li><span class="highlight">Procedural fluency:</span> Decimal operations with accuracy</li>
+                            <li><span class="highlight">Problem solving:</span> Applying decimals to real-world situations</li>
+                            <li><span class="highlight">Reasoning:</span> Comparing and ordering decimal numbers</li>
+                            <li><span class="highlight">Mathematical communication:</span> Reading and writing decimals correctly</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field" placeholder="Enter after teaching"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field" placeholder="Enter after teaching"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field" placeholder="Enter after teaching"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
         <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
             Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
         </p>
