@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examination Management System</title>
+    <title>Chapterwise Examination Management System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -237,6 +237,9 @@
         
         .exam-table tr:hover {
             background-color: #f1f2f6;
+            transform: translateY(-1px);
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
         
         .action-btn {
@@ -308,6 +311,20 @@
             color: #c0392b;
         }
         
+        .chapter-header {
+            background: #eef2f7;
+            padding: 10px 15px;
+            font-weight: bold;
+            color: #1a2a6c;
+            border-left: 4px solid #1a2a6c;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
         .footer {
             text-align: center;
             padding: 20px;
@@ -315,6 +332,29 @@
             font-size: 0.9rem;
             border-top: 1px solid #eee;
             background: #f8f9fa;
+        }
+        
+        .chapter-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #2ecc71;
+            border-radius: 3px;
         }
         
         @media (max-width: 768px) {
@@ -336,6 +376,11 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .tab-btn {
+                min-width: 100%;
+                margin-bottom: 5px;
+            }
         }
     </style>
 </head>
@@ -345,7 +390,7 @@
             <div class="header-content">
                 <div class="logo">
                     <i class="fas fa-graduation-cap"></i>
-                    <h1>Examination Management System</h1>
+                    <h1>Chapterwise Examination System</h1>
                 </div>
                 <a href="index.html">
                     <button class="back-btn">
@@ -373,22 +418,466 @@
             
             <div class="exam-content" id="examContent">
                 <div class="tabs">
-                    <button class="tab-btn active" data-tab="class-test">Class Test</button>
+                    <button class="tab-btn active" data-tab="chapterwise-test">Chapterwise Test</button>
+            
                     <button class="tab-btn" data-tab="monthly-test">Monthly Test</button>
                     <button class="tab-btn" data-tab="periodic-test">Periodic Test</button>
                     <button class="tab-btn" data-tab="half-yearly">Half Yearly</button>
-                    <button class="tab-btn" data-tab="session-ending">Session Ending</button>
+                </div>
+                
+                <!-- Chapterwise Test Tab -->
+                <div class="tab-content active" id="chapterwise-test">
+                    <h2><i class="fas fa-book-open"></i> Chapterwise Test Schedule</h2>
+                    <p>Each chapter test: 20 marks | 40 minutes duration</p>
+                    
+                    <!-- Class 7-C Section -->
+                    <div class="chapter-header">
+                        <i class="fas fa-users"></i> Class 7-C - Mathematics
+                    </div>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Chapter</th>
+                                <th>Title</th>
+                                <th>Duration</th>
+                                <th>Marks</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chapter 1</td>
+                                <td>Integers</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 2</td>
+                                <td>Fractions & Decimals</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <!-- Additional chapters for Class 7-C -->
+                            <tr>
+                                <td>Chapter 3</td>
+                                <td>Data Handling</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 4</td>
+                                <td>Simple Equations</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 5</td>
+                                <td>Lines & Angles</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 6</td>
+                                <td>Triangles</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 7</td>
+                                <td>Congruence</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 8</td>
+                                <td>Comparing Quantities</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 9</td>
+                                <td>Rational Numbers</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 10</td>
+                                <td>Practical Geometry</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 11</td>
+                                <td>Perimeter & Area</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 12</td>
+                                <td>Algebraic Expressions</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 13</td>
+                                <td>Exponents & Powers</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 14</td>
+                                <td>Symmetry</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Class 11 Section -->
+                    <div class="chapter-header">
+                        <i class="fas fa-users"></i> Class 11 - Mathematics
+                    </div>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Chapter</th>
+                                <th>Title</th>
+                                <th>Duration</th>
+                                <th>Marks</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chapter 1</td>
+                                <td>Sets</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="class test 11/sets.html" class="class test 11-Sets">Sets</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                               
+                            </tr>
+                            <tr>
+                                <td>Chapter 2</td>
+                                <td>Relations & Functions</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="class test 11/relationfunction.html" class="Relations and functions">Relations and functions</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Chapter 3</td>
+                                <td>Trigonometric Functions</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 4</td>
+                                <td>Complex Numbers</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 5</td>
+                                <td>Linear Inequalities</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 6</td>
+                                <td>Permutations</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 7</td>
+                                <td>Binomial Theorem</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 8</td>
+                                <td>Sequences & Series</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 9</td>
+                                <td>Straight Lines</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 10</td>
+                                <td>Conic Sections</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 11</td>
+                                <td>Introduction to 3D</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 12</td>
+                                <td>Limits & Derivatives</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 13</td>
+                                <td>Mathematical Reasoning</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 14</td>
+                                <td>Statistics</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <!-- Class 12 Section -->
+                    <div class="chapter-header">
+                        <i class="fas fa-users"></i> Class 12 - Mathematics
+                    </div>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Chapter</th>
+                                <th>Title</th>
+                                <th>Duration</th>
+                                <th>Marks</th>
+                                <th>Question Paper</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Chapter 1</td>
+                                <td>Relations & Functions</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 2</td>
+                                <td>Inverse Functions</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 3</td>
+                                <td>Matrices</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-scheduled">Scheduled</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 4</td>
+                                <td>Determinants</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 5</td>
+                                <td>Continuity</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 6</td>
+                                <td>Differentiation</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 7</td>
+                                <td>Application of Derivatives</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 8</td>
+                                <td>Integrals</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 9</td>
+                                <td>Differential Equations</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 10</td>
+                                <td>Vector Algebra</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 11</td>
+                                <td>3D Geometry</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 12</td>
+                                <td>Linear Programming</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 13</td>
+                                <td>Probability</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                            <tr>
+                                <td>Chapter 14</td>
+                                <td>Bayes Theorem</td>
+                                <td>40 min</td>
+                                <td>20</td>
+                                <td><a href="#" class="add-content">Add Content</a></td>
+                                <td><span class="status-badge status-pending">Pending</span></td>
+                                <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 
                 <!-- Class Test Tab -->
-                <div class="tab-content active" id="class-test">
+                <div class="tab-content" id="class-test">
                     <h2><i class="fas fa-pencil-alt"></i> Class Test Schedule</h2>
                     <table class="exam-table">
                         <thead>
                             <tr>
                                 <th>Class</th>
                                 <th>Subject</th>
-                          
                                 <th>Duration</th>
                                 <th>Question Paper</th>
                                 <th>Status</th>
@@ -399,16 +888,14 @@
                             <tr>
                                 <td>Class 7-C</td>
                                 <td>Mathematics</td>
-                              
                                 <td>40 min</td>
                                 <td><a href="#">Download</a></td>
                                 <td><span class="status-badge status-completed">Completed</span></td>
                                 <td><button class="action-btn"><i class="fas fa-edit"></i> Edit</button></td>
                             </tr>
                             <tr>
-                                <td>Class11</td>
+                                <td>Class 11</td>
                                 <td>Mathematics</td>
-                                
                                 <td>40 min</td>
                                 <td><a href="https://drive.google.com/file/d/1jPJFJzmooIyfOkxCkkjhWwtFzHjGVw8j/view?usp=sharing">Download</a></td>
                                 <td><span class="status-badge status-scheduled">Scheduled</span></td>
@@ -417,7 +904,6 @@
                             <tr>
                                 <td>Class 12</td>
                                 <td>Mathematics</td>
-                                
                                 <td>40 min</td>
                                 <td><a href="https://drive.google.com/file/d/1V9XlApm22oQSq0tcQnfTwjHJL6jMOWsh/view?usp=sharing">Download</a></td>
                                 <td><span class="status-badge status-scheduled">Scheduled</span></td>
@@ -447,8 +933,8 @@
                             <tr>
                                 <td>Class 11</td>
                                 <td>Mathematics</td>
-                                <td></td>
-                                <td></td>
+                                <td>15/07/2025</td>
+                                <td>10:00 AM</td>
                                 <td>90 min</td>
                                 <td><a href="#">Download</a></td>
                                 <td><span class="status-badge status-pending">Pending</span></td>
@@ -456,9 +942,9 @@
                             </tr>
                             <tr>
                                 <td>Class 12</td>
-                                <td>Mathematics/td>
-                                <td></td>
-                                <td></td>
+                                <td>Mathematics</td>
+                                <td>17/07/2025</td>
+                                <td>10:00 AM</td>
                                 <td>90 min</td>
                                 <td><a href="#">Download</a></td>
                                 <td><span class="status-badge status-pending">Pending</span></td>
@@ -488,8 +974,8 @@
                             <tr>
                                 <td>Class 11</td>
                                 <td>Mathematics</td>
-                                <td></td>
-                                <td></td>
+                                <td>05/08/2025</td>
+                                <td>10:00 AM</td>
                                 <td>90 min</td>
                                 <td><a href="#">Download</a></td>
                                 <td><span class="status-badge status-pending">Pending</span></td>
@@ -498,8 +984,8 @@
                             <tr>
                                 <td>Class 12</td>
                                 <td>Mathematics</td>
-                                <td></td>
-                                <td></td>
+                                <td>07/08/2025</td>
+                                <td>10:00 AM</td>
                                 <td>90 min</td>
                                 <td><a href="#">Download</a></td>
                                 <td><span class="status-badge status-pending">Pending</span></td>
@@ -576,6 +1062,17 @@
             row.addEventListener('mouseleave', () => {
                 row.style.transform = 'scale(1)';
                 row.style.boxShadow = 'none';
+            });
+        });
+        
+        // Add content buttons functionality
+        const addContentLinks = document.querySelectorAll('.add-content');
+        addContentLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const chapter = this.closest('tr').querySelector('td:first-child').textContent;
+                const className = this.closest('table').previousElementSibling.textContent;
+                alert(`Add content for ${chapter} in ${className}`);
             });
         });
     </script>
