@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan Organiser - Relations and Functions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+        .container {
+            width: 29.7cm; /* A4 width */
+            height: 21cm;  /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title-section h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #e3eaf3;
+            font-weight: bold;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .filled-text {
+            padding: 5px;
+            min-height: 60px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .section-title {
+            background-color: #e3eaf3;
+            padding: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2025-07-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="Class 11 - Section A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Chapter 2: Relations and Functions"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2025-07-15"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="8"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div class="section-title">Cartesian Products of Sets:</div>
+                    <div>- Ordered pairs and Cartesian product definition</div>
+                    <div>- Properties and calculation of elements in Cartesian products</div>
+                    <div>- Representation of Cartesian products</div>
+                    
+                    <div class="section-title">Relations:</div>
+                    <div>- Definition of relations between sets</div>
+                    <div>- Domain, range, and codomain of relations</div>
+                    <div>- Representation methods: roster, set-builder, arrow diagram</div>
+                    
+                    <div class="section-title">Functions:</div>
+                    <div>- Definition as a special type of relation</div>
+                    <div>- Real-valued functions and real functions</div>
+                    <div>- Types: identity, constant, polynomial, rational, modulus, signum, greatest integer</div>
+                    <div>- Algebra of real functions: addition, subtraction, multiplication, division</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div>1. Students will understand and compute Cartesian products of sets</div>
+                    <div>2. Students will define relations and identify domain, range, codomain</div>
+                    <div>3. Students will differentiate between relations and functions</div>
+                    <div>4. Students will identify various types of functions (identity, constant, polynomial, etc.)</div>
+                    <div>5. Students will perform algebraic operations on real functions</div>
+                    <div>6. Students will represent functions graphically and interpret graphs</div>
+                    <div>7. Students will solve problems involving relations and functions</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div>1. Begin with real-world examples to introduce concepts (e.g., coordinates as Cartesian products)</div>
+                    <div>2. Use visual aids and diagrams for relations and arrow diagrams</div>
+                    <div>3. Graphical representation of different function types using GeoGebra/Desmos</div>
+                    <div>4. Problem-solving sessions with guided practice</div>
+                    <div>5. Collaborative learning: Group activities for solving problems</div>
+                    <div>6. Technology integration: Graphing calculators and visualization tools</div>
+                    <div>7. Formative assessments through quizzes and class participation</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Critical Thinking:</strong> Analyzing relations and functions</div>
+                    <div><strong>Problem Solving:</strong> Solving complex problems involving functions</div>
+                    <div><strong>Digital Literacy:</strong> Using graphing tools and software</div>
+                    <div><strong>Logical Reasoning:</strong> Understanding function properties and behaviors</div>
+                    <div><strong>Collaboration:</strong> Group problem-solving activities</div>
+                    <div><strong>Value Education:</strong> Appreciating mathematical patterns in real life</div>
+                    <div><strong>Vocational Skills:</strong> Application in programming, data science, engineering</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div>• Cartesian Products: Database systems, coordinate geometry in GPS</div>
+                    <div>• Relations: Social networks (friendship relations), database relations</div>
+                    <div>• Functions: Physics (motion as function of time), economics (demand-supply curves)</div>
+                    <div>• Identity Function: Maintaining original values in data processing</div>
+                    <div>• Modulus Function: Distance calculations, error measurement</div>
+                    <div>• Greatest Integer Function: Digital signal processing, computer algorithms</div>
+                    <div>• Polynomial Functions: Engineering design, trajectory modeling</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Physics:</strong> Position-time graphs as functions, velocity and acceleration</div>
+                    <div><strong>Computer Science:</strong> Functions in programming, relational databases</div>
+                    <div><strong>Economics:</strong> Demand and supply functions, cost functions</div>
+                    <div><strong>Geography:</strong> Coordinate systems and mapping relationships</div>
+                    <div><strong>Chemistry:</strong> Reaction rates as functions of concentration</div>
+                    <div><strong>Biology:</strong> Population growth models using functions</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Formative Assessment:</strong></div>
+                    <div>- Class participation in problem-solving</div>
+                    <div>- Quizzes on Cartesian products and relations</div>
+                    <div>- Group presentations on function types</div>
+                    
+                    <div><strong>Summative Assessment:</strong></div>
+                    <div>- End-of-chapter test including:</div>
+                    <div>  • MCQs on definitions and properties</div>
+                    <div>  • Short answer questions on concepts</div>
+                    <div>  • Problem-solving questions (find domain/range)</div>
+                    <div>  • Graphical representation tasks</div>
+                    <div>  • Real-world application problems</div>
+                    
+                    <div><strong>Project:</strong> Create a visual guide to different function types with real-life examples</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Textbooks:</strong> NCERT Class 11 Mathematics</div>
+                    <div><strong>Digital:</strong> GeoGebra, Desmos graphing tools; Khan Academy videos</div>
+                    <div><strong>Visual Aids:</strong> Coordinate grids, function graphs posters</div>
+                    <div><strong>Worksheets:</strong> Practice problems on relations and functions</div>
+                    <div><strong>Technology:</strong> Projector, graphing calculators</div>
+                    <div><strong>Online Resources:</strong> Interactive function visualization websites</div>
+                    <div><strong>Physical Models:</strong> 3D graphs for functions with two variables</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div>1. Define and compute Cartesian products of sets</div>
+                    <div>2. Understand and represent relations between sets</div>
+                    <div>3. Differentiate between relations and functions</div>
+                    <div>4. Identify domain, range, and codomain of functions</div>
+                    <div>5. Recognize and graph different types of functions</div>
+                    <div>6. Perform algebraic operations on real functions</div>
+                    <div>7. Solve applied problems using relations and functions</div>
+                    <div>8. Develop logical reasoning through function analysis</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Session 1-2: Cartesian Products</strong></div>
+                    <div>- Introduction with real-life examples (coordinates)</div>
+                    <div>- Definition and properties of Cartesian products</div>
+                    <div>- Solving examples from textbook</div>
+                    <div>- Worksheet practice with feedback</div>
+                    
+                    <div><strong>Session 3-4: Relations</strong></div>
+                    <div>- Defining relations with examples</div>
+                    <div>- Domain, range, codomain concepts</div>
+                    <div>- Representation methods (arrow diagrams)</div>
+                    <div>- Group activity: Creating relations between sets</div>
+                    
+                    <div><strong>Session 5-6: Functions</strong></div>
+                    <div>- Definition and characteristics of functions</div>
+                    <div>- Types of functions with graphical representation</div>
+                    <div>- Using GeoGebra to visualize functions</div>
+                    <div>- Identifying functions in different representations</div>
+                    
+                    <div><strong>Session 7-8: Algebra of Functions</strong></div>
+                    <div>- Operations on functions: addition, subtraction</div>
+                    <div>- Multiplication and division of functions</div>
+                    <div>- Solving complex problems</div>
+                    <div>- Review and assessment</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Skills Developed:</strong></div>
+                    <div>- Abstract thinking and mathematical reasoning</div>
+                    <div>- Graphical representation and interpretation</div>
+                    <div>- Problem-solving and analytical skills</div>
+                    <div>- Logical deduction and pattern recognition</div>
+                    <div>- Collaborative learning through group work</div>
+                    
+                    <div><strong>Attitude Cultivated:</strong></div>
+                    <div>- Appreciation for mathematical structures</div>
+                    <div>- Confidence in solving complex problems</div>
+                    <div>- Persistence in working through challenges</div>
+                    <div>- Curiosity about mathematical patterns in the world</div>
+                    <div>- Value of precision in mathematical definitions</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="filled-text">
+                    <div><strong>Conceptual Understanding:</strong> Students explain Cartesian products and relations in their own words</div>
+                    <div><strong>Procedural Fluency:</strong> Students accurately compute Cartesian products and identify function properties</div>
+                    <div><strong>Problem Solving:</strong> Students solve real-world problems using relations and functions</div>
+                    <div><strong>Reasoning Ability:</strong> Students justify why a relation is or isn't a function</div>
+                    <div><strong>Mathematical Communication:</strong> Students present solutions and explain their reasoning</div>
+                    <div><strong>Connections:</strong> Students identify applications in other subjects and daily life</div>
+                    <div><strong>Representation:</strong> Students create graphical and algebraic representations of functions</div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
+    </div>
+    
+    <script>
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
