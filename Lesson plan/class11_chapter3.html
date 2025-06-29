@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan Organiser - Trigonometric Functions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+        .container {
+            width: 29.7cm; /* A4 width */
+            height: 21cm;  /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title-section h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #e3eaf3;
+            font-weight: bold;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .content-text {
+            padding: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .content-text ul {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        
+        .content-text li {
+            margin-bottom: 3px;
+        }
+        
+        .math-concept {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #1c4587;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2025-07-01"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="XI - Science"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="40"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Chapter 3: Trigonometric Functions"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2025-07-01"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="8"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <div class="math-concept">3.1 Introduction to Trigonometry</div>
+                    <ul>
+                        <li>Historical background and applications</li>
+                        <li>Extension from trigonometric ratios to functions</li>
+                    </ul>
+                    
+                    <div class="math-concept">3.2 Angles and Their Measurement</div>
+                    <ul>
+                        <li>Positive and negative angles</li>
+                        <li>Degree measure (1° = 60′, 1′ = 60″)</li>
+                        <li>Radian measure (definition and relation with arc length)</li>
+                        <li>Conversion between degrees and radians</li>
+                        <li>Relation: π radian = 180°, 1 radian ≈ 57°16′</li>
+                    </ul>
+                    
+                    <div class="math-concept">3.3 Trigonometric Functions</div>
+                    <ul>
+                        <li>Unit circle approach: sin x, cos x definitions</li>
+                        <li>Reciprocal functions: cosec x, sec x, cot x</li>
+                        <li>Fundamental identities: sin²x + cos²x = 1, etc.</li>
+                        <li>Signs of trigonometric functions in different quadrants</li>
+                        <li>Domain and range of trigonometric functions</li>
+                        <li>Behavior in different quadrants</li>
+                        <li>Trigonometric values for standard angles (0°, 30°, 45°, etc.)</li>
+                    </ul>
+                    
+                    <div class="math-concept">3.4 Trigonometric Functions of Sum and Difference of Angles</div>
+                    <ul>
+                        <li>cos(x±y), sin(x±y), tan(x±y), cot(x±y) formulas</li>
+                        <li>Double and triple angle formulas</li>
+                        <li>Sum-to-product and product-to-sum identities</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Convert angles between degrees and radians</li>
+                        <li>Apply the relationship between arc length, radius, and angle</li>
+                        <li>Define trigonometric functions using unit circle</li>
+                        <li>Determine signs of trig functions in different quadrants</li>
+                        <li>Apply fundamental trigonometric identities</li>
+                        <li>Use sum and difference formulas for trigonometric functions</li>
+                        <li>Apply double and triple angle formulas</li>
+                        <li>Solve trigonometric equations using identities</li>
+                        <li>Understand historical development of trigonometry</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Interactive whiteboard demonstrations of angle measurement</li>
+                        <li>Unit circle manipulatives for visualizing trig functions</li>
+                        <li>Group activities for deriving identities</li>
+                        <li>Problem-based learning through real-world applications</li>
+                        <li>Digital simulations for graphing trig functions</li>
+                        <li>Think-pair-share for solving trigonometric equations</li>
+                        <li>Historical context presentation (Indian contributions)</li>
+                        <li>Differentiated worksheets for varied learning levels</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li><strong>Critical Thinking:</strong> Analyzing periodic patterns in real-world phenomena</li>
+                        <li><strong>Collaboration:</strong> Group problem-solving activities</li>
+                        <li><strong>Digital Literacy:</strong> Using graphing software and online simulators</li>
+                        <li><strong>Historical Appreciation:</strong> Recognizing Indian contributions to trigonometry</li>
+                        <li><strong>Practical Application:</strong> Connecting to architecture, engineering, and physics</li>
+                        <li><strong>Problem Solving:</strong> Developing strategies for complex trigonometric equations</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Architecture: Calculating heights and distances of structures</li>
+                        <li>Navigation: GPS systems and celestial navigation</li>
+                        <li>Physics: Wave interference and harmonic motion analysis</li>
+                        <li>Engineering: Force resolution in mechanical systems</li>
+                        <li>Music: Sound wave analysis and harmonics</li>
+                        <li>Computer Graphics: Rotation transformations and animation</li>
+                        <li>Astronomy: Calculating planetary positions and orbits</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li><strong>Physics:</strong> Simple harmonic motion, projectile motion, wave equations</li>
+                        <li><strong>Geography:</strong> Navigation, map projections, and coordinate systems</li>
+                        <li><strong>Computer Science:</strong> Programming trigonometric functions, graphics algorithms</li>
+                        <li><strong>History:</strong> Ancient Indian and Greek contributions to trigonometry</li>
+                        <li><strong>Art & Design:</strong> Symmetry and patterns in mandalas and architecture</li>
+                        <li><strong>Music:</strong> Waveform analysis of sound frequencies</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Class participation and group activities (10%)</li>
+                        <li>Weekly quizzes on angle conversion and identities (20%)</li>
+                        <li>Problem-solving assignments with real-world context (20%)</li>
+                        <li>Mid-chapter test on trigonometric functions and graphs (25%)</li>
+                        <li>End-of-chapter project: "Trigonometry in Ancient Indian Mathematics" (25%)</li>
+                        <li>Rubric-based assessment for derivations and proofs</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>NCERT Mathematics Textbook Class XI</li>
+                        <li>Geogebra software for trigonometric simulations</li>
+                        <li>Desmos graphing calculator for function visualization</li>
+                        <li>Protractors and rulers for angle measurement</li>
+                        <li>Unit circle charts and quadrant models</li>
+                        <li>Historical timeline of trigonometry development</li>
+                        <li>Worksheets with trigonometric identities practice</li>
+                        <li>Online quiz platforms (Kahoot, Quizizz)</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Define radian measure and convert between radians and degrees</li>
+                        <li>Relate arc length to central angle using l = rθ</li>
+                        <li>Define trigonometric functions using unit circle approach</li>
+                        <li>Determine domain, range, and signs of trig functions</li>
+                        <li>Apply fundamental trigonometric identities</li>
+                        <li>Derive and apply sum/difference formulas</li>
+                        <li>Use double and triple angle formulas</li>
+                        <li>Solve trigonometric equations using identities</li>
+                        <li>Appreciate historical development of trigonometry</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li><strong>Session 1-2:</strong> Angle measurement and conversion (demonstration + practice)</li>
+                        <li><strong>Session 3:</strong> Unit circle introduction (hands-on activity)</li>
+                        <li><strong>Session 4:</strong> Trigonometric identities discovery (group work)</li>
+                        <li><strong>Session 5:</strong> Graphs and properties (digital visualization)</li>
+                        <li><strong>Session 6:</strong> Sum and difference formulas (guided derivation)</li>
+                        <li><strong>Session 7:</strong> Multiple angle formulas (problem-solving)</li>
+                        <li><strong>Session 8:</strong> Review and historical context (presentation + discussion)</li>
+                        <li>Daily warm-ups with angle conversion problems</li>
+                        <li>Exit tickets for formative assessment</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li>Precision in angle measurement and calculation</li>
+                        <li>Analytical thinking for identity proofs</li>
+                        <li>Pattern recognition in trigonometric graphs</li>
+                        <li>Perseverance in solving complex equations</li>
+                        <li>Collaborative problem-solving approach</li>
+                        <li>Appreciation for mathematical beauty and symmetry</li>
+                        <li>Respect for historical contributions to mathematics</li>
+                        <li>Confidence in applying concepts to real-world problems</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-text">
+                    <ul>
+                        <li><strong>Conceptual Understanding:</strong> Visual models for angle measurement and trig functions</li>
+                        <li><strong>Procedural Fluency:</strong> Step-by-step practice with conversions and identities</li>
+                        <li><strong>Problem Solving:</strong> Real-world application problems (heights, distances, waves)</li>
+                        <li><strong>Reasoning Ability:</strong> Deriving trigonometric identities from fundamental principles</li>
+                        <li><strong>Mathematical Communication:</strong> Explaining solutions and proofs using proper terminology</li>
+                        <li><strong>Digital Literacy:</strong> Using software for function visualization and analysis</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
+    </div>
+    
+    <script>
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+        
+        // Set today's date as default
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelector('input[type="date"]').value = today;
+    </script>
+</body>
+</html>

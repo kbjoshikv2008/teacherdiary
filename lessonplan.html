@@ -3,36 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematics Lesson Plans Hub</title>
+    <title>Mathematics Lesson Plans Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --class7: #FF6B6B;
-            --class11: #4ECDC4;
-            --class12: #45B7D1;
-            --dark: #2C3E50;
-            --light: #ECF0F1;
-            --white: #FFFFFF;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #F9F9F9;
-            color: var(--dark);
-            line-height: 1.7;
+            background: linear-gradient(135deg, #1a2a6c, #2c3e50, #4a148c);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/></svg>');
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         header {
-            background: linear-gradient(135deg, var(--dark), #34495E);
-            color: var(--white);
-            padding: 3rem 0;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
         }
@@ -43,338 +57,375 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            background-position: bottom;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+            height: 5px;
+            background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
         }
         
         h1 {
             font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .subtitle {
-            font-weight: 300;
             font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        /* Navigation Tabs */
-        .nav-container {
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            margin: -30px auto 3rem auto;
-            max-width: 900px;
-            position: relative;
-            z-index: 10;
-            padding: 5px;
-        }
-        
-        .nav-tabs {
+        .math-icons {
             display: flex;
-            list-style: none;
             justify-content: center;
-            position: relative;
+            gap: 25px;
+            margin-top: 20px;
+            font-size: 2.5rem;
+            color: #3498db;
         }
         
-        .nav-tabs::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: rgba(0,0,0,0.05);
-            border-radius: 3px;
+        .class-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
         
-        .nav-tabs li {
-            flex: 1;
-            text-align: center;
-            max-width: 300px;
+        .class-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        .nav-tabs a {
+        .class-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        }
+        
+        .class-header {
+            padding: 25px 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .class-header i {
+            font-size: 2.5rem;
+        }
+        
+        .class-7 .class-header { background: linear-gradient(135deg, #3498db, #2c3e50); }
+        .class-11 .class-header { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .class-12 .class-header { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        
+        .class-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .chapter-list {
+            padding: 20px;
+        }
+        
+        .chapter-list h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chapter-list h3 i {
+            color: #3498db;
+        }
+        
+        .chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .chapter-link {
             display: block;
-            padding: 1.5rem 1rem;
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            z-index: 1;
+            padding: 15px;
+            background: #f8f9fa;
             border-radius: 8px;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid #3498db;
+            position: relative;
             overflow: hidden;
         }
         
-        .nav-tabs a::before {
-            content: "";
+        .chapter-link:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+            border-left-color: #e74c3c;
+        }
+        
+        .chapter-link i {
+            margin-right: 10px;
+            color: #9b59b6;
+        }
+        
+        .chapter-num {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-math {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 3rem;
+            opacity: 0.1;
             z-index: -1;
         }
         
-        .nav-tabs a:hover::before {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .nav-tabs a.class7::before {
-            background: var(--class7);
-        }
-        
-        .nav-tabs a.class11::before {
-            background: var(--class11);
-        }
-        
-        .nav-tabs a.class12::before {
-            background: var(--class12);
-        }
-        
-        .nav-tabs a.active {
-            color: var(--white);
-        }
-        
-        .nav-tabs a.class7.active {
-            background: var(--class7);
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-        }
-        
-        .nav-tabs a.class11.active {
-            background: var(--class11);
-            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
-        }
-        
-        .nav-tabs a.class12.active {
-            background: var(--class12);
-            box-shadow: 0 4px 15px rgba(69, 183, 209, 0.4);
-        }
-        
-        /* Welcome Content */
-        .welcome-content {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem auto;
-        }
-        
-        .welcome-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .welcome-content p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .feature-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1.5rem auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.8rem;
-            color: var(--white);
-        }
-        
-        .class7-icon {
-            background: var(--class7);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-        }
-        
-        .class11-icon {
-            background: var(--class11);
-            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
-        }
-        
-        .class12-icon {
-            background: var(--class12);
-            box-shadow: 0 5px 15px rgba(69, 183, 209, 0.3);
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-        
-        .feature-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-class7 {
-            background: var(--class7);
-            color: var(--white);
-            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
-        }
-        
-        .btn-class11 {
-            background: var(--class11);
-            color: var(--white);
-            box-shadow: 0 4px 10px rgba(78, 205, 196, 0.3);
-        }
-        
-        .btn-class12 {
-            background: var(--class12);
-            color: var(--white);
-            box-shadow: 0 4px 10px rgba(69, 183, 209, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: var(--light);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-tabs {
-                flex-direction: column;
-            }
-            
-            .nav-tabs li {
-                max-width: 100%;
+            .class-container {
+                grid-template-columns: 1fr;
             }
             
             h1 {
                 font-size: 2.2rem;
             }
             
-            .header-content {
-                padding: 0 15px;
+            .chapters {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Mathematics Lesson Plans</h1>
-            <p class="subtitle">Comprehensive teaching resources for all classes</p>
-        </div>
-    </header>
-    
     <div class="container">
-        <div class="nav-container">
-            <ul class="nav-tabs">
-                <li><a href="class7-lessons.html" class="class7"><i class="fas fa-calculator"></i> Class 7</a></li>
-                <li><a href="class11-lessons.html" class="class11"><i class="fas fa-function"></i> Class 11</a></li>
-                <li><a href="class12-lessons.html" class="class12 active"><i class="fas fa-infinity"></i> Class 12</a></li>
-            </ul>
-        </div>
+        <header>
+            <h1>Mathematics Lesson Plans Portal</h1>
+            <p class="subtitle">Comprehensive collection of chapter-wise lesson plans for classes 7, 11, and 12</p>
+            <div class="math-icons">
+                <i class="fas fa-calculator"></i>
+                <i class="fas fa-shapes"></i>
+                <i class="fas fa-infinity"></i>
+                <i class="fas fa-square-root-alt"></i>
+                <i class="fas fa-chart-line"></i>
+            </div>
+        </header>
         
-        <div class="welcome-content">
-            <h2>Welcome to Mathematics Lesson Plans Hub</h2>
-            <p>Discover comprehensive, competency-based lesson plans designed to make mathematics engaging and accessible for students of all levels. Select a class above to explore available resources.</p>
-        </div>
+        <div class="floating-math" style="top: 100px; left: 5%;">∫</div>
+        <div class="floating-math" style="top: 300px; right: 8%;">π</div>
+        <div class="floating-math" style="bottom: 150px; left: 10%;">∞</div>
+        <div class="floating-math" style="bottom: 300px; right: 12%;">Δ</div>
         
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon class7-icon">
+        <div class="class-container">
+            <!-- Class 7 Card -->
+            <div class="class-card class-7">
+                <div class="class-header">
                     <i class="fas fa-calculator"></i>
+                    <h2 class="class-title">Class 7 Mathematics</h2>
                 </div>
-                <h3>Class 7 Resources</h3>
-                <p>Foundational mathematics concepts including number systems, fractions, geometry, and introduction to algebra.</p>
-                <a href="class7-lessons.html" class="btn btn-class7">Explore Class 7</a>
+                <div class="chapter-list">
+                    <h3><i class="fas fa-book"></i> Chapters</h3>
+                    <div class="chapters">
+                        <a href="Lesson plan/class7_chapter1.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 1:</span> Large Numbers Around Us
+                        </a>
+                        <a href="Lesson plan/class7_chapter2.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 2:</span> Arithmetic Expressions
+                        </a>
+                        <a href="Lesson plan/class7_chapter3.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 3:</span> A Peek Beyond the Point
+                        </a>
+                        <a href="Lesson plan/class7_chapter4.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 4:</span> Expressions using Letter-Numbers
+                        </a>
+                        <a href="Lesson plan/class7_chapter5.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 5:</span> Parallel and Intersecting Lines
+                        </a>
+                        <a href="Lesson plan/class7_chapter6.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 6:</span> Number Play
+                        </a>
+                        <a href="Lesson plan/class7_chapter7.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 7:</span> A Tale of Three Intersecting Lines
+                        </a>
+                        <a href="Lesson plan/class7_chapter8.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 8:</span> Working with Fractions
+                        </a>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon class11-icon">
-                    <i class="fas fa-function"></i>
+            <!-- Class 11 Card -->
+            <div class="class-card class-11">
+                <div class="class-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h2 class="class-title">Class 11 Mathematics</h2>
                 </div>
-                <h3>Class 11 Resources</h3>
-                <p>Advanced topics including sets, relations, trigonometry, and introduction to calculus concepts.</p>
-                <a href="class11-lessons.html" class="btn btn-class11">Explore Class 11</a>
+                <div class="chapter-list">
+                    <h3><i class="fas fa-book"></i> Chapters</h3>
+                    <div class="chapters">
+                        <a href="Lesson plan/class11_chapter1.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 1:</span> Sets
+                        </a>
+                        <a href="Lesson plan/class11_chapter2.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 2:</span> Relations and Functions
+                        </a>
+                        <a href="Lesson plan/class11_chapter3.html.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 3:</span> Trigonometric Functions
+                        </a>
+                        <a href="Lesson plan/class11_chapter4.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 4:</span> Complex Numbers and Quadratic Equations
+                        </a>
+                        <a href="Lesson plan/class11_chapter5.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 5:</span> Linear Inequalities
+                        </a>
+                        <a href="Lesson plan/class11_chapter6.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 6:</span> Permutations and Combinations
+                        </a>
+                        <a href="Lesson plan/class11_chapter7.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 7:</span> Binomial Theorem
+                        </a>
+                        <a href="Lesson plan/class11_chapter8.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 8:</span> Sequences and Series
+                        </a>
+                        <a href="Lesson plan/class11_chapter9.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 9:</span> Straight Lines
+                        </a>
+                        <a href="Lesson plan/class11_chapter10.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 10:</span> Conic Sections
+                        </a>
+                        <a href="Lesson plan/class11_chapter11.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 11:</span> Introduction to Three Dimensional Geometry
+                        </a>
+                        <a href="Lesson plan/class11_chapter12.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 12:</span> Limits and Derivatives
+                        </a>
+                        <a href="Lesson plan/class11_chapter13.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 13:</span> Statistics
+                        </a>
+                        <a href="Lesson plan/class11_chapter14.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 14:</span> Probability
+                        </a>
+                    </div>
+                </div>
             </div>
             
-            <div class="feature-card">
-                <div class="feature-icon class12-icon">
+            <!-- Class 12 Card -->
+            <div class="class-card class-12">
+                <div class="class-header">
                     <i class="fas fa-infinity"></i>
+                    <h2 class="class-title">Class 12 Mathematics</h2>
                 </div>
-                <h3>Class 12 Resources</h3>
-                <p>Comprehensive coverage of calculus, linear algebra, probability, and exam preparation materials.</p>
-                <a href="class12-lessons.html" class="btn btn-class12">Explore Class 12</a>
+                <div class="chapter-list">
+                    <h3><i class="fas fa-book"></i> Part I</h3>
+                    <div class="chapters">
+                        <a href="Lesson plan/class12_part1_chapter1.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 1:</span> Relations and Functions
+                        </a>
+                        <a href="Lesson plan/class12_part1_chapter2.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 2:</span> Inverse Trigonometric Functions
+                        </a>
+                        <a href="Lesson plan/class12_part1_chapter3.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 3:</span> Matrices
+                        </a>
+                        <a href="Lesson plan/class12_part1_chapter4.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 4:</span> Determinants
+                        </a>
+                        <a href="Lesson plan/class12_part1_chapter5.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 5:</span> Continuity and Differentiability
+                        </a>
+                        <a href="Lesson plan/class12_part1_chapter6.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 6:</span> Application of Derivatives
+                        </a>
+                    </div>
+                    
+                    <h3 style="margin-top: 20px;"><i class="fas fa-book"></i> Part II</h3>
+                    <div class="chapters">
+                        <a href="Lesson plan/class12_part2_chapter7_Indefinite.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 7:</span> Indefinite Integrals
+                        </a>
+			<a href="Lesson plan/class12_part2_chapter7_definite.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 7:</span> Definite Integrals
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter8.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 8:</span> Application of Integrals
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter9.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 9:</span> Differential Equations
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter10.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 10:</span> Vector Algebra
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter11.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 11:</span> Three Dimensional Geometry
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter12.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 12:</span> Linear Programming
+                        </a>
+                        <a href="Lesson plan/class12_part2_chapter13.html" class="chapter-link">
+                            <i class="fas fa-arrow-right"></i>
+                            <span class="chapter-num">Chapter 13:</span> Probability
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <footer>
+            <p>&copy; 2023 Mathematics Lesson Plans Portal | Designed for Educational Use</p>
+            <p>All lesson plans organized by chapter as per NCERT curriculum</p>
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">
+                <i class="fas fa-exclamation-circle"></i> Note: Click on any chapter to access the detailed lesson plan
+            </p>
+        </footer>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Mathematics Lesson Plans Hub. All rights reserved.</p>
-            <p>Created with <i class="fas fa-heart" style="color: #FF6B6B;"></i> for educators</p>
-        </div>
-    </footer>
 </body>
 </html>

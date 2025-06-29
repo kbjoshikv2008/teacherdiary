@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan Organiser - Sets Class 11</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+        .container {
+            width: 29.7cm; /* A4 width */
+            min-height: 21cm;  /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title-section h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #e3eaf3;
+            font-weight: bold;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .lesson-content {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #1c4587;
+        }
+        
+        .content-title {
+            color: #1c4587;
+            margin-bottom: 5px;
+        }
+        
+        .topic-item {
+            margin: 5px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .topic-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #1c4587;
+        }
+        
+        .highlight {
+            background-color: #e3eaf3;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2023-10-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="XI - A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Chapter 1: Sets"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2023-10-16"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="8"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="content-title">Chapter 1: Sets</div>
+                        <div class="topic-item">Introduction to sets and their representations</div>
+                        <div class="topic-item">Types of sets: Empty, Finite, Infinite, Singleton</div>
+                        <div class="topic-item">Subsets, Power sets, Universal sets</div>
+                        <div class="topic-item">Venn diagrams and their applications</div>
+                        <div class="topic-item">Operations on sets: Union, Intersection, Difference, Complement</div>
+                        <div class="topic-item">Practical problems based on sets</div>
+                        <div class="topic-item">Laws of set theory: Commutative, Associative, Distributive, De Morgan's</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">Students will understand the concept of sets and their representation</div>
+                        <div class="topic-item">Students will be able to differentiate between various types of sets</div>
+                        <div class="topic-item">Students will perform set operations (union, intersection, difference)</div>
+                        <div class="topic-item">Students will represent sets using Venn diagrams</div>
+                        <div class="topic-item">Students will apply set concepts to solve practical problems</div>
+                        <div class="topic-item">Students will understand and apply De Morgan's Laws</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">Concept explanation through real-life examples (class sets, number sets)</div>
+                        <div class="topic-item">Interactive demonstration of set operations using physical objects</div>
+                        <div class="topic-item">Group activities for Venn diagram problems</div>
+                        <div class="topic-item">Digital tools for visualizing set relationships</div>
+                        <div class="topic-item">Problem-solving sessions with worksheets</div>
+                        <div class="topic-item">Peer teaching for complex concepts</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item"><span class="highlight">Critical Thinking:</span> Analyzing set relationships and operations</div>
+                        <div class="topic-item"><span class="highlight">Problem Solving:</span> Solving practical problems using set theory</div>
+                        <div class="topic-item"><span class="highlight">Logical Reasoning:</span> Understanding set properties and laws</div>
+                        <div class="topic-item"><span class="highlight">Collaboration:</span> Working in groups for Venn diagram activities</div>
+                        <div class="topic-item"><span class="highlight">Digital Literacy:</span> Using technology for set visualization</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">Sets in database management systems</div>
+                        <div class="topic-item">Sets in computer programming (data structures)</div>
+                        <div class="topic-item">Sets in probability and statistics</div>
+                        <div class="topic-item">Sets in daily life: Library classification, shopping categories</div>
+                        <div class="topic-item">Sets in logical reasoning and puzzles</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item"><span class="highlight">Computer Science:</span> Data structures, database management</div>
+                        <div class="topic-item"><span class="highlight">Statistics:</span> Probability, data classification</div>
+                        <div class="highlight">Logic and Philosophy:</span> Set theory in logical reasoning</div>
+                        <div class="topic-item"><span class="highlight">Economics:</span> Market segmentation, consumer groups</div>
+                        <div class="topic-item"><span class="highlight">Biology:</span> Classification of organisms</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">Formative Assessment:
+                            <ul>
+                                <li>Class participation in set activities</li>
+                                <li>Worksheet solving in groups</li>
+                                <li>Quick quizzes on set concepts</li>
+                            </ul>
+                        </div>
+                        <div class="topic-item">Summative Assessment:
+                            <ul>
+                                <li>Chapter test with problems on set operations</li>
+                                <li>Venn diagram problems</li>
+                                <li>Practical application problems</li>
+                            </ul>
+                        </div>
+                        <div class="topic-item">Sample Problems:
+                            <ul>
+                                <li>If A = {1,2,3,4}, B = {3,4,5,6}, find A∪B and A∩B</li>
+                                <li>Represent A-B and B-A using Venn diagrams</li>
+                                <li>In a class of 50 students, 30 like math, 25 like science, and 10 like both. How many like neither?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">NCERT Mathematics Textbook Class 11 (Chapter 1)</div>
+                        <div class="topic-item">Physical sets (colored blocks, cards) for demonstration</div>
+                        <div class="topic-item">Venn diagram templates and worksheets</div>
+                        <div class="topic-item">Digital tools: GeoGebra, Desmos for set visualization</div>
+                        <div class="topic-item">Online resources: Khan Academy, BYJU's videos</div>
+                        <div class="topic-item">Whiteboard and markers for diagram illustration</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">To introduce the concept of sets and their representations</div>
+                        <div class="topic-item">To explain different types of sets and set operations</div>
+                        <div class="topic-item">To develop the ability to represent sets using Venn diagrams</div>
+                        <div class="topic-item">To solve problems based on set operations</div>
+                        <div class="topic-item">To apply set concepts to real-world situations</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item"><span class="highlight">Lecture Method:</span> For introducing concepts and terminology</div>
+                        <div class="topic-item"><span class="highlight">Demonstration:</span> Using physical objects to show set operations</div>
+                        <div class="topic-item"><span class="highlight">Interactive Learning:</span> Group activities with Venn diagrams</div>
+                        <div class="topic-item"><span class="highlight">Problem-Based Learning:</span> Solving real-life problems</div>
+                        <div class="topic-item"><span class="highlight">Technology Integration:</span> Using digital tools for visualization</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item">Analytical skills to understand set relationships</div>
+                        <div class="topic-item">Precision in using set notation and terminology</div>
+                        <div class="topic-item">Visualization skills for Venn diagrams</div>
+                        <div class="topic-item">Collaborative attitude during group activities</div>
+                        <div class="topic-item">Curiosity to explore real-world applications</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="lesson-content">
+                        <div class="topic-item"><span class="highlight">Conceptual Understanding:</span> Grasping the fundamentals of sets</div>
+                        <div class="topic-item"><span class="highlight">Procedural Fluency:</span> Performing set operations accurately</div>
+                        <div class="topic-item"><span class="highlight">Problem Solving:</span> Applying set theory to solve problems</div>
+                        <div class="topic-item"><span class="highlight">Reasoning Ability:</span> Understanding set properties and laws</div>
+                        <div class="topic-item"><span class="highlight">Mathematical Communication:</span> Expressing set relationships clearly</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
+    </div>
+    
+    <script>
+        // Set current date as default
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        document.querySelector('input[type="date"]').value = formattedDate;
+        
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
