@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Class Test - Chapter 3</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a6c2a, #b21f1f, #1a6c5c);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .test-paper {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .test-header {
+            background: linear-gradient(to right, #1a7e23, #31921b);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .test-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .test-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .test-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chapter-content {
+            padding: 30px;
+        }
+        
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #6bc05c;
+            color: #1a7e23;
+            font-size: 1.8rem;
+        }
+        
+        .chapter-title i {
+            background: #49ab39;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .questions-container {
+            margin-left: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a7e23;
+        }
+        
+        .marks {
+            background: #49ab39;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .question-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .math {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .test-footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a7e23;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .test-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .chapter-content {
+                padding: 20px 15px;
+            }
+        }
+        
+        .trig-graph {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Test Paper 3: Trigonometric Functions -->
+        <div class="test-paper">
+            <div class="test-header">
+                <h1>Mathematics Class Test</h1>
+                <div class="test-info">
+                    <div><i class="fas fa-book"></i> Chapter 3: Trigonometric Functions</div>
+                    <div><i class="fas fa-clock"></i> Time: 40 Minutes</div>
+                    <div><i class="fas fa-star"></i> Total Marks: 20</div>
+                </div>
+            </div>
+            
+            <div class="chapter-content">
+                <div class="chapter-title">
+                    <i class="fas fa-project-diagram"></i>
+                    <h2>Chapter 3: Trigonometric Functions</h2>
+                </div>
+                
+                <div class="questions-container">
+                    <!-- Question 1 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 1</div>
+                            <div class="marks">5 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Find the value of:</p>
+                            <div class="math">
+                                \[ \left( 1 + \cos \frac{\pi}{8} \right) \left( 1 + \cos \frac{3\pi}{8} \right) \left( 1 + \cos \frac{5\pi}{8} \right) \left( 1 + \cos \frac{7\pi}{8} \right) \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 2</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Find the value of:</p>
+                            <div class="math">
+                                \[ \tan \frac{\pi}{8} \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 3</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>A circular wire of radius 7 cm is cut and bent again into an arc of a circle of radius 12 cm. Find the angle subtended by the arc at the centre.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 4</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Find the value of:</p>
+                            <div class="math">
+                                \[ \sqrt{3} \csc 20^\circ - \sec 20^\circ \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 5</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Prove the following trigonometric identity:</p>
+                            <div class="math">
+                                \[ \cos 6x = 32 \cos^6 x - 48 \cos^4 x + 18 \cos^2 x - 1 \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 6 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 6</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>If \( \tan x = \frac{3}{4}, \pi < x < \frac{3\pi}{2} \), find the values of:</p>
+                            <div class="math">
+                                \[ \sin \frac{x}{2}, \quad \cos \frac{x}{2}, \quad \text{and} \quad \tan \frac{x}{2} \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-footer">
+                <p>End of Test | Best of Luck!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = {
+                'fa-book': '📚',
+                'fa-clock': '⏱️',
+                'fa-star': '⭐',
+                'fa-project-diagram': '△'
+            };
+            
+            document.querySelectorAll('i').forEach(icon => {
+                const iconClass = icon.className.replace('fas ', '');
+                if(icons[iconClass]) {
+                    icon.textContent = icons[iconClass];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
