@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Matrices - Class 12 Mathematics</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 21cm;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 100, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #1c4587;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .header h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .header h2 {
+            color: #2a6099;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            border: 1px solid #d6e4ff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            background-color: #1c4587;
+            color: white;
+            padding: 10px 15px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .section-title.hindi {
+            background-color: #2a6099;
+            font-weight: 500;
+        }
+        
+        .section-content {
+            padding: 15px;
+            background-color: #f8fbff;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .content-item {
+            background-color: white;
+            border: 1px solid #d6e4ff;
+            border-radius: 5px;
+            padding: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .content-item h3 {
+            color: #1c4587;
+            margin-bottom: 8px;
+            font-size: 16px;
+            border-bottom: 1px dashed #a3c2ff;
+            padding-bottom: 5px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .matrix-example {
+            font-family: 'Cambria Math', serif;
+            background-color: #e6f0ff;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 8px 0;
+            text-align: center;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .signature-area {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #1c4587;
+        }
+        
+        .signature-box {
+            width: 45%;
+            text-align: center;
+        }
+        
+        .signature-line {
+            height: 1px;
+            background-color: #1c4587;
+            margin: 40px 0 10px;
+        }
+        
+        .signature-label {
+            font-weight: 600;
+            color: #1c4587;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 1cm;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>Chapter 3: Matrices - Class 12 Mathematics</h2>
+            <h3>शिक्षण योजना आयोजक - अध्याय 3: आव्यूह - कक्षा 12 गणित</h3>
+        </div>
+        
+        <!-- General Facts -->
+        <div class="section">
+            <div class="section-title">General Facts | सामान्य तथ्य</div>
+            <div class="section-content">
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h3>Subject | विषय</h3>
+                        <p>Mathematics | गणित</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Class and Section | कक्षा एवं अनुभाग</h3>
+                        <p>Class 12 | कक्षा 12</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Chapter/Topic | अध्याय/विषय</h3>
+                        <p>Chapter 3: Matrices | अध्याय 3: आव्यूह</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Number of Periods Required | आवश्यक अवधियों की संख्या</h3>
+                        <p>10 periods | 10 अवधियाँ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Content and Concepts -->
+        <div class="section">
+            <div class="section-title">Content and Concepts | विषयवस्तु एवं संकल्पनाएँ</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="highlight">Introduction:</span> Definition, notation, and real-world applications of matrices</li>
+                    <li><span class="highlight">Matrix fundamentals:</span> Elements, rows, columns, order of a matrix</li>
+                    <li><span class="highlight">Types of matrices:</span> Row, column, square, diagonal, scalar, identity, zero matrices</li>
+                    <li><span class="highlight">Matrix operations:</span> Addition, subtraction, scalar multiplication, matrix multiplication</li>
+                    <li><span class="highlight">Matrix properties:</span> Transpose, symmetric and skew-symmetric matrices</li>
+                    <li><span class="highlight">Special matrices:</span> Invertible matrices and their properties</li>
+                </ul>
+                <div class="matrix-example">
+                    Example: A = 
+                    \begin{bmatrix}
+                    3 & 1 & -2 \\
+                    0 & 4 & 5 \\
+                    -1 & 2 & 0
+                    \end{bmatrix}
+                    is a 3×3 matrix
+                </div>
+            </div>
+        </div>
+        
+        <!-- Learning Outcomes -->
+        <div class="section">
+            <div class="section-title">Learning Outcomes (NCERT) | अधिगम उपलब्धियाँ</div>
+            <div class="section-content">
+                <ul>
+                    <li>Understand matrix as a rectangular array of real numbers</li>
+                    <li>Identify different types of matrices and their properties</li>
+                    <li>Perform algebraic operations on matrices (addition, multiplication, scalar multiplication)</li>
+                    <li>Compute the transpose of a matrix and identify symmetric/skew-symmetric matrices</li>
+                    <li>Understand the concept of invertible matrices</li>
+                    <li>Apply matrix operations to solve real-world problems</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Pedagogical Strategies -->
+        <div class="section">
+            <div class="section-title">Pedagogical Strategies | शैक्षणिक रणनीतियाँ</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="highlight">Visual representation:</span> Use grid charts to demonstrate matrix structure</li>
+                    <li><span class="highlight">Real-world examples:</span> Show applications in spreadsheets, computer graphics, and economics</li>
+                    <li><span class="highlight">Interactive activities:</span> Matrix operation puzzles and group problem-solving</li>
+                    <li><span class="highlight">Step-by-step modeling:</span> Demonstrate matrix operations on the board</li>
+                    <li><span class="highlight">Digital tools:</span> Use spreadsheet software to perform matrix calculations</li>
+                    <li><span class="highlight">Differentiated instruction:</span> Provide tiered practice problems based on skill level</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 21st Century Skills -->
+        <div class="section">
+            <div class="section-title">21st Century Skills / Value Education | 21वीं सदी के कौशल / मूल्य शिक्षा</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="highlight">Critical thinking:</span> Analyzing matrix properties and operations</li>
+                    <li><span class="highlight">Problem-solving:</span> Applying matrices to solve real-world scenarios</li>
+                    <li><span class="highlight">Digital literacy:</span> Using technology for matrix computations</li>
+                    <li><span class="highlight">Collaboration:</span> Group activities for matrix problem-solving</li>
+                    <li><span class="highlight">Precision:</span> Emphasizing accuracy in matrix operations</li>
+                    <li><span class="highlight">Logical reasoning:</span> Understanding matrix properties and relationships</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Extension / Real life applications -->
+        <div class="section">
+            <div class="section-title">Extension / Real life applications | विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+            <div class="section-content">
+                <ul>
+                    <li>Computer graphics: Transformation matrices for rotation and scaling</li>
+                    <li>Economics: Input-output analysis in economic models</li>
+                    <li>Statistics: Data organization and analysis</li>
+                    <li>Computer science: Cryptography and data encryption</li>
+                    <li>Physics: Quantum mechanics and transformation matrices</li>
+                    <li>Business: Sales data representation and analysis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Integration with other subjects -->
+        <div class="section">
+            <div class="section-title">Integration with other subjects | अन्य विषयों के साथ एकीकरण</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="highlight">Physics:</span> Transformation matrices in optics and mechanics</li>
+                    <li><span class="highlight">Economics:</span> Input-output analysis and linear programming</li>
+                    <li><span class="highlight">Computer Science:</span> Data structures and algorithms</li>
+                    <li><span class="highlight">Statistics:</span> Data organization and multivariate analysis</li>
+                    <li><span class="highlight">Business Studies:</span> Financial data representation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Assessment -->
+        <div class="section">
+            <div class="section-title">Assessment (Item Format) | मूल्यांकन (मद प्रारूप)</div>
+            <div class="section-content">
+                <ul>
+                    <li>Formative assessments: Daily practice problems and quizzes</li>
+                    <li>Conceptual questions: Define matrix types and properties</li>
+                    <li>Computation exercises: Matrix operations (addition, multiplication)</li>
+                    <li>Application problems: Real-world scenario solutions using matrices</li>
+                    <li>Proof-based questions: Verifying matrix properties</li>
+                    <li>Digital assessment: Online matrix operation exercises</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Resources -->
+        <div class="section">
+            <div class="section-title">Resources / Digital / Physical | संसाधन / डिजिटल / भौतिक</div>
+            <div class="section-content">
+                <ul>
+                    <li>NCERT Class 12 Mathematics Textbook</li>
+                    <li>Matrix operation worksheets</li>
+                    <li>Graph paper for manual matrix representation</li>
+                    <li>Spreadsheet software (Excel/Google Sheets)</li>
+                    <li>Online matrix calculators and visualizers</li>
+                    <li>Educational videos on matrix operations</li>
+                    <li>3×3 and 4×4 matrix grid boards</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Teaching Methodology -->
+        <div class="section">
+            <div class="section-title">Teaching Methodology | शिक्षण पद्धति</div>
+            <div class="section-content">
+                <ul>
+                    <li><span class="highlight">Period 1-2:</span> Introduction to matrices, notation, and real-world applications</li>
+                    <li><span class="highlight">Period 3-4:</span> Types of matrices and equality of matrices</li>
+                    <li><span class="highlight">Period 5-6:</span> Matrix operations - addition, subtraction, scalar multiplication</li>
+                    <li><span class="highlight">Period 7-8:</span> Matrix multiplication and its properties</li>
+                    <li><span class="highlight">Period 9:</span> Transpose of a matrix, symmetric and skew-symmetric matrices</li>
+                    <li><span class="highlight">Period 10:</span> Invertible matrices, review, and assessment</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="signature-area">
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                <div class="signature-label">Signature of Teacher with date</div>
+                <div class="signature-label">शिक्षक के हस्ताक्षर सहित तिथि</div>
+            </div>
+            <div class="signature-box">
+                <div class="signature-line"></div>
+                <div class="signature-label">Signature of HM/Vice Principal/Principal</div>
+                <div class="signature-label">प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

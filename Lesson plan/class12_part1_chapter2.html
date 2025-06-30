@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Inverse Trigonometric Functions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title-section h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #e3eaf3;
+            font-weight: bold;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .content-table {
+            width: 100%;
+            margin: 15px 0;
+            border-collapse: collapse;
+        }
+        
+        .content-table th {
+            background-color: #1c4587;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .content-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .content-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .highlight {
+            background-color: #e3f2fd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .function-table {
+            width: 100%;
+            margin: 15px 0;
+            border-collapse: collapse;
+        }
+        
+        .function-table th, .function-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .function-table th {
+            background-color: #1c4587;
+            color: white;
+        }
+        
+        .function-table tr:nth-child(even) {
+            background-color: #f0f7ff;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2024-07-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="Class 12 - Section A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Inverse Trigonometric Functions"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2024-07-15"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="6"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Introduction to inverse trigonometric functions and why domain restrictions are necessary
+• Principal value branches for all six inverse trig functions
+• Domains and ranges of inverse trig functions
+• Graphs of inverse trigonometric functions
+• Properties and identities:
+  - sin⁻¹(sin x) = x only for x ∈ [-π/2, π/2]
+  - sin(sin⁻¹ x) = x for x ∈ [-1, 1]
+  - 3sin⁻¹x = sin⁻¹(3x - 4x³)
+• Simplification techniques (e.g., cot⁻¹(1/√(x²-1)) = sec⁻¹x for x > 1
+• Solving equations involving inverse trig functions</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Students will understand the concept of inverse trig functions and their principal value branches
+• Students will be able to find principal values of inverse trig functions
+• Students will be able to prove and apply properties of inverse trig functions
+• Students will be able to simplify expressions involving inverse trig functions
+• Students will be able to solve equations using inverse trig functions
+• Students will understand the graphical representation of inverse trig functions</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Start with review of one-one, onto functions and inverses
+• Use graphical representations to show domain restrictions and principal branches
+• Interactive demonstration using Desmos for graphing functions
+• Group activities for proving properties (e.g., 3sin⁻¹x = sin⁻¹(3x - 4x³))
+• Problem-solving sessions for finding principal values
+• Think-pair-share for simplification problems
+• Visual aids to explain the reflection property over y=x</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Critical thinking: Analyzing why inverse trig functions need domain restrictions
+• Problem-solving: Applying properties to simplify complex expressions
+• Collaboration: Working in groups to solve proofs
+• Precision: Handling domain restrictions accurately
+• Digital literacy: Using graphing tools for visualization
+• Historical appreciation: Learning about Indian contributions to trigonometry</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Calculus applications: Defining integrals (e.g., ∫dx/√(1-x²) = sin⁻¹x)
+• Physics applications: Calculating angles in projectile motion and vectors
+• Engineering: Signal processing, wave analysis, and AC circuits
+• Navigation: Calculating directions and bearings
+• Computer graphics: Rotation transformations and animation
+• Architecture: Calculating angles in structural design</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Physics: Vectors, oscillations and waves, projectile motion
+• Calculus: Differentiation and integration of inverse trig functions
+• Computer Science: Algorithm development for trigonometric calculations
+• Engineering: Structural analysis and electrical engineering applications
+• Geography: Navigation and mapping applications
+• History: Study of contributions by Indian mathematicians (Aryabhata, Bhaskara)</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Short answer questions: Finding principal values (Exercise 2.1)
+• Proof-based questions: Proving identities (Exercise 2.2)
+• Simplification problems: Writing expressions in simplest form
+• Graphical interpretation: Analyzing graphs of inverse trig functions
+• MCQs: Testing conceptual understanding (e.g., Q13, Q14 from Exercise 2.1)
+• Real-world application problems: Solving physics/engineering scenarios
+• Derivative problems: Connecting with calculus concepts</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Textbook: NCERT Class 12 Mathematics
+• Digital: Desmos graphing calculator, Geogebra, online quizzes
+• Visual aids: Posters of inverse trig function graphs
+• Worksheets: Practice problems from Exercises 2.1, 2.2, Miscellaneous
+• Historical resources: Information about Indian mathematicians
+• Physical models: Unit circle with angle measurements
+• Presentation: Animated PPT showing reflection property over y=x</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">1. Define inverse trigonometric functions and explain the need for domain restrictions
+2. Identify principal value branches for all six inverse trig functions
+3. Determine domains and ranges of inverse trig functions
+4. Sketch and interpret graphs of inverse trig functions
+5. Apply properties to simplify expressions and prove identities
+6. Solve problems involving principal values
+7. Connect concepts to real-world applications in science and engineering</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">Period 1: Introduction and sine inverse
+  - Lecture: Why inverses need restricted domains
+  - Demonstration: Graphing sin x and sin⁻¹x using Desmos
+  - Activity: Finding principal values (Exercise 2.1 Q1, Q2)
+
+Period 2: Cosine and tangent inverses
+  - Comparative analysis: sin⁻¹ vs cos⁻¹ vs tan⁻¹
+  - Group work: Domain and range table completion
+  - Problem-solving: Exercises 2.1 Q4, Q5, Q6
+
+Period 3: Cosec, sec, and cot inverses
+  - Visual presentation: Graphical representations
+  - Think-pair-share: Principal value branches
+  - Worksheet: Exercises 2.1 Q3, Q7, Q8
+
+Period 4: Properties and identities
+  - Guided discovery: Deriving 3sin⁻¹x = sin⁻¹(3x-4x³)
+  - Problem-solving: Exercise 2.2 problems
+  - Real-world connection: Physics applications
+
+Period 5: Simplification techniques
+  - Step-by-step demonstration: Example 5 (cot⁻¹(1/√(x²-1)))
+  - Group challenge: Exercise 2.2 Q3, Q4, Q6
+  - Error analysis: Common mistakes discussion
+
+Period 6: Review and assessment
+  - Concept mapping: Connecting all inverse trig functions
+  - Practice test: Mixed problems from exercises
+  - Reflection: Historical contributions discussion</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">• Analytical skills: Working with domains and ranges
+• Precision: Handling restricted domains accurately
+• Problem-solving: Applying properties to simplify expressions
+• Critical thinking: Understanding why inverse trig functions are defined as they are
+• Perseverance: Working through complex proofs
+• Appreciation: Valuing historical contributions to mathematics
+• Collaborative spirit: Working effectively in groups
+• Attention to detail: Not confusing sin⁻¹x with (sin x)⁻¹</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">This lesson plan focuses on developing:
+1. Conceptual understanding of inverse trig functions
+2. Problem-solving competency with inverse trig expressions
+3. Graphical interpretation skills
+4. Application competency in real-world contexts
+5. Critical thinking through proof development
+6. Collaborative skills through group activities
+7. Historical appreciation of mathematical development
+
+Competency progression:
+Session 1: Foundational concepts (definitions, domains)
+Session 2: Principal value determination
+Session 3: Graphical representation
+Session 4: Property application
+Session 5: Simplification techniques
+Session 6: Integrated problem-solving</textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field" value="6"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field" value="Extra session for principal value determination"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field">• Domain restrictions for inverse trig functions
+• Determining correct principal values
+• Applying identities for simplification
+• Graphical interpretation of inverse functions</textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox" checked> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
+    </div>
+    
+    <script>
+        // Set today's date as default
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        document.querySelector('input[type="date"]').value = formattedDate;
+        
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
