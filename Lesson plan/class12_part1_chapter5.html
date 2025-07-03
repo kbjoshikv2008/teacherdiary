@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson Plan Organiser - Matrices (Class 12)</title>
+    <title>Lesson Plan Organiser - Continuity and Differentiability</title>
     <style>
         * {
             box-sizing: border-box;
@@ -172,40 +172,27 @@
             color: red;
         }
         
-        .section-title {
-            background-color: #1c4587;
-            color: white;
+        .concept-highlight {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1c4587;
             padding: 8px;
-            margin: 15px 0 10px;
-            border-radius: 4px;
-            font-size: 18px;
+            margin: 5px 0;
         }
         
-        .lesson-content {
-            padding: 10px;
+        .example-box {
             background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
             border-radius: 4px;
-            margin-bottom: 15px;
         }
         
-        .lesson-content h4 {
-            color: #1c4587;
-            margin-bottom: 5px;
-        }
-        
-        .lesson-content ul {
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .lesson-content li {
-            margin-bottom: 5px;
-        }
-        
-        .time-allocation {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 5px;
+        .formula {
+            font-family: "Cambria Math", serif;
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #f0f8ff;
         }
     </style>
 </head>
@@ -231,12 +218,12 @@
                     <div class="english required">Date</div>
                     <div class="hindi">दिनांक</div>
                 </td>
-                <td width="25%"><input type="date" class="input-field"></td>
+                <td width="25%"><input type="date" class="input-field" value="2024-07-10"></td>
                 <td width="25%" class="bilingual">
                     <div class="english required">Class and Section</div>
                     <div class="hindi">कक्षा एवं अनुभाग</div>
                 </td>
-                <td width="25%"><input type="text" class="input-field" value="Class 12"></td>
+                <td width="25%"><input type="text" class="input-field" value="Class 12 - Section A"></td>
             </tr>
             <tr>
                 <td class="bilingual">
@@ -255,19 +242,19 @@
                     <div class="english required">Chapter/Topic</div>
                     <div class="hindi">अध्याय/विषय</div>
                 </td>
-                <td><input type="text" class="input-field" value="Chapter 3: Matrices"></td>
+                <td><input type="text" class="input-field" value="Chapter 5: Continuity and Differentiability"></td>
                 <td class="bilingual">
                     <div class="english required">Date of Commencement</div>
                     <div class="hindi">प्रारंभ करने की तिथि</div>
                 </td>
-                <td><input type="date" class="input-field"></td>
+                <td><input type="date" class="input-field" value="2024-07-10"></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english required">No. of Periods Required</div>
                     <div class="hindi">आवश्यक अवधियों की संख्या</div>
                 </td>
-                <td><input type="number" class="input-field" value="10"></td>
+                <td><input type="number" class="input-field" value="12"></td>
                 <td class="bilingual">
                     <div class="english">Actual Date of Completion</div>
                     <div class="hindi">वास्तविक पूर्णता तिथि</div>
@@ -293,186 +280,314 @@
                     <div class="english">Lesson Plan Developer</div>
                     <div class="hindi">पाठ योजना विकासकर्ता</div>
                 </td>
-                <td><input type="text" class="input-field" value="Math Department"></td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
             </tr>
         </table>
         
         <!-- Content and Concepts -->
-        <div class="section-title">Content and Concepts | विषयवस्तु एवं संकल्पनाएँ</div>
-        <div class="lesson-content">
-            <div class="time-allocation">Time: 10 periods</div>
-            <h4>Chapter Outline:</h4>
-            <ul>
-                <li>Introduction to Matrices and their real-world applications</li>
-                <li>Matrix representation and order of matrices</li>
-                <li>Types of matrices: Row, Column, Square, Diagonal, Scalar, Identity, Zero</li>
-                <li>Matrix operations: Addition, Subtraction, Scalar Multiplication</li>
-                <li>Matrix multiplication and its properties</li>
-                <li>Transpose of a matrix and its properties</li>
-                <li>Symmetric and Skew-symmetric matrices</li>
-                <li>Invertible matrices and matrix inverse</li>
-                <li>Elementary operations and applications</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+1. Continuity:
+   - Definition and graphical interpretation
+   - Algebra of continuous functions
+   - Examples of continuous/discontinuous functions
+
+2. Differentiability:
+   - Relationship with continuity
+   - Derivatives of composite, implicit, and inverse functions
+   - Exponential and logarithmic functions
+
+3. Advanced Concepts:
+   - Logarithmic differentiation
+   - Derivatives of parametric functions
+   - Second-order derivatives
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Learning Outcomes -->
-        <div class="section-title">Learning Outcomes (NCERT) | अधिगम उपलब्धियाँ</div>
-        <div class="lesson-content">
-            <p>By the end of this chapter, students will be able to:</p>
-            <ul>
-                <li>Understand matrix representation and identify different types of matrices</li>
-                <li>Perform matrix operations: addition, subtraction, scalar multiplication</li>
-                <li>Multiply matrices and apply properties of matrix multiplication</li>
-                <li>Determine the transpose of a matrix and identify symmetric/skew-symmetric matrices</li>
-                <li>Compute the inverse of a matrix (2×2 and 3×3)</li>
-                <li>Apply matrices to solve real-world problems in business, economics, and computer science</li>
-                <li>Use matrix methods to solve systems of linear equations</li>
-                <li>Represent geometric transformations using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+1. Students will understand continuity and its mathematical definition
+2. Students will differentiate between continuous and discontinuous functions
+3. Students will apply the concept of differentiability to various functions
+4. Students will master techniques for finding derivatives of complex functions
+5. Students will solve problems involving second-order derivatives
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Pedagogical Strategies -->
-        <div class="section-title">Pedagogical Strategies | शैक्षणिक रणनीतियाँ</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Period 1-2:</strong> Interactive lecture on matrix fundamentals with real-life examples and visual representations</li>
-                <li><strong>Period 3:</strong> Hands-on activity - classifying matrices using cards and group work</li>
-                <li><strong>Period 4:</strong> Problem-solving lab - matrix operations with spreadsheet software</li>
-                <li><strong>Period 5:</strong> Discovery learning - properties of matrix multiplication through pattern recognition</li>
-                <li><strong>Period 6:</strong> Case studies - applications in computer graphics and cryptography</li>
-                <li><strong>Period 7:</strong> Collaborative learning - transpose and symmetric matrices through group investigations</li>
-                <li><strong>Period 8:</strong> Concept mapping - inverse matrices and their properties</li>
-                <li><strong>Period 9:</strong> Real-world problem solving - applications in economics and engineering</li>
-                <li><strong>Period 10:</strong> Review and assessment with peer evaluation</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+- Interactive lectures with visual illustrations of continuity
+- Step-by-step problem-solving demonstrations
+- Collaborative group activities for solving differentiation problems
+- Digital simulations for visualizing parametric derivatives
+- Formative assessments through quizzes and worksheets
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- 21st Century Skills -->
-        <div class="section-title">21st Century Skills / Value Education | 21वीं सदी के कौशल / मूल्य शिक्षा</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Critical Thinking:</strong> Analyzing different matrix operations and their applications</li>
-                <li><strong>Problem Solving:</strong> Applying matrices to solve real-world problems in various domains</li>
-                <li><strong>Collaboration:</strong> Group projects on matrix applications in technology</li>
-                <li><strong>Digital Literacy:</strong> Using spreadsheet software for matrix operations</li>
-                <li><strong>Ethical Reasoning:</strong> Discussing ethical use of matrices in data manipulation</li>
-                <li><strong>Creativity:</strong> Designing transformation matrices for computer graphics</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+- Critical Thinking: Analyzing function behavior
+- Problem Solving: Applying differentiation techniques
+- Digital Literacy: Using graphing tools
+- Collaboration: Group problem-solving
+- Real-world Application: Connecting to physics and engineering concepts
+- Ethical Reasoning: Academic integrity in problem-solving
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Extension Section -->
-        <div class="section-title">Extension / Real life applications | विस्तार / वास्तविक जीवन अनुप्रयोग</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Computer Graphics: Transformation matrices for rotation, scaling and translation</li>
-                <li>Economics: Input-output models and Leontief models</li>
-                <li>Computer Science: Matrix operations in machine learning algorithms</li>
-                <li>Cryptography: Matrix encryption and decryption techniques</li>
-                <li>Engineering: Solving systems of equations in structural analysis</li>
-                <li>Robotics: Transformation matrices in robotic arm movements</li>
-                <li>Business: Sales data representation and analysis using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+- Physics: Motion analysis using derivatives
+- Economics: Marginal cost/revenue concepts
+- Engineering: Stress analysis in materials
+- Computer Graphics: Curve modeling and continuity
+- Architecture: Structural stability calculations
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Integration Section -->
-        <div class="section-title">Integration with other subjects | अन्य विषयों के साथ एकीकरण</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Physics:</strong> Transformation matrices in optics and quantum mechanics</li>
-                <li><strong>Economics:</strong> Input-output analysis in macroeconomics</li>
-                <li><strong>Computer Science:</strong> Matrix operations in image processing and AI</li>
-                <li><strong>Geography:</strong> Coordinate transformations in GIS mapping</li>
-                <li><strong>Chemistry:</strong> Molecular symmetry operations using matrices</li>
-                <li><strong>Statistics:</strong> Data organization in multivariate analysis</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+Physics: Velocity and acceleration calculations
+Economics: Optimization of profit functions
+Computer Science: Algorithm efficiency analysis
+Engineering: Structural load calculations
+Statistics: Curve fitting and regression analysis
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Assessment Section -->
-        <div class="section-title">Assessment (Item Format) | मूल्यांकन (मद प्रारूप)</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Formative:</strong> Class participation, matrix classification activities, quizzes</li>
-                <li><strong>Summative:</strong> End-of-chapter test with problems on:
-                    <ul>
-                        <li>Matrix operations and properties</li>
-                        <li>Finding transpose and inverse</li>
-                        <li>Identifying symmetric/skew-symmetric matrices</li>
-                        <li>Solving application problems</li>
-                    </ul>
-                </li>
-                <li><strong>Project:</strong> Research on applications of matrices in modern technology</li>
-                <li><strong>Practical:</strong> Solving real-world problems using matrix operations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+1. Formative Assessment:
+   - Class participation and questioning
+   - Weekly quizzes on continuity concepts
+   - Homework assignments on differentiation
+
+2. Summative Assessment:
+   - Unit test with problems on differentiability
+   - Application-based problems on derivatives
+   - Graphical analysis of function continuity
+
+3. Project:
+   - Real-world application presentation
+   - Mathematical modeling project
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Resources Section -->
-        <div class="section-title">Resources / Digital / Physical | संसाधन / डिजिटल / भौतिक</div>
-        <div class="lesson-content">
-            <ul>
-                <li>NCERT Mathematics Textbook Class 12</li>
-                <li>Geogebra for matrix transformations visualization</li>
-                <li>Matrix calculator apps and online tools</li>
-                <li>Spreadsheet software (Excel/Google Sheets) for operations</li>
-                <li>Worksheets with practice problems</li>
-                <li>3D models for transformation demonstrations</li>
-                <li>Case studies from engineering and economics</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+- NCERT Textbook: Class 12 Mathematics
+- GeoGebra for graphical illustrations
+- Online derivative calculators
+- Worksheets with practice problems
+- Video lectures on advanced differentiation
+- Physical models for function visualization
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Objectives Section -->
-        <div class="section-title">Objectives | उद्देश्य</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Define matrices and identify various types of matrices</li>
-                <li>Perform matrix addition, subtraction and scalar multiplication</li>
-                <li>Multiply matrices and understand properties of multiplication</li>
-                <li>Find transpose of matrices and identify symmetric/skew-symmetric matrices</li>
-                <li>Compute inverse of matrices (2×2 and 3×3)</li>
-                <li>Apply matrices to solve systems of linear equations</li>
-                <li>Represent geometric transformations using matrices</li>
-                <li>Solve real-world problems using matrix operations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+1. Define continuity mathematically and graphically
+2. Identify points of discontinuity in functions
+3. Apply differentiation rules to various functions
+4. Solve problems using logarithmic differentiation
+5. Compute derivatives of parametric functions
+6. Determine second-order derivatives
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Teaching Methodology -->
-        <div class="section-title">Teaching Methodology | शिक्षण पद्धति</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Demonstration with step-by-step examples</li>
-                <li>Guided practice with immediate feedback</li>
-                <li>Collaborative problem-solving in groups</li>
-                <li>Technology integration with matrix calculators</li>
-                <li>Concept mapping for relationships between concepts</li>
-                <li>Case studies showing real-world applications</li>
-                <li>Visualization tools for matrix transformations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+Period 1-2: Introduction to Continuity
+  - Lecture with graphical examples
+  - Group activity: Identifying discontinuities
+
+Period 3-4: Differentiability Fundamentals
+  - Step-by-step differentiation problems
+  - Pair work: Practice exercises
+
+Period 5-6: Advanced Differentiation
+  - Digital demonstration of chain rule
+  - Worksheet on implicit differentiation
+
+Period 7-8: Exponential and Logarithmic Functions
+  - Real-world application examples
+  - Problem-solving session
+
+Period 9-10: Parametric and Higher-order Derivatives
+  - Graphical analysis with GeoGebra
+  - Collaborative problem solving
+
+Period 11-12: Review and Assessment
+  - Comprehensive problem-solving
+  - Unit test and feedback
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Skills and Attitude -->
-        <div class="section-title">Skills and Attitude | कौशल एवं दृष्टिकोण</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Precision in matrix operations</li>
-                <li>Logical reasoning in matrix multiplication</li>
-                <li>Analytical thinking in solving systems</li>
-                <li>Pattern recognition in matrix structures</li>
-                <li>Appreciation for mathematical structure</li>
-                <li>Critical evaluation of solution methods</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+- Analytical skills for examining function behavior
+- Precision in mathematical calculations
+- Persistence in solving complex problems
+- Collaborative approach in learning
+- Critical evaluation of solutions
+- Application of concepts to real-world scenarios
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Competency Based Lesson Plan -->
-        <div class="section-title">Competency Based Lesson Plan | क्षमता आधारित पाठ योजना</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Conceptual Understanding:</strong> Through explanations and visualizations</li>
-                <li><strong>Procedural Fluency:</strong> Through step-by-step practice of operations</li>
-                <li><strong>Problem Solving:</strong> Through application to real-world contexts</li>
-                <li><strong>Reasoning Ability:</strong> Through justification of matrix properties</li>
-                <li><strong>Mathematical Communication:</strong> Through group discussions and presentations</li>
-                <li><strong>Modeling:</strong> Representing real-world situations using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <textarea class="input-field">
+1. Conceptual Understanding:
+   - Analyze function continuity graphically
+   - Derive differentiation rules
+
+2. Procedural Fluency:
+   - Apply chain rule to composite functions
+   - Compute derivatives efficiently
+
+3. Problem Solving:
+   - Solve real-world optimization problems
+   - Analyze rates of change in various contexts
+
+4. Reasoning Ability:
+   - Justify continuity at critical points
+   - Verify differentiability conditions
+
+5. Mathematical Communication:
+   - Explain concepts using proper terminology
+   - Present solutions in structured format
+                    </textarea>
+                </td>
+            </tr>
+        </table>
         
         <!-- Post Teaching Reflection -->
         <table>
@@ -494,14 +609,14 @@
                     <div class="english">Planning for remedial teaching</div>
                     <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
                 </td>
-                <td><input type="text" class="input-field" placeholder="Topics needing reinforcement"></td>
+                <td><input type="text" class="input-field" placeholder="Additional practice sessions for..."></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english">Concepts for which remedial classes are required</div>
                     <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
                 </td>
-                <td><textarea class="input-field" placeholder="List challenging concepts"></textarea></td>
+                <td><textarea class="input-field">Implicit differentiation, Parametric derivatives</textarea></td>
             </tr>
         </table>
         
@@ -531,7 +646,7 @@
                     <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> Yes | हाँ
+                    <input type="checkbox" checked> Yes | हाँ
                 </td>
                 <td style="text-align: center;">
                     <input type="checkbox"> No | नहीं
@@ -543,7 +658,7 @@
                     <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> Yes | हाँ
+                    <input type="checkbox" checked> Yes | हाँ
                 </td>
                 <td style="text-align: center;">
                     <input type="checkbox"> No | नहीं
@@ -555,7 +670,7 @@
                     <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> Yes | हाँ
+                    <input type="checkbox" checked> Yes | हाँ
                 </td>
                 <td style="text-align: center;">
                     <input type="checkbox"> No | नहीं
@@ -579,7 +694,7 @@
                     <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> Yes | हाँ
+                    <input type="checkbox" checked> Yes | हाँ
                 </td>
                 <td style="text-align: center;">
                     <input type="checkbox"> No | नहीं
@@ -603,6 +718,11 @@
     </div>
     
     <script>
+        // Set today's date as default
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0];
+        document.querySelector('input[type="date"]').value = formattedDate;
+        
         // Prevent form submission on enter key
         document.querySelectorAll('.input-field').forEach(input => {
             input.addEventListener('keydown', function(e) {
@@ -610,14 +730,6 @@
                     e.preventDefault();
                 }
             });
-        });
-        
-        // Set default date to today
-        const today = new Date().toISOString().substr(0, 10);
-        document.querySelectorAll('input[type="date"]').forEach(dateInput => {
-            if (!dateInput.value) {
-                dateInput.value = today;
-            }
         });
     </script>
 </body>

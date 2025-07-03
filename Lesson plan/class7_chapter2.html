@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson Plan Organiser - Matrices (Class 12)</title>
+    <title>Lesson Plan: Arithmetic Expressions | Grade 7 Maths</title>
     <style>
         * {
             box-sizing: border-box;
@@ -28,7 +28,7 @@
         
         .container {
             width: 29.7cm; /* A4 width */
-            height: 21cm;  /* A4 height */
+            min-height: 21cm;  /* A4 height */
             background-color: white;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 1.5cm;
@@ -172,40 +172,10 @@
             color: red;
         }
         
-        .section-title {
-            background-color: #1c4587;
-            color: white;
-            padding: 8px;
-            margin: 15px 0 10px;
-            border-radius: 4px;
-            font-size: 18px;
-        }
-        
-        .lesson-content {
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-        
-        .lesson-content h4 {
-            color: #1c4587;
-            margin-bottom: 5px;
-        }
-        
-        .lesson-content ul {
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .lesson-content li {
-            margin-bottom: 5px;
-        }
-        
-        .time-allocation {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 5px;
+        .prefilled {
+            background-color: #f8f9fa;
+            padding: 5px;
+            min-height: 20px;
         }
     </style>
 </head>
@@ -231,31 +201,31 @@
                     <div class="english required">Date</div>
                     <div class="hindi">दिनांक</div>
                 </td>
-                <td width="25%"><input type="date" class="input-field"></td>
+                <td width="25%"><input type="date" class="input-field" id="lesson-date"></td>
                 <td width="25%" class="bilingual">
                     <div class="english required">Class and Section</div>
                     <div class="hindi">कक्षा एवं अनुभाग</div>
                 </td>
-                <td width="25%"><input type="text" class="input-field" value="Class 12"></td>
+                <td width="25%"><div class="prefilled">VII-A</div></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english required">Subject</div>
                     <div class="hindi">विषय</div>
                 </td>
-                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td><div class="prefilled">Mathematics</div></td>
                 <td class="bilingual">
                     <div class="english required">Number of Enrolled Students</div>
                     <div class="hindi">नामांकित छात्रों की संख्या</div>
                 </td>
-                <td><input type="number" class="input-field" value="40"></td>
+                <td><input type="number" class="input-field" placeholder="e.g., 40"></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english required">Chapter/Topic</div>
                     <div class="hindi">अध्याय/विषय</div>
                 </td>
-                <td><input type="text" class="input-field" value="Chapter 3: Matrices"></td>
+                <td><div class="prefilled">Arithmetic Expressions</div></td>
                 <td class="bilingual">
                     <div class="english required">Date of Commencement</div>
                     <div class="hindi">प्रारंभ करने की तिथि</div>
@@ -267,7 +237,7 @@
                     <div class="english required">No. of Periods Required</div>
                     <div class="hindi">आवश्यक अवधियों की संख्या</div>
                 </td>
-                <td><input type="number" class="input-field" value="10"></td>
+                <td><div class="prefilled">6</div></td>
                 <td class="bilingual">
                     <div class="english">Actual Date of Completion</div>
                     <div class="hindi">वास्तविक पूर्णता तिथि</div>
@@ -293,186 +263,253 @@
                     <div class="english">Lesson Plan Developer</div>
                     <div class="hindi">पाठ योजना विकासकर्ता</div>
                 </td>
-                <td><input type="text" class="input-field" value="Math Department"></td>
+                <td><input type="text" class="input-field" placeholder="Teacher Name"></td>
             </tr>
         </table>
         
         <!-- Content and Concepts -->
-        <div class="section-title">Content and Concepts | विषयवस्तु एवं संकल्पनाएँ</div>
-        <div class="lesson-content">
-            <div class="time-allocation">Time: 10 periods</div>
-            <h4>Chapter Outline:</h4>
-            <ul>
-                <li>Introduction to Matrices and their real-world applications</li>
-                <li>Matrix representation and order of matrices</li>
-                <li>Types of matrices: Row, Column, Square, Diagonal, Scalar, Identity, Zero</li>
-                <li>Matrix operations: Addition, Subtraction, Scalar Multiplication</li>
-                <li>Matrix multiplication and its properties</li>
-                <li>Transpose of a matrix and its properties</li>
-                <li>Symmetric and Skew-symmetric matrices</li>
-                <li>Invertible matrices and matrix inverse</li>
-                <li>Elementary operations and applications</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Simple arithmetic expressions and their values<br>
+                    - Comparing expressions without calculation<br>
+                    - Complex expressions and order of operations<br>
+                    - Terms in expressions and their identification<br>
+                    - Brackets and their role in expressions<br>
+                    - Properties: Commutative, Associative, Distributive<br>
+                    - Real-life applications of arithmetic expressions
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Learning Outcomes -->
-        <div class="section-title">Learning Outcomes (NCERT) | अधिगम उपलब्धियाँ</div>
-        <div class="lesson-content">
-            <p>By the end of this chapter, students will be able to:</p>
-            <ul>
-                <li>Understand matrix representation and identify different types of matrices</li>
-                <li>Perform matrix operations: addition, subtraction, scalar multiplication</li>
-                <li>Multiply matrices and apply properties of matrix multiplication</li>
-                <li>Determine the transpose of a matrix and identify symmetric/skew-symmetric matrices</li>
-                <li>Compute the inverse of a matrix (2×2 and 3×3)</li>
-                <li>Apply matrices to solve real-world problems in business, economics, and computer science</li>
-                <li>Use matrix methods to solve systems of linear equations</li>
-                <li>Represent geometric transformations using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Students will understand and evaluate simple and complex arithmetic expressions<br>
+                    - Students will compare expressions using reasoning rather than calculation<br>
+                    - Students will identify terms in expressions and apply properties of operations<br>
+                    - Students will use brackets appropriately in expressions<br>
+                    - Students will solve real-world problems using arithmetic expressions<br>
+                    - Students will apply distributive property in calculations
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Pedagogical Strategies -->
-        <div class="section-title">Pedagogical Strategies | शैक्षणिक रणनीतियाँ</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Period 1-2:</strong> Interactive lecture on matrix fundamentals with real-life examples and visual representations</li>
-                <li><strong>Period 3:</strong> Hands-on activity - classifying matrices using cards and group work</li>
-                <li><strong>Period 4:</strong> Problem-solving lab - matrix operations with spreadsheet software</li>
-                <li><strong>Period 5:</strong> Discovery learning - properties of matrix multiplication through pattern recognition</li>
-                <li><strong>Period 6:</strong> Case studies - applications in computer graphics and cryptography</li>
-                <li><strong>Period 7:</strong> Collaborative learning - transpose and symmetric matrices through group investigations</li>
-                <li><strong>Period 8:</strong> Concept mapping - inverse matrices and their properties</li>
-                <li><strong>Period 9:</strong> Real-world problem solving - applications in economics and engineering</li>
-                <li><strong>Period 10:</strong> Review and assessment with peer evaluation</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Real-life scenarios and word problems<br>
+                    - Visual representations using tokens/models<br>
+                    - Group activities with expression cards<br>
+                    - Think-pair-share for complex concepts<br>
+                    - Step-by-step evaluation demonstrations<br>
+                    - Error analysis of common mistakes<br>
+                    - Hands-on activities with manipulatives
+                </div></td>
+            </tr>
+        </table>
         
         <!-- 21st Century Skills -->
-        <div class="section-title">21st Century Skills / Value Education | 21वीं सदी के कौशल / मूल्य शिक्षा</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Critical Thinking:</strong> Analyzing different matrix operations and their applications</li>
-                <li><strong>Problem Solving:</strong> Applying matrices to solve real-world problems in various domains</li>
-                <li><strong>Collaboration:</strong> Group projects on matrix applications in technology</li>
-                <li><strong>Digital Literacy:</strong> Using spreadsheet software for matrix operations</li>
-                <li><strong>Ethical Reasoning:</strong> Discussing ethical use of matrices in data manipulation</li>
-                <li><strong>Creativity:</strong> Designing transformation matrices for computer graphics</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Critical thinking in expression evaluation<br>
+                    - Problem-solving with real-world contexts<br>
+                    - Collaboration through group activities<br>
+                    - Financial literacy through money expressions<br>
+                    - Logical reasoning in expression comparison<br>
+                    - Communication skills in explaining solutions
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Extension Section -->
-        <div class="section-title">Extension / Real life applications | विस्तार / वास्तविक जीवन अनुप्रयोग</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Computer Graphics: Transformation matrices for rotation, scaling and translation</li>
-                <li>Economics: Input-output models and Leontief models</li>
-                <li>Computer Science: Matrix operations in machine learning algorithms</li>
-                <li>Cryptography: Matrix encryption and decryption techniques</li>
-                <li>Engineering: Solving systems of equations in structural analysis</li>
-                <li>Robotics: Transformation matrices in robotic arm movements</li>
-                <li>Business: Sales data representation and analysis using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Shopping scenarios and change calculations<br>
+                    - Grouping in games and activities<br>
+                    - Financial calculations (savings, expenses)<br>
+                    - Measurement expressions (height, distance)<br>
+                    - Food distribution and sharing problems<br>
+                    - Time management expressions
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Integration Section -->
-        <div class="section-title">Integration with other subjects | अन्य विषयों के साथ एकीकरण</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Physics:</strong> Transformation matrices in optics and quantum mechanics</li>
-                <li><strong>Economics:</strong> Input-output analysis in macroeconomics</li>
-                <li><strong>Computer Science:</strong> Matrix operations in image processing and AI</li>
-                <li><strong>Geography:</strong> Coordinate transformations in GIS mapping</li>
-                <li><strong>Chemistry:</strong> Molecular symmetry operations using matrices</li>
-                <li><strong>Statistics:</strong> Data organization in multivariate analysis</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Economics: Budgeting and expense calculations<br>
+                    - Science: Measurement expressions in experiments<br>
+                    - Social Studies: Population and grouping scenarios<br>
+                    - Language: Translating word problems to expressions<br>
+                    - Computer Science: Order of operations in programming
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Assessment Section -->
-        <div class="section-title">Assessment (Item Format) | मूल्यांकन (मद प्रारूप)</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Formative:</strong> Class participation, matrix classification activities, quizzes</li>
-                <li><strong>Summative:</strong> End-of-chapter test with problems on:
-                    <ul>
-                        <li>Matrix operations and properties</li>
-                        <li>Finding transpose and inverse</li>
-                        <li>Identifying symmetric/skew-symmetric matrices</li>
-                        <li>Solving application problems</li>
-                    </ul>
-                </li>
-                <li><strong>Project:</strong> Research on applications of matrices in modern technology</li>
-                <li><strong>Practical:</strong> Solving real-world problems using matrix operations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Formative: Class participation, group activities, worksheets<br>
+                    - Summative: End-of-chapter test<br>
+                    - Practical: Creating expressions for real scenarios<br>
+                    - Oral: Explaining solution strategies<br>
+                    - Written: Solving textbook exercises<br>
+                    - Creative: Designing expression puzzles
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Resources Section -->
-        <div class="section-title">Resources / Digital / Physical | संसाधन / डिजिटल / भौतिक</div>
-        <div class="lesson-content">
-            <ul>
-                <li>NCERT Mathematics Textbook Class 12</li>
-                <li>Geogebra for matrix transformations visualization</li>
-                <li>Matrix calculator apps and online tools</li>
-                <li>Spreadsheet software (Excel/Google Sheets) for operations</li>
-                <li>Worksheets with practice problems</li>
-                <li>3D models for transformation demonstrations</li>
-                <li>Case studies from engineering and economics</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Textbook: Ganita Prakash Grade 7<br>
+                    - Expression cards with numbers and operators<br>
+                    - Token models for integer operations<br>
+                    - Whiteboard and markers<br>
+                    - Projector for visual presentations<br>
+                    - Worksheets with real-life scenarios<br>
+                    - Online expression evaluators<br>
+                    - Manipulatives for grouping activities
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Objectives Section -->
-        <div class="section-title">Objectives | उद्देश्य</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Define matrices and identify various types of matrices</li>
-                <li>Perform matrix addition, subtraction and scalar multiplication</li>
-                <li>Multiply matrices and understand properties of multiplication</li>
-                <li>Find transpose of matrices and identify symmetric/skew-symmetric matrices</li>
-                <li>Compute inverse of matrices (2×2 and 3×3)</li>
-                <li>Apply matrices to solve systems of linear equations</li>
-                <li>Represent geometric transformations using matrices</li>
-                <li>Solve real-world problems using matrix operations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    1. Understand and evaluate simple arithmetic expressions<br>
+                    2. Compare expressions using reasoning rather than calculation<br>
+                    3. Identify terms in complex expressions<br>
+                    4. Apply order of operations correctly<br>
+                    5. Use brackets appropriately in expressions<br>
+                    6. Apply commutative, associative, and distributive properties
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Teaching Methodology -->
-        <div class="section-title">Teaching Methodology | शिक्षण पद्धति</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Demonstration with step-by-step examples</li>
-                <li>Guided practice with immediate feedback</li>
-                <li>Collaborative problem-solving in groups</li>
-                <li>Technology integration with matrix calculators</li>
-                <li>Concept mapping for relationships between concepts</li>
-                <li>Case studies showing real-world applications</li>
-                <li>Visualization tools for matrix transformations</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    <strong>Period 1:</strong> Introduction to simple expressions and values<br>
+                    <strong>Period 2:</strong> Comparing expressions through reasoning<br>
+                    <strong>Period 3:</strong> Complex expressions and order of operations<br>
+                    <strong>Period 4:</strong> Terms in expressions and properties<br>
+                    <strong>Period 5:</strong> Brackets and their role in expressions<br>
+                    <strong>Period 6:</strong> Distributive property applications<br>
+                    <strong>Throughout:</strong> Real-life problem solving and group activities
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Skills and Attitude -->
-        <div class="section-title">Skills and Attitude | कौशल एवं दृष्टिकोण</div>
-        <div class="lesson-content">
-            <ul>
-                <li>Precision in matrix operations</li>
-                <li>Logical reasoning in matrix multiplication</li>
-                <li>Analytical thinking in solving systems</li>
-                <li>Pattern recognition in matrix structures</li>
-                <li>Appreciation for mathematical structure</li>
-                <li>Critical evaluation of solution methods</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    - Logical reasoning in expression evaluation<br>
+                    - Attention to detail in order of operations<br>
+                    - Confidence in solving complex expressions<br>
+                    - Collaborative problem-solving approach<br>
+                    - Patience in step-by-step evaluation<br>
+                    - Appreciation for real-world applications
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Competency Based Lesson Plan -->
-        <div class="section-title">Competency Based Lesson Plan | क्षमता आधारित पाठ योजना</div>
-        <div class="lesson-content">
-            <ul>
-                <li><strong>Conceptual Understanding:</strong> Through explanations and visualizations</li>
-                <li><strong>Procedural Fluency:</strong> Through step-by-step practice of operations</li>
-                <li><strong>Problem Solving:</strong> Through application to real-world contexts</li>
-                <li><strong>Reasoning Ability:</strong> Through justification of matrix properties</li>
-                <li><strong>Mathematical Communication:</strong> Through group discussions and presentations</li>
-                <li><strong>Modeling:</strong> Representing real-world situations using matrices</li>
-            </ul>
-        </div>
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td><div class="prefilled">
+                    <strong>Numerical Competency:</strong> Evaluating expressions accurately<br>
+                    <strong>Critical Thinking:</strong> Comparing expressions through reasoning<br>
+                    <strong>Problem Solving:</strong> Creating expressions for real scenarios<br>
+                    <strong>Conceptual Understanding:</strong> Properties of operations<br>
+                    <strong>Application:</strong> Using expressions in practical situations<br>
+                    <strong>Collaboration:</strong> Working in groups on complex problems
+                </div></td>
+            </tr>
+        </table>
         
         <!-- Post Teaching Reflection -->
         <table>
@@ -487,21 +524,21 @@
                     <div class="english">No. of periods required</div>
                     <div class="hindi">आवश्यक अवधियों की संख्या</div>
                 </td>
-                <td width="50%"><input type="number" class="input-field"></td>
+                <td width="50%"><input type="number" class="input-field" placeholder="Actual periods used"></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english">Planning for remedial teaching</div>
                     <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
                 </td>
-                <td><input type="text" class="input-field" placeholder="Topics needing reinforcement"></td>
+                <td><input type="text" class="input-field" placeholder="e.g., Order of operations practice"></td>
             </tr>
             <tr>
                 <td class="bilingual">
                     <div class="english">Concepts for which remedial classes are required</div>
                     <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
                 </td>
-                <td><textarea class="input-field" placeholder="List challenging concepts"></textarea></td>
+                <td><textarea class="input-field" placeholder="Specific concepts students struggled with"></textarea></td>
             </tr>
         </table>
         
@@ -567,10 +604,10 @@
                     <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> Yes | हाँ
+                    <input type="checkbox"> High | उच्च
                 </td>
                 <td style="text-align: center;">
-                    <input type="checkbox"> No | नहीं
+                    <input type="checkbox"> Medium | मध्यम
                 </td>
             </tr>
             <tr>
@@ -603,6 +640,10 @@
     </div>
     
     <script>
+        // Set default date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('lesson-date').value = today;
+        
         // Prevent form submission on enter key
         document.querySelectorAll('.input-field').forEach(input => {
             input.addEventListener('keydown', function(e) {
@@ -610,14 +651,6 @@
                     e.preventDefault();
                 }
             });
-        });
-        
-        // Set default date to today
-        const today = new Date().toISOString().substr(0, 10);
-        document.querySelectorAll('input[type="date"]').forEach(dateInput => {
-            if (!dateInput.value) {
-                dateInput.value = today;
-            }
         });
     </script>
 </body>
