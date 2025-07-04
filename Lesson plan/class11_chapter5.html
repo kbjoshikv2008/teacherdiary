@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Linear Inequalities</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm; /* A4 width */
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 128, 0.2);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title-section h2 {
+            color: #2a5298;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-info {
+            background-color: #e6f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6e;
+            border-left: 4px solid #4a86e8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #b8d1ff;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #d4e3fc;
+            font-weight: bold;
+            color: #1c4587;
+            font-size: 16px;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content-cell {
+            padding: 15px;
+            background-color: #f8fbff;
+            line-height: 1.6;
+        }
+        
+        .content-cell ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .content-cell li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .example {
+            background-color: #f0f8ff;
+            border-left: 3px solid #4a86e8;
+            padding: 10px 15px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #4a86e8;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #1c4587;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .math-concept {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+        }
+        
+        .rule-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a86e8;
+            padding: 12px 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+            <div class="chapter-info">
+                Chapter: Linear Inequalities | Class: XI Mathematics
+            </div>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%">[DD/MM/YYYY]</td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%">XI Science</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td>Mathematics</td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td>Linear Inequalities</td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td>8</td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td colspan="3">
+                    NCERT Mathematics Textbook + Teacher's Enhancement
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td colspan="3">[Teacher's Name]</td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>Introduction to inequalities and real-life applications</li>
+                        <li>Types of inequalities: numerical, literal, double, strict, slack</li>
+                        <li>Linear inequalities in one variable: <span class="math-concept">ax + b < 0</span>, <span class="math-concept">ax + b > 0</span></li>
+                        <li>Linear inequalities in two variables: <span class="math-concept">ax + by < c</span></li>
+                        <li>Rules for solving inequalities:
+                            <ul>
+                                <li>Adding/subtracting same number to both sides</li>
+                                <li>Multiplying/dividing by positive numbers</li>
+                                <li>Reversing inequality when multiplying/dividing by negative numbers</li>
+                            </ul>
+                        </li>
+                        <li>Algebraic solutions for different number sets (natural numbers, integers, real numbers)</li>
+                        <li>Graphical representation on number line</li>
+                        <li>Solving systems of linear inequalities</li>
+                        <li>Word problems involving inequalities</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Key Concept:</strong> When multiplying or dividing both sides of an inequality by a negative number, the inequality sign must be reversed.
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <p>After studying this chapter, students will be able to:</p>
+                    <ul>
+                        <li>Understand the concept of inequalities and their real-world applications</li>
+                        <li>Solve linear inequalities in one variable algebraically</li>
+                        <li>Represent solutions of inequalities on the number line</li>
+                        <li>Solve systems of linear inequalities in one variable</li>
+                        <li>Solve word problems using linear inequalities</li>
+                        <li>Apply rules for inequality manipulation, including sign reversal</li>
+                        <li>Solve double inequalities of the form <span class="math-concept">a < bx + c < d</span></li>
+                        <li>Translate real-world constraints into mathematical inequalities</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Real-world introduction:</span> Start with everyday examples (budgets, height restrictions) to demonstrate need for inequalities</li>
+                        <li><span class="highlight">Visual representation:</span> Use number lines for graphical solutions</li>
+                        <li><span class="highlight">Comparative analysis:</span> Contrast solving equations with solving inequalities</li>
+                        <li><span class="highlight">Error analysis:</span> Examine common mistakes, especially sign reversal errors</li>
+                        <li><span class="highlight">Problem-solving stations:</span> Set up different word problem scenarios around classroom</li>
+                        <li><span class="highlight">Think-pair-share:</span> Collaborative solving of inequality problems</li>
+                        <li><span class="highlight">Digital tools:</span> Use Desmos for graphical representation of inequalities</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Critical Thinking:</span> Analyzing constraints in real-world problems</li>
+                        <li><span class="highlight">Decision Making:</span> Determining feasible solutions within constraints</li>
+                        <li><span class="highlight">Logical Reasoning:</span> Applying rules of inequality manipulation</li>
+                        <li><span class="highlight">Financial Literacy:</span> Budgeting and resource allocation problems</li>
+                        <li><span class="highlight">Precision:</span> Accurately representing solutions on number lines</li>
+                        <li><span class="highlight">Problem Solving:</span> Translating word problems into mathematical inequalities</li>
+                        <li><span class="highlight">Resource Management:</span> Understanding constraints in resource allocation</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Budgeting:</span> Financial constraints in personal and business finance</li>
+                        <li><span class="highlight">Engineering:</span> Tolerance limits in manufacturing and construction</li>
+                        <li><span class="highlight">Nutrition:</span> Dietary constraints (calorie intake, nutrient requirements)</li>
+                        <li><span class="highlight">Transportation:</span> Load capacity constraints in logistics</li>
+                        <li><span class="highlight">Chemistry:</span> pH level ranges for chemical solutions</li>
+                        <li><span class="highlight">Medicine:</span> Safe dosage ranges for medications</li>
+                        <li><span class="highlight">Environmental Science:</span> Acceptable pollution levels</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Economics:</span> Budget constraints, resource allocation</li>
+                        <li><span class="highlight">Physics:</span> Range of measurement errors, tolerance in instruments</li>
+                        <li><span class="highlight">Chemistry:</span> Concentration ranges in solutions</li>
+                        <li><span class="highlight">Biology:</span> Normal ranges for physiological parameters</li>
+                        <li><span class="highlight">Geography:</span> Climate ranges and temperature variations</li>
+                        <li><span class="highlight">Computer Science:</span> Conditional statements in programming</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Formative Assessment:</span>
+                            <ul>
+                                <li>Solving inequalities in class with immediate feedback</li>
+                                <li>Group activities: Translating real-world scenarios into inequalities</li>
+                                <li>Quick quizzes on inequality rules and sign reversal</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Summative Assessment:</span>
+                            <ul>
+                                <li>Chapter test including:
+                                    <ul>
+                                        <li>Solving linear inequalities algebraically</li>
+                                        <li>Graphical representation on number lines</li>
+                                        <li>Solving systems of inequalities</li>
+                                        <li>Word problems with real-world contexts</li>
+                                        <li>Solving double inequalities</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Assignment:</span> Research project on historical development of inequality concepts</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>NCERT Class 11 Mathematics Textbook (Chapter 6)</li>
+                        <li>Number line charts and manipulatives</li>
+                        <li>Worksheets with graduated difficulty problems</li>
+                        <li>Digital resources:
+                            <ul>
+                                <li>Desmos for graphical representations</li>
+                                <li>Geogebra inequality visualization</li>
+                                <li>Khan Academy videos on linear inequalities</li>
+                                <li>Online inequality solvers for verification</li>
+                            </ul>
+                        </li>
+                        <li>Real-world scenario cards for problem-solving</li>
+                        <li>Whiteboards for group work</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%">[To be completed after teaching]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td>Extra sessions on sign reversal and word problem translation</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <ul>
+                        <li>Reversing inequality signs when multiplying/dividing by negatives</li>
+                        <li>Graphical representation on number lines</li>
+                        <li>Translating word problems into mathematical inequalities</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+        </div>
+        
+        <p class="footer-note">
+            Note: This lesson plan covers 8 periods and follows NCERT guidelines for Class 11 Mathematics.
+        </p>
+    </div>
+    
+    <script>
+        // Prevent form submission on enter key
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
