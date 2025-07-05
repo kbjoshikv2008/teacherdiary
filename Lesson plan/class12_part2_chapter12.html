@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Linear Programming</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+        .container {
+            width: 29.7cm; /* A4 width */
+            min-height: 21cm;  /* A4 height */
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 28px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .title-section h2 {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #e3eaf3;
+            font-weight: bold;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        .input-field {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-size: 14px;
+            background-color: transparent;
+        }
+        
+        .input-field:focus {
+            outline: 1px solid #4a86e8;
+        }
+        
+        textarea.input-field {
+            height: 60px;
+            resize: none;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .checkbox-group input {
+            margin-right: 5px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #999;
+            text-align: center;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 1cm;
+                width: 100%;
+                height: 100%;
+            }
+            
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #1c4587;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .print-btn:hover {
+            background-color: #0d3268;
+        }
+        
+        .required:after {
+            content: " *";
+            color: red;
+        }
+        
+        .prefilled-content {
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 5px;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn no-print" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%"><input type="date" class="input-field" value="2024-10-15"></td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%"><input type="text" class="input-field" value="XII-A"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics"></td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="42"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td><input type="text" class="input-field" value="Linear Programming"></td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td><input type="date" class="input-field" value="2024-10-15"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td><input type="number" class="input-field" value="10"></td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td><input type="date" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="self-source" checked>
+                        <label for="self-source">Self | स्वयं</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="resource-pool">
+                        <label for="resource-pool">Resource Pool | संसाधन पूल</label>
+                    </div>
+                </td>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td><input type="text" class="input-field" value="Mathematics Department"></td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Introduction to Optimization Problems</li>
+                            <li>Mathematical Formulation of Linear Programming Problems (LPP)</li>
+                            <li>Objective Functions and Constraints</li>
+                            <li>Graphical Method for Solving LPP</li>
+                            <li>Feasible and Infeasible Regions</li>
+                            <li>Corner Point Method for Optimal Solutions</li>
+                            <li>Special Cases: Unbounded, Infeasible and Multiple Solutions</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Understand the concept of optimization in real-life problems</li>
+                            <li>Formulate linear programming problems mathematically</li>
+                            <li>Identify objective functions and constraints</li>
+                            <li>Graph feasible regions for systems of linear inequalities</li>
+                            <li>Solve LPPs using the graphical method</li>
+                            <li>Apply the corner point method to find optimal solutions</li>
+                            <li>Analyze special cases in linear programming</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Real-world problem-based learning scenarios</li>
+                            <li>Graphical visualization using GeoGebra software</li>
+                            <li>Collaborative group work on optimization challenges</li>
+                            <li>Case studies from business and economics</li>
+                            <li>Step-by-step guided practice with worksheets</li>
+                            <li>Think-Pair-Share for constraint analysis</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Critical Thinking: Analyzing optimization scenarios</li>
+                            <li>Decision Making: Evaluating optimal solutions</li>
+                            <li>Resource Management: Efficient allocation principles</li>
+                            <li>Financial Literacy: Cost-profit analysis applications</li>
+                            <li>Problem Solving: Structured approach to constraints</li>
+                            <li>Collaboration: Group optimization projects</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Business: Profit maximization and cost minimization</li>
+                            <li>Manufacturing: Production planning and resource allocation</li>
+                            <li>Transportation: Logistics and route optimization</li>
+                            <li>Agriculture: Optimal crop selection and land use</li>
+                            <li>Nutrition: Designing optimal diet plans</li>
+                            <li>Finance: Portfolio optimization and investment strategies</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Economics: Resource allocation and production theory</li>
+                            <li>Business Studies: Operations research and management</li>
+                            <li>Geography: Land use optimization and resource distribution</li>
+                            <li>Computer Science: Algorithm design and optimization</li>
+                            <li>Nutrition Science: Diet planning and nutrient optimization</li>
+                            <li>Environmental Science: Sustainable resource management</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Formative: Class participation, group work, worksheets</li>
+                            <li>Summative: Chapter test with problem-solving questions</li>
+                            <li>Practical: Optimization project (e.g., production planning)</li>
+                            <li>Digital: Online quizzes on graphical solutions</li>
+                            <li>Peer Assessment: Group presentations on real-world LPPs</li>
+                            <li>Self-assessment: Reflection journals on optimization concepts</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>NCERT Mathematics Textbook</li>
+                            <li>GeoGebra for graphical solutions</li>
+                            <li>Graph papers and colored pencils</li>
+                            <li>Business case studies (printed handouts)</li>
+                            <li>Linear programming video library</li>
+                            <li>Online interactive LPP solvers</li>
+                            <li>Historical notes on optimization in WWII</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Objectives Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Objectives</div>
+                    <div class="hindi">उद्देश्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <p>By the end of this chapter, students will be able to:</p>
+                        <ul>
+                            <li>Identify optimization problems in real-world scenarios</li>
+                            <li>Mathematically formulate linear programming problems</li>
+                            <li>Graph feasible regions for systems of inequalities</li>
+                            <li>Apply the corner point method to find optimal solutions</li>
+                            <li>Analyze and interpret solutions in practical contexts</li>
+                            <li>Recognize special cases in linear programming</li>
+                            <li>Solve problems from business and economics using LPP</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Teaching Methodology -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Teaching Methodology</div>
+                    <div class="hindi">शिक्षण पद्धति</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <p><strong>Periods 1-2: Introduction to Optimization & Problem Formulation</strong></p>
+                        <ul>
+                            <li>Starter: Furniture dealer case study from NCERT</li>
+                            <li>Concept: Objective functions and constraints</li>
+                            <li>Activity: Formulating LPPs from real-world scenarios</li>
+                        </ul>
+                        
+                        <p><strong>Periods 3-4: Graphical Method & Feasible Regions</strong></p>
+                        <ul>
+                            <li>Demonstration: Graphing inequalities with GeoGebra</li>
+                            <li>Group Work: Identifying feasible regions</li>
+                            <li>Practice: Solving simple LPPs graphically</li>
+                        </ul>
+                        
+                        <p><strong>Periods 5-6: Corner Point Method</strong></p>
+                        <ul>
+                            <li>Concept: Theorem for optimal solutions at vertices</li>
+                            <li>Case Study: Applying corner point method step-by-step</li>
+                            <li>Worksheet: Calculating values at corner points</li>
+                        </ul>
+                        
+                        <p><strong>Periods 7-8: Special Cases in LPP</strong></p>
+                        <ul>
+                            <li>Analysis: Unbounded and infeasible regions</li>
+                            <li>Discussion: Multiple optimal solutions</li>
+                            <li>Activity: Identifying special cases in problems</li>
+                        </ul>
+                        
+                        <p><strong>Periods 9-10: Applications & Review</strong></p>
+                        <ul>
+                            <li>Practical: Solving business optimization problems</li>
+                            <li>Historical: Linear programming in WWII operations</li>
+                            <li>Assessment: Chapter test and project evaluation</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Skills and Attitude -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Skills and Attitude</div>
+                    <div class="hindi">कौशल एवं दृष्टिकोण</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <ul>
+                            <li>Analytical skills for constraint identification</li>
+                            <li>Visual interpretation of feasible regions</li>
+                            <li>Systematic approach to problem-solving</li>
+                            <li>Critical evaluation of optimal solutions</li>
+                            <li>Practical application mindset</li>
+                            <li>Precision in mathematical formulation</li>
+                            <li>Collaboration in optimization projects</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Competency Based Lesson Plan -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Competency Based Lesson Plan</div>
+                    <div class="hindi">क्षमता आधारित पाठ योजना</div>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="prefilled-content">
+                        <p><strong>Competencies:</strong></p>
+                        <ul>
+                            <li>Mathematical modeling of real-world problems</li>
+                            <li>Graphical interpretation and analysis</li>
+                            <li>Optimal decision-making</li>
+                            <li>Resource optimization thinking</li>
+                            <li>Critical evaluation of constraints</li>
+                        </ul>
+                        
+                        <p><strong>Activities:</strong></p>
+                        <ul>
+                            <li>Production Challenge: Optimize furniture manufacturing</li>
+                            <li>Farm Planning: Maximize crop yield with resource constraints</li>
+                            <li>Diet Optimization: Design nutritious meal plans</li>
+                            <li>Transportation Problem: Minimize logistics costs</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%"><input type="number" class="input-field"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td><input type="text" class="input-field" placeholder="To be completed after teaching"></td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td><textarea class="input-field" placeholder="To be completed after teaching"></textarea></td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px; color: #777; font-size: 14px;">
+            Note: Fields marked with * are mandatory | ध्यान दें: * चिह्नित फ़ील्ड अनिवार्य हैं
+        </p>
+    </div>
+    
+    <script>
+        // Prevent form submission on enter key
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('keydown', function(e) {
+                if(e.key === 'Enter' && this.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+            });
+        });
+        
+        // Set today's date as default
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelector('input[type="date"]').value = today;
+    </script>
+</body>
+</html>
