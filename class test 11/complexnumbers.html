@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Class Test - Chapter 4</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a5276, #1c3d5f, #1a5276);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .test-paper {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .test-header {
+            background: linear-gradient(to right, #1a5276, #2874a6);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .test-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .test-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .test-info div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chapter-content {
+            padding: 30px;
+        }
+        
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #5dade2;
+            color: #1a5276;
+            font-size: 1.8rem;
+        }
+        
+        .chapter-title i {
+            background: #3498db;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .questions-container {
+            margin-left: 20px;
+        }
+        
+        .question {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .question:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a5276;
+        }
+        
+        .marks {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .question-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .math {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .test-footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a5276;
+            color: white;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .test-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .chapter-content {
+                padding: 20px 15px;
+            }
+        }
+        
+        .complex-plane {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px auto;
+            display: block;
+        }
+        
+        .complex-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Test Paper 4: Complex Numbers -->
+        <div class="test-paper">
+            <div class="test-header">
+                <h1>Mathematics Class Test</h1>
+                <div class="test-info">
+                    <div><i class="fas fa-book"></i> Chapter 4: Complex Numbers</div>
+                    <div><i class="fas fa-clock"></i> Time: 40 Minutes</div>
+                    <div><i class="fas fa-star"></i> Total Marks: 20</div>
+                </div>
+            </div>
+            
+            <div class="chapter-content">
+                <div class="chapter-title">
+                    <i class="fas fa-complex-num">ℂ</i>
+                    <h2>Chapter 4: Complex Numbers</h2>
+                </div>
+                
+                <div class="questions-container">
+                    <!-- Question 1 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 1</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>If \( x + iy = (3 + 2i)(2 - i) \), then find the value of \( x^2 + y^2 \)</p>
+                            <div class="math">
+                                \[ x + iy = (3 + 2i)(2 - i) \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 2</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Find the sum \( i + i^2 + i^3 + i^4 + \cdots \) up to 1000 terms</p>
+                            <div class="math">
+                                \[ \sum_{k=1}^{1000} i^k \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 3</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>If \( (x - iy)(3 + 5i) \) is the conjugate of \( -6 - 24i \), find the value of \( x + y \)</p>
+                            <div class="math">
+                                \[ (x - iy)(3 + 5i) = \overline{-6 - 24i} \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 4</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>What is the conjugate of the following expression?</p>
+                            <div class="math">
+                                \[ \frac{\sqrt{5 + 12i} + \sqrt{5 - 12i}}{\sqrt{5 + 12i} - \sqrt{5 - 12i}} \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 5</div>
+                            <div class="marks">3 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>Simplify the following expression:</p>
+                            <div class="math">
+                                \[ (1 + i) \frac{2 + i}{3 + i} \]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 6 -->
+                    <div class="question">
+                        <div class="question-header">
+                            <div class="question-number">Question 6</div>
+                            <div class="marks">5 marks</div>
+                        </div>
+                        <div class="question-content">
+                            <p>If \( \alpha \) and \( \beta \) are different complex numbers with \( |\beta| = 1 \), then find:</p>
+                            <div class="math">
+                                \[ \left| \frac{\beta - \alpha}{1 - \alpha\bar{\beta}} \right| \]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test-footer">
+                <p>End of Test | Best of Luck!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const icons = {
+                'fa-book': '📚',
+                'fa-clock': '⏱️',
+                'fa-star': '⭐',
+                'fa-complex-num': 'ℂ'
+            };
+            
+            document.querySelectorAll('i').forEach(icon => {
+                const iconClass = icon.className.replace('fas ', '');
+                if(icons[iconClass]) {
+                    icon.textContent = icons[iconClass];
+                }
+            });
+        });
+    </script>
+</body>
+</html>
