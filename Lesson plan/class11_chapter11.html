@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: 3D Geometry</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 128, 0.2);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title-section h2 {
+            color: #2a5298;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-info {
+            background-color: #e6f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6e;
+            border-left: 4px solid #4a86e8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #b8d1ff;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #d4e3fc;
+            font-weight: bold;
+            color: #1c4587;
+            font-size: 16px;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content-cell {
+            padding: 15px;
+            background-color: #f8fbff;
+            line-height: 1.6;
+        }
+        
+        .content-cell ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .content-cell li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .example {
+            background-color: #f0f8ff;
+            border-left: 3px solid #4a86e8;
+            padding: 10px 15px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #4a86e8;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #1c4587;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .math-concept {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+        }
+        
+        .principle-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a86e8;
+            padding: 12px 15px;
+            margin: 10px 0;
+        }
+        
+        .coordinate-system {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .octant-card {
+            width: 180px;
+            text-align: center;
+            border: 1px solid #b8d1ff;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #f0f8ff;
+        }
+        
+        .octant-card h4 {
+            color: #1c4587;
+            margin-bottom: 8px;
+        }
+        
+        .octant-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background-color: white;
+            border-radius: 4px;
+        }
+        
+        .geometry-example {
+            background-color: #fff8e6;
+            border: 1px solid #ffd54f;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .formula {
+            font-family: 'Cambria Math', serif;
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #e6f7ff;
+            border-radius: 4px;
+        }
+        
+        .octant-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .octant-table th, .octant-table td {
+            border: 1px solid #4a86e8;
+            text-align: center;
+            padding: 8px;
+        }
+        
+        .octant-table th {
+            background-color: #d4e3fc;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+            <div class="chapter-info">
+                Chapter: Introduction to Three Dimensional Geometry | Class: XI Mathematics
+            </div>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%">[DD/MM/YYYY]</td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%">XI Science</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td>Mathematics</td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td>3D Coordinate Geometry</td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td>6</td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td colspan="3">
+                    NCERT Mathematics Textbook Chapter 11 + Teacher's Enhancement
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td colspan="3">[Teacher's Name]</td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>Introduction to 3D coordinate system: Extending from 2D to 3D</li>
+                        <li>Coordinate axes (X, Y, Z) and coordinate planes (XY, YZ, ZX)</li>
+                        <li>Octants: The eight divisions of 3D space</li>
+                        <li>Coordinates of a point in space: Ordered triplet (x, y, z)</li>
+                        <li>Sign conventions in different octants</li>
+                        <li>Distance formula in 3D space: 
+                            <span class="math-concept">\[ \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2} \]</span>
+                        </li>
+                        <li>Applications: Collinearity of points, properties of geometric figures</li>
+                        <li>Section formula and centroid (brief introduction)</li>
+                    </ul>
+                    
+                    <div class="coordinate-system">
+                        <div class="octant-card">
+                            <h4>3D Coordinate System</h4>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGxpbmUgeDE9IjUwIiB5MT0iMTAiIHgyPSI1MCIgeTI9IjkwIiBzdHJva2U9IiMxYzQ1ODciIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMCIgeTE9IjUwIiB4Mj0iOTAiIHkyPSI1MCIgc3Ryb2tlPSIjMWM0NTg3IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjAiIHkxPSIyMCIgeDI9IjgwIiB5Mj0iODAiIHN0cm9rZT0iIzFjNDU4NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTUiIHk9IjE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOCI+WjwvdGV4dD48dGV4dCB4PSI5MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI4Ij5YPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIxNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjgiPlk8L3RleHQ+PC9zdmc+" alt="3D Coordinate System">
+                        </div>
+                        <div class="octant-card">
+                            <h4>Coordinate Planes</h4>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBvbHlnb24gcG9pbnRzPSI1MCwxMCAxMCw1MCA1MCw5MCA5MCw1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWM0NTg3IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNTAiIHkxPSIxMCIgeDI9IjUwIiB5Mj0iOTAiIHN0cm9rZT0iIzFjNDU4NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjEwIiB5MT0iNTAiIHgyPSI5MCIgeTI9IjUwIiBzdHJva2U9IiMxYzQ1ODciIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjU1IiB5PSIxNSI+Wlo8L3RleHQ+PHRleHQgeD0iOTAiIHk9IjU1Ij5YWTwvdGV4dD48dGV4dCB4PSIyMCIgeT0iMTUiPlhZPC90ZXh0Pjwvc3ZnPg==" alt="Coordinate Planes">
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <strong>Key Concept:</strong> In 3D space, we extend the 2D coordinate system by adding a third axis (Z-axis) perpendicular to the XY-plane. Any point in space can be represented by an ordered triplet (x, y, z).
+                    </div>
+                    
+                    <div class="geometry-example">
+                        <strong>Example: Distance Calculation</strong><br>
+                        Find distance between P(1,-3,4) and Q(-4,1,2)<br>
+                        Solution: 
+                        <span class="math-concept">\[ \sqrt{(-4-1)^2 + (1+3)^2 + (2-4)^2} = \sqrt{25+16+4} = \sqrt{45} = 3\sqrt{5} \]</span>
+                    </div>
+                    
+                    <h4>Octants and Sign Conventions</h4>
+                    <table class="octant-table">
+                        <tr>
+                            <th>Octant</th>
+                            <th>x-sign</th>
+                            <th>y-sign</th>
+                            <th>z-sign</th>
+                        </tr>
+                        <tr>
+                            <td>I (XOYZ)</td>
+                            <td>+</td>
+                            <td>+</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>II (X'OYZ)</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>III (X'OY'Z)</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>IV (XOY'Z)</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>V (XOYZ')</td>
+                            <td>+</td>
+                            <td>+</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>VI (X'OYZ')</td>
+                            <td>-</td>
+                            <td>+</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>VII (X'OY'Z')</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>VIII (XOY'Z')</td>
+                            <td>+</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <p>After studying this chapter, students will be able to:</p>
+                    <ul>
+                        <li>Understand the extension of coordinate geometry from 2D to 3D space</li>
+                        <li>Identify coordinate axes, planes, and octants in 3D space</li>
+                        <li>Determine the coordinates of a point in 3D space</li>
+                        <li>Apply sign conventions based on octant location</li>
+                        <li>Calculate distance between two points in 3D space</li>
+                        <li>Verify collinearity of points using distance formula</li>
+                        <li>Solve problems involving geometric shapes in 3D space</li>
+                        <li>Understand the concept of centroid in 3D</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">3D models:</span> Use physical models to demonstrate coordinate axes and planes</li>
+                        <li><span class="highlight">Classroom mapping:</span> Designate classroom walls as coordinate planes</li>
+                        <li><span class="highlight">Technology integration:</span> Use GeoGebra 3D for visualization</li>
+                        <li><span class="highlight">Real-world examples:</span> Use GPS coordinates, aircraft navigation</li>
+                        <li><span class="highlight">Group activities:</span> Octant identification exercises</li>
+                        <li><span class="highlight">Problem-solving sessions:</span> Solve NCERT examples step-by-step</li>
+                        <li><span class="highlight">Historical context:</span> Discuss contributions of Descartes and Fermat</li>
+                        <li><span class="highlight">Hands-on activity:</span> Create 3D coordinate systems using strings</li>
+                    </ul>
+                    <div class="geometry-example">
+                        <strong>Activity:</strong> Find which octant contains point (-3,1,2)<br>
+                        Solution: From Table 11.1, x=- (negative), y=+ (positive), z=+ (positive) → Octant II
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Spatial Reasoning:</span> Visualizing objects in 3D space</li>
+                        <li><span class="highlight">Critical Thinking:</span> Analyzing geometric relationships in 3D</li>
+                        <li><span class="highlight">Problem Solving:</span> Applying distance formula to real-world scenarios</li>
+                        <li><span class="highlight">Technical Literacy:</span> Understanding 3D coordinate systems used in technology</li>
+                        <li><span class="highlight">Historical Appreciation:</span> Recognizing Descartes' contributions</li>
+                        <li><span class="highlight">Collaboration:</span> Group activities on octant identification</li>
+                        <li><span class="highlight">Abstraction:</span> Extending 2D concepts to 3D space</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Navigation:</span> GPS systems using 3D coordinates</li>
+                        <li><span class="highlight">Computer Graphics:</span> 3D modeling and animation</li>
+                        <li><span class="highlight">Architecture:</span> Building design and spatial planning</li>
+                        <li><span class="highlight">Aviation:</span> Aircraft position tracking</li>
+                        <li><span class="highlight">Physics:</span> Quantum mechanics and vector fields</li>
+                        <li><span class="highlight">Robotics:</span> Robot movement in 3D space</li>
+                        <li><span class="highlight">Geology:</span> Seismic mapping and underground resource location</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Physics:</span> Vectors in space, motion in 3D</li>
+                        <li><span class="highlight">Computer Science:</span> 3D graphics programming</li>
+                        <li><span class="highlight">Engineering:</span> Structural design and analysis</li>
+                        <li><span class="highlight">Geography:</span> Topographic mapping</li>
+                        <li><span class="highlight">Art and Design:</span> Perspective drawing and 3D modeling</li>
+                        <li><span class="highlight">History of Mathematics:</span> Development of coordinate geometry</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Formative Assessment:</span>
+                            <ul>
+                                <li>Classroom exercises: Identifying octants</li>
+                                <li>Quick quizzes: Distance calculations</li>
+                                <li>Group activities: 3D coordinate mapping</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Summative Assessment:</span>
+                            <ul>
+                                <li>Chapter test including:
+                                    <ul>
+                                        <li>Finding coordinates of points</li>
+                                        <li>Calculating distances in 3D space</li>
+                                        <li>Verifying collinearity of points</li>
+                                        <li>Identifying properties of geometric figures</li>
+                                        <li>Solving real-world application problems</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Assignment:</span> Create a 3D model of classroom with coordinate system</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>NCERT Class 11 Mathematics Textbook (Chapter 11)</li>
+                        <li>3D coordinate system models</li>
+                        <li>String and cardboard for creating 3D frames</li>
+                        <li>Digital resources:
+                            <ul>
+                                <li>GeoGebra 3D graphing tools</li>
+                                <li>Online 3D coordinate system simulators</li>
+                                <li>Khan Academy videos on 3D geometry</li>
+                                <li>Interactive octant visualization tools</li>
+                            </ul>
+                        </li>
+                        <li>Historical documents on Descartes and coordinate geometry</li>
+                        <li>Real-world examples: GPS coordinates, architectural blueprints</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%">[To be completed after teaching]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td>Extra sessions on visualization of 3D space and octant identification</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <ul>
+                        <li>Visualizing points in different octants</li>
+                        <li>Applying distance formula in 3D</li>
+                        <li>Understanding coordinate planes and axes</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="h Hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+        </div>
+        
+        <p class="footer-note">
+            Note: This lesson plan covers 6 periods and follows NCERT guidelines for Class 11 Mathematics Chapter 11.
+        </p>
+    </div>
+</body>
+</html>

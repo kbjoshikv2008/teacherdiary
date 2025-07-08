@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Probability</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 128, 0.2);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title-section h2 {
+            color: #2a5298;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-info {
+            background-color: #e6f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6e;
+            border-left: 4px solid #4a86e8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #b8d1ff;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #d4e3fc;
+            font-weight: bold;
+            color: #1c4587;
+            font-size: 16px;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content-cell {
+            padding: 15px;
+            background-color: #f8fbff;
+            line-height: 1.6;
+        }
+        
+        .content-cell ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .content-cell li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .example {
+            background-color: #f0f8ff;
+            border-left: 3px solid #4a86e8;
+            padding: 10px 15px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #4a86e8;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #1c4587;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .math-concept {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+        }
+        
+        .principle-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a86e8;
+            padding: 12px 15px;
+            margin: 10px 0;
+        }
+        
+        .probability-example {
+            background-color: #fff8e6;
+            border: 1px solid #ffd54f;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+            <div class="chapter-info">
+                Chapter: Probability | Class: XI Mathematics
+            </div>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%">[DD/MM/YYYY]</td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%">XI Science</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td>Mathematics</td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td>Probability</td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td>10</td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td colspan="3">
+                    NCERT Mathematics Textbook Chapter 16 + Teacher's Enhancement
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td colspan="3">[Teacher's Name]</td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>Introduction to Random Experiments and Sample Spaces</li>
+                        <li>Events: Types of events (Simple, Compound, Impossible, Sure)</li>
+                        <li>Axiomatic Approach to Probability</li>
+                        <li>Probability of Events: <span class="math-concept">P(E) = n(E)/n(S)</span></li>
+                        <li>Probability of Complementary Events: <span class="math-concept">P(E') = 1 - P(E)</span></li>
+                        <li>Mutually Exclusive and Exhaustive Events</li>
+                        <li>Independent Events and Multiplication Theorem</li>
+                        <li>Conditional Probability: <span class="math-concept">P(A|B) = P(A∩B)/P(B)</span></li>
+                        <li>Baye's Theorem and its Applications</li>
+                        <li>Random Variables and Probability Distributions</li>
+                        <li>Mean and Variance of Random Variables</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Key Concept:</strong> Probability measures the likelihood of occurrence of events: 
+                        <span class="math-concept">0 ≤ P(E) ≤ 1</span>
+                    </div>
+                    <div class="probability-example">
+                        <strong>Sample Problem:</strong> A die is thrown. Find the probability of getting:<br>
+                        (a) A prime number<br>
+                        (b) A number greater than 4<br>
+                        Solution:<br>
+                        Sample space S = {1,2,3,4,5,6}<br>
+                        (a) P(prime) = P{2,3,5} = 3/6 = 1/2<br>
+                        (b) P(>4) = P{5,6} = 2/6 = 1/3
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <p>After studying this chapter, students will be able to:</p>
+                    <ul>
+                        <li>Define random experiments, outcomes, and sample spaces</li>
+                        <li>Differentiate between various types of events</li>
+                        <li>Apply axiomatic approach to calculate probabilities</li>
+                        <li>Compute probabilities of complementary and compound events</li>
+                        <li>Determine when events are mutually exclusive or independent</li>
+                        <li>Calculate conditional probabilities using appropriate formulas</li>
+                        <li>Apply Baye's theorem to solve practical problems</li>
+                        <li>Define random variables and construct probability distributions</li>
+                        <li>Compute mean and variance of random variables</li>
+                        <li>Solve real-world problems using probability concepts</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Experimental learning:</span> Use coin tosses, dice rolls to demonstrate probability concepts</li>
+                        <li><span class="highlight">Visual aids:</span> Venn diagrams for event relationships and probability calculations</li>
+                        <li><span class="highlight">Real-world application:</span> Analyze probability in weather forecasting, games, insurance</li>
+                        <li><span class="highlight">Group activities:</span> Probability experiments with cards, dice, and spinners</li>
+                        <li><span class="highlight">Technology integration:</span> Use probability simulators and Excel for data analysis</li>
+                        <li><span class="highlight">Case studies:</span> Medical diagnosis using Baye's theorem</li>
+                        <li><span class="highlight">Problem-solving sessions:</span> Step-by-step modeling of probability problems</li>
+                    </ul>
+                    <div class="probability-example">
+                        <strong>Sample Activity:</strong> The Birthday Paradox<br>
+                        Students calculate the probability that two people in a group share the same birthday.<br>
+                        For 23 people: P(at least one shared birthday) ≈ 50.7%<br>
+                        This demonstrates counterintuitive probability concepts.
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Critical Thinking:</span> Evaluating risk and uncertainty in decisions</li>
+                        <li><span class="highlight">Data Analysis:</span> Interpreting probabilistic information</li>
+                        <li><span class="highlight">Logical Reasoning:</span> Understanding relationships between events</li>
+                        <li><span class="highlight">Ethical Decision Making:</span> Considering probabilities in moral choices</li>
+                        <li><span class="highlight">Financial Literacy:</span> Understanding insurance and investment risks</li>
+                        <li><span class="highlight">Scientific Temper:</span> Applying probability in research and experiments</li>
+                        <li><span class="highlight">Problem Solving:</span> Developing strategies for probabilistic scenarios</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Weather Forecasting:</span> Probability of precipitation</li>
+                        <li><span class="highlight">Medical Field:</span> Disease diagnosis and treatment success rates</li>
+                        <li><span class="highlight">Finance:</span> Risk assessment in investments and insurance</li>
+                        <li><span class="highlight">Gaming Industry:</span> Odds calculation in casinos and lotteries</li>
+                        <li><span class="highlight">Quality Control:</span> Probability in manufacturing defect detection</li>
+                        <li><span class="highlight">Artificial Intelligence:</span> Probability in machine learning algorithms</li>
+                        <li><span class="highlight">Sports Analytics:</span> Predicting game outcomes and player performance</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Biology:</span> Genetics and inheritance probabilities</li>
+                        <li><span class="highlight">Physics:</span> Quantum mechanics and uncertainty principle</li>
+                        <li><span class="highlight">Economics:</span> Market predictions and risk analysis</li>
+                        <li><span class="highlight">Computer Science:</span> Algorithms and data analysis</li>
+                        <li><span class="highlight">Psychology:</span> Behavioral prediction models</li>
+                        <li><span class="highlight">Chemistry:</span> Reaction probabilities and equilibrium</li>
+                        <li><span class="highlight">Social Sciences:</span> Polling and survey analysis</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Formative Assessment:</span>
+                            <ul>
+                                <li>Classroom quizzes on basic probability concepts</li>
+                                <li>Group presentations on real-life applications</li>
+                                <li>Worksheets on probability calculations</li>
+                                <li>Online MCQ tests using learning platforms</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Summative Assessment:</span>
+                            <ul>
+                                <li>Chapter test including:
+                                    <ul>
+                                        <li>Probability of simple and compound events</li>
+                                        <li>Conditional probability problems</li>
+                                        <li>Baye's theorem applications</li>
+                                        <li>Random variables and distributions</li>
+                                        <li>Mean and variance calculations</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Project Work:</span> Statistical analysis of real-world probability scenarios</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>NCERT Class 11 Mathematics Textbook (Chapter 16)</li>
+                        <li>Probability kits with dice, cards, coins, and spinners</li>
+                        <li>Worksheets with real-life probability scenarios</li>
+                        <li>Digital resources:
+                            <ul>
+                                <li>Geogebra probability simulations</li>
+                                <li>Khan Academy videos on probability</li>
+                                <li>Online random number generators</li>
+                                <li>Probability calculator apps</li>
+                            </ul>
+                        </li>
+                        <li>Historical documents on Pascal, Fermat, and Kolmogorov</li>
+                        <li>Case studies on probability in decision making</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%">[To be completed after teaching]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td>Extra sessions on conditional probability and Baye's theorem</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <ul>
+                        <li>Understanding conditional probability</li>
+                        <li>Applying Baye's theorem to practical problems</li>
+                        <li>Calculating variance of random variables</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+        </div>
+        
+        <p class="footer-note">
+            Note: This lesson plan covers 10 periods and follows NCERT guidelines for Class 11 Mathematics Chapter 16.
+        </p>
+    </div>
+</body>
+</html>

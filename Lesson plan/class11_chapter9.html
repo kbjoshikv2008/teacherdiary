@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Straight Lines</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 128, 0.2);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title-section h2 {
+            color: #2a5298;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-info {
+            background-color: #e6f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6e;
+            border-left: 4px solid #4a86e8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #b8d1ff;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #d4e3fc;
+            font-weight: bold;
+            color: #1c4587;
+            font-size: 16px;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content-cell {
+            padding: 15px;
+            background-color: #f8fbff;
+            line-height: 1.6;
+        }
+        
+        .content-cell ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .content-cell li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .example {
+            background-color: #f0f8ff;
+            border-left: 3px solid #4a86e8;
+            padding: 10px 15px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #4a86e8;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #1c4587;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .math-concept {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+        }
+        
+        .principle-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a86e8;
+            padding: 12px 15px;
+            margin: 10px 0;
+        }
+        
+        .slope-visual {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .slope-box {
+            background-color: #e6f7ff;
+            border: 1px solid #4a86e8;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            min-width: 120px;
+            margin: 5px;
+        }
+        
+        .line-example {
+            background-color: #fff8e6;
+            border: 1px solid #ffd54f;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+            <div class="chapter-info">
+                Chapter: Straight Lines | Class: XI Mathematics
+            </div>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%">[DD/MM/YYYY]</td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%">XI Science</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td>Mathematics</td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td>Straight Lines</td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td>10</td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td colspan="3">
+                    NCERT Mathematics Textbook Chapter 9 + Teacher's Enhancement
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td colspan="3">[Teacher's Name]</td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>Introduction to coordinate geometry and straight lines</li>
+                        <li>Slope of a line: Definition and calculation methods</li>
+                        <li>Angle between two lines and conditions for parallelism/perpendicularity</li>
+                        <li>Various forms of line equations:
+                            <ul>
+                                <li>Horizontal and vertical lines</li>
+                                <li>Point-slope form: <span class="math-concept">y - y₁ = m(x - x₁)</span></li>
+                                <li>Two-point form: <span class="math-concept">y - y₁ = \frac{y₂ - y₁}{x₂ - x₁}(x - x₁)</span></li>
+                                <li>Slope-intercept form: <span class="math-concept">y = mx + c</span></li>
+                                <li>Intercept form: <span class="math-concept">\frac{x}{a} + \frac{y}{b} = 1</span></li>
+                            </ul>
+                        </li>
+                        <li>General equation of a line: <span class="math-concept">Ax + By + C = 0</span></li>
+                        <li>Distance of a point from a line: <span class="math-concept">d = \frac{|Ax₁ + By₁ + C|}{\sqrt{A² + B²}}</span></li>
+                        <li>Distance between two parallel lines</li>
+                        <li>Collinearity of points and applications</li>
+                    </ul>
+                    <div class="example">
+                        <strong>Key Concept:</strong> The slope (m) of a line passing through points (x₁, y₁) and (x₂, y₂) is given by:
+                        <span class="math-concept">m = \frac{y₂ - y₁}{x₂ - x₁}</span>
+                    </div>
+                    <div class="slope-visual">
+                        <div class="slope-box">
+                            Positive Slope<br>(m > 0)
+                        </div>
+                        <div class="slope-box">
+                            Negative Slope<br>(m < 0)
+                        </div>
+                        <div class="slope-box">
+                            Zero Slope<br>(m = 0)
+                        </div>
+                        <div class="slope-box">
+                            Undefined Slope<br>(Vertical Line)
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <p>After studying this chapter, students will be able to:</p>
+                    <ul>
+                        <li>Understand and calculate the slope of a line using different methods</li>
+                        <li>Determine when two lines are parallel or perpendicular based on their slopes</li>
+                        <li>Derive and apply different forms of line equations</li>
+                        <li>Calculate the distance of a point from a line</li>
+                        <li>Find the distance between parallel lines</li>
+                        <li>Solve problems involving collinear points</li>
+                        <li>Apply straight line concepts to real-world situations</li>
+                        <li>Convert between different forms of line equations</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Visual demonstrations:</span> Use coordinate grids to illustrate slope concepts</li>
+                        <li><span class="highlight">Real-world connections:</span> Show applications in architecture, engineering, and navigation</li>
+                        <li><span class="highlight">Hands-on activities:</span> String-and-pin models to demonstrate line equations</li>
+                        <li><span class="highlight">Technology integration:</span> Use graphing software to visualize line properties</li>
+                        <li><span class="highlight">Historical context:</span> Discuss René Descartes' contributions to coordinate geometry</li>
+                        <li><span class="highlight">Step-by-step modeling:</span> Teacher demonstration of deriving line equations</li>
+                        <li><span class="highlight">Collaborative learning:</span> Group problem-solving activities</li>
+                    </ul>
+                    <div class="line-example">
+                        <strong>Sample Activity:</strong> Find the equation of a line passing through (3, -2) with slope -4.<br>
+                        Solution: Using point-slope form: y - (-2) = -4(x - 3)<br>
+                        → y + 2 = -4x + 12<br>
+                        → 4x + y - 10 = 0
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education / Vocational skills</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा / व्यावसायिक कौशल</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Spatial Reasoning:</span> Visualizing geometric relationships on coordinate planes</li>
+                        <li><span class="highlight">Analytical Thinking:</span> Solving problems involving slopes and distances</li>
+                        <li><span class="highlight">Precision:</span> Accurate calculation of slopes and distances</li>
+                        <li><span class="highlight">Technical Application:</span> Applying concepts to engineering and design</li>
+                        <li><span class="highlight">Problem Solving:</span> Addressing real-world geometric challenges</li>
+                        <li><span class="highlight">Logical Reasoning:</span> Proving geometric properties algebraically</li>
+                        <li><span class="highlight">Digital Literacy:</span> Using graphing tools for visualization</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Architecture:</span> Designing structures with precise angles and slopes</li>
+                        <li><span class="highlight">Civil Engineering:</span> Road gradient calculations and construction planning</li>
+                        <li><span class="highlight">Robotics:</span> Path planning and navigation algorithms</li>
+                        <li><span class="highlight">Economics:</span> Creating linear demand and supply models</li>
+                        <li><span class="highlight">Computer Graphics:</span> Rendering straight lines in digital environments</li>
+                        <li><span class="highlight">Geography:</span> Topographic map interpretation and slope analysis</li>
+                        <li><span class="highlight">Physics:</span> Analyzing motion along straight paths</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Physics:</span> Vector components and projectile motion</li>
+                        <li><span class="highlight">Computer Science:</span> Algorithm development for line drawing</li>
+                        <li><span class="highlight">Economics:</span> Linear regression models</li>
+                        <li><span class="highlight">Geography:</span> Terrain slope calculations</li>
+                        <li><span class="highlight">Art and Design:</span> Perspective drawing techniques</li>
+                        <li><span class="highlight">History of Mathematics:</span> Contributions of René Descartes</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Formative Assessment:</span>
+                            <ul>
+                                <li>Classroom exercises: Calculating slopes and equations</li>
+                                <li>Quick quizzes on line properties</li>
+                                <li>Group activities: Deriving line equations</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Summative Assessment:</span>
+                            <ul>
+                                <li>Chapter test including:
+                                    <ul>
+                                        <li>Finding slopes between points</li>
+                                        <li>Determining parallel/perpendicular lines</li>
+                                        <li>Deriving line equations in different forms</li>
+                                        <li>Calculating point-line distances</li>
+                                        <li>Solving real-world application problems</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Assignment:</span> Research project on applications of straight lines in architecture</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>NCERT Class 11 Mathematics Textbook (Chapter 9)</li>
+                        <li>Coordinate geometry kits with grids and markers</li>
+                        <li>Slope calculation worksheets with real-world examples</li>
+                        <li>Digital resources:
+                            <ul>
+                                <li>Geogebra for line visualization</li>
+                                <li>Desmos graphing calculator</li>
+                                <li>Khan Academy videos on coordinate geometry</li>
+                                <li>Interactive slope calculators</li>
+                            </ul>
+                        </li>
+                        <li>Historical documents on René Descartes</li>
+                        <li>Physical models demonstrating parallel/perpendicular lines</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%">[To be completed after teaching]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td>Extra sessions on distance formula and line equations</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <ul>
+                        <li>Angle between two lines</li>
+                        <li>Distance from point to line</li>
+                        <li>Intercept form applications</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+        </div>
+        
+        <p class="footer-note">
+            Note: This lesson plan covers 10 periods and follows NCERT guidelines for Class 11 Mathematics Chapter 9.
+        </p>
+    </div>
+</body>
+</html>

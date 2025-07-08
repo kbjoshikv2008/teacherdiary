@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Plan: Conic Sections</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f5ff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 21cm;
+            background-color: white;
+            box-shadow: 0 0 25px rgba(0, 0, 128, 0.2);
+            padding: 1.5cm;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .title-section {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1c4587;
+        }
+        
+        .title-section h1 {
+            color: #1c4587;
+            font-size: 32px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .title-section h2 {
+            color: #2a5298;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .chapter-info {
+            background-color: #e6f0ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 18px;
+            color: #1a3a6e;
+            border-left: 4px solid #4a86e8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        th, td {
+            border: 1px solid #b8d1ff;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #d4e3fc;
+            font-weight: bold;
+            color: #1c4587;
+            font-size: 16px;
+        }
+        
+        .bilingual {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+        
+        .english {
+            font-weight: bold;
+            color: #1c4587;
+            margin-bottom: 3px;
+        }
+        
+        .hindi {
+            font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+            color: #333;
+            font-size: 15px;
+        }
+        
+        .content-cell {
+            padding: 15px;
+            background-color: #f8fbff;
+            line-height: 1.6;
+        }
+        
+        .content-cell ul {
+            padding-left: 25px;
+            margin: 10px 0;
+        }
+        
+        .content-cell li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #e6f7ff;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        
+        .example {
+            background-color: #f0f8ff;
+            border-left: 3px solid #4a86e8;
+            padding: 10px 15px;
+            margin: 12px 0;
+            font-size: 15px;
+        }
+        
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .signature-box {
+            width: 45%;
+            padding: 15px;
+            border: 1px dashed #4a86e8;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .signature-box p {
+            margin: 0;
+            font-weight: bold;
+            color: #1c4587;
+        }
+        
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(to bottom, #1c4587, #0d3268);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 16px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .math-concept {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+        }
+        
+        .principle-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #4a86e8;
+            padding: 12px 15px;
+            margin: 10px 0;
+        }
+        
+        .conic-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .conic-card {
+            width: 180px;
+            text-align: center;
+            border: 1px solid #b8d1ff;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #f0f8ff;
+        }
+        
+        .conic-card h4 {
+            color: #1c4587;
+            margin-bottom: 8px;
+        }
+        
+        .conic-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            background-color: white;
+            border-radius: 4px;
+        }
+        
+        .conic-example {
+            background-color: #fff8e6;
+            border: 1px solid #ffd54f;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .formula {
+            font-family: 'Cambria Math', serif;
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #e6f7ff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">Print Lesson Plan</button>
+    
+    <div class="container">
+        <div class="title-section">
+            <h1>Lesson Plan Organiser</h1>
+            <h2>शिक्षण योजना आयोजक</h2>
+            <div class="chapter-info">
+                Chapter: Conic Sections | Class: XI Mathematics
+            </div>
+        </div>
+        
+        <!-- General Facts Section -->
+        <table>
+            <tr>
+                <th colspan="4" class="bilingual">
+                    <div class="english">General Facts</div>
+                    <div class="hindi">सामान्य तथ्य</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Date</div>
+                    <div class="hindi">दिनांक</div>
+                </td>
+                <td width="25%">[DD/MM/YYYY]</td>
+                <td width="25%" class="bilingual">
+                    <div class="english required">Class and Section</div>
+                    <div class="hindi">कक्षा एवं अनुभाग</div>
+                </td>
+                <td width="25%">XI Science</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Subject</div>
+                    <div class="hindi">विषय</div>
+                </td>
+                <td>Mathematics</td>
+                <td class="bilingual">
+                    <div class="english required">Number of Enrolled Students</div>
+                    <div class="hindi">नामांकित छात्रों की संख्या</div>
+                </td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">Chapter/Topic</div>
+                    <div class="hindi">अध्याय/विषय</div>
+                </td>
+                <td>Conic Sections</td>
+                <td class="bilingual">
+                    <div class="english required">Date of Commencement</div>
+                    <div class="hindi">प्रारंभ करने की तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english required">No. of Periods Required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td>8</td>
+                <td class="bilingual">
+                    <div class="english">Actual Date of Completion</div>
+                    <div class="hindi">वास्तविक पूर्णता तिथि</div>
+                </td>
+                <td>[DD/MM/YYYY]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Source of the Lesson Plan</div>
+                    <div class="hindi">पाठ योजना का स्रोत</div>
+                </td>
+                <td colspan="3">
+                    NCERT Mathematics Textbook Chapter 10 + Teacher's Enhancement
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Lesson Plan Developer</div>
+                    <div class="hindi">पाठ योजना विकासकर्ता</div>
+                </td>
+                <td colspan="3">[Teacher's Name]</td>
+            </tr>
+        </table>
+        
+        <!-- Content and Concepts -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Content and Concepts</div>
+                    <div class="hindi">विषयवस्तु एवं संकल्पनाएँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>Introduction to conic sections as intersections of a plane with a double-napped cone</li>
+                        <li>Circle: Definition, standard equation, center, radius</li>
+                        <li>Parabola: Definition, standard equations (y²=4ax, x²=4ay, etc.), focus, directrix, vertex, latus rectum</li>
+                        <li>Ellipse: Definition, standard equations, foci, vertices, major/minor axis, eccentricity, latus rectum</li>
+                        <li>Hyperbola: Definition, standard equations, foci, vertices, transverse/conjugate axis, eccentricity, latus rectum</li>
+                        <li>Degenerated conic sections: Point, straight line, intersecting lines</li>
+                        <li>Applications in real-world scenarios (planetary motion, reflectors, etc.)</li>
+                    </ul>
+                    
+                    <div class="conic-diagram">
+                        <div class="conic-card">
+                            <h4>Circle</h4>
+                            <div class="formula">(x-h)² + (y-k)² = r²</div>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjNDU4NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="Circle">
+                        </div>
+                        <div class="conic-card">
+                            <h4>Parabola</h4>
+                            <div class="formula">y² = 4ax</div>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTEwIDgwIEMzMCAzMCw1MCAxMCw3MCAzMCw5MCA4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWM0NTg3IiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=" alt="Parabola">
+                        </div>
+                        <div class="conic-card">
+                            <h4>Ellipse</h4>
+                            <div class="formula">x²/a² + y²/b² = 1</div>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGVsbGlwc2UgY3g9IjUwIiBjeT0iNTAiIHJ4PSI0MCIgcnk9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzQ1ODciIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="Ellipse">
+                        </div>
+                        <div class="conic-card">
+                            <h4>Hyperbola</h4>
+                            <div class="formula">x²/a² - y²/b² = 1</div>
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTEwIDgwIEMyNSA0MCw0MCAxMCw2MCAxMCw4NSA0MCwxMDAgODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjNDU4NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTTEwIDIwIEMyNSA2MCw0MCA5MCw2MCA5MCw4NSA2MCwxMDAgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFjNDU4NyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="Hyperbola">
+                        </div>
+                    </div>
+                    
+                    <div class="example">
+                        <strong>Key Concept:</strong> Conic sections are curves formed by the intersection of a plane with a double-napped cone. The type of curve depends on the angle between the plane and the cone's axis.
+                    </div>
+                    
+                    <div class="conic-example">
+                        <strong>Example: Circle</strong><br>
+                        Find the equation of the circle with center (-3, 2) and radius 4.<br>
+                        Solution: Using (x - h)² + (y - k)² = r²<br>
+                        (x + 3)² + (y - 2)² = 16
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Learning Outcomes -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Learning Outcomes (NCERT)</div>
+                    <div class="hindi">अधिगम उपलब्धियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <p>After studying this chapter, students will be able to:</p>
+                    <ul>
+                        <li>Understand the geometric definition of conic sections</li>
+                        <li>Derive and apply standard equations of circles, parabolas, ellipses, and hyperbolas</li>
+                        <li>Identify key elements of conic sections (focus, directrix, vertex, latus rectum)</li>
+                        <li>Calculate eccentricity for ellipses and hyperbolas</li>
+                        <li>Solve problems involving conic sections in various orientations</li>
+                        <li>Apply conic sections to solve real-world problems</li>
+                        <li>Distinguish between different conic sections based on equations</li>
+                        <li>Understand the degenerate cases of conic sections</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Pedagogical Strategies -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Pedagogical Strategies</div>
+                    <div class="hindi">शैक्षणिक रणनीतियाँ</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Visual demonstration:</span> Use physical models to show how conic sections are formed from a cone</li>
+                        <li><span class="highlight">Interactive software:</span> Use GeoGebra to visualize conic sections and their properties</li>
+                        <li><span class="highlight">Real-world examples:</span> Show applications in astronomy (planetary orbits), engineering (parabolic reflectors)</li>
+                        <li><span class="highlight">Group activities:</span> Have students derive standard equations in groups</li>
+                        <li><span class="highlight">Problem-solving sessions:</span> Solve NCERT examples step-by-step</li>
+                        <li><span class="highlight">Historical context:</span> Discuss contributions of Apollonius (262-190 B.C.)</li>
+                        <li><span class="highlight">Hands-on activity:</span> Construct conic sections using paper cones and planes</li>
+                    </ul>
+                    <div class="conic-example">
+                        <strong>Activity:</strong> Calculate the focus and directrix of parabola y² = 12x<br>
+                        Solution: Comparing with y² = 4ax ⇒ 4a = 12 ⇒ a = 3<br>
+                        Focus: (3, 0), Directrix: x = -3
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- 21st Century Skills -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">21st Century Skills / Value Education</div>
+                    <div class="hindi">21वीं सदी के कौशल / मूल्य शिक्षा</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Spatial Visualization:</span> Understanding 3D relationships in conic formation</li>
+                        <li><span class="highlight">Critical Thinking:</span> Analyzing equations to identify conic sections</li>
+                        <li><span class="highlight">Problem Solving:</span> Applying conic sections to real-world scenarios</li>
+                        <li><span class="highlight">Precision:</span> Accurate calculation of conic section parameters</li>
+                        <li><span class="highlight">Historical Appreciation:</span> Recognizing Apollonius's contributions</li>
+                        <li><span class="highlight">Collaboration:</span> Working in groups on derivation activities</li>
+                        <li><span class="highlight">Technology Integration:</span> Using software for visualization</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Extension Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Extension / Real life applications</div>
+                    <div class="hindi">विस्तार / वास्तविक जीवन अनुप्रयोग</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Astronomy:</span> Planetary orbits (elliptical paths)</li>
+                        <li><span class="highlight">Engineering:</span> Parabolic reflectors in telescopes, antennas, and headlights</li>
+                        <li><span class="highlight">Architecture:</span> Parabolic arches, elliptical domes</li>
+                        <li><span class="highlight">Physics:</span> Trajectories of projectiles (parabolic paths)</li>
+                        <li><span class="highlight">Medical:</span> Elliptical training machines</li>
+                        <li><span class="highlight">Art:</span> Conic sections in design and perspective</li>
+                        <li><span class="highlight">Navigation:</span> Hyperbolic navigation systems</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Integration Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Integration with other subjects</div>
+                    <div class="hindi">अन्य विषयों के साथ एकीकरण</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Physics:</span> Orbital mechanics, projectile motion</li>
+                        <li><span class="highlight">Astronomy:</span> Kepler's laws of planetary motion</li>
+                        <li><span class="highlight">Engineering:</span> Structural design with arches and domes</li>
+                        <li><span class="highlight">Art and Design:</span> Perspective drawing, curved structures</li>
+                        <li><span class="highlight">History of Mathematics:</span> Contributions of Apollonius</li>
+                        <li><span class="highlight">Geography:</span> Mapping elliptical orbits</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Assessment Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Assessment (Item Format)</div>
+                    <div class="hindi">मूल्यांकन (मद प्रारूप)</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li><span class="highlight">Formative Assessment:</span>
+                            <ul>
+                                <li>Classroom exercises: Identifying conic sections from equations</li>
+                                <li>Quick quizzes: Calculating foci, directrix, vertices</li>
+                                <li>Group presentations: Real-world applications</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Summative Assessment:</span>
+                            <ul>
+                                <li>Chapter test including:
+                                    <ul>
+                                        <li>Deriving standard equations</li>
+                                        <li>Finding elements of conic sections</li>
+                                        <li>Solving application problems</li>
+                                        <li>Identifying conic sections from equations</li>
+                                        <li>Problems on eccentricity and latus rectum</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Assignment:</span> Research project on historical development of conic sections</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Resources Section -->
+        <table>
+            <tr>
+                <th class="bilingual">
+                    <div class="english">Resources / Digital / Physical</div>
+                    <div class="hindi">संसाधन / डिजिटल / भौतिक</div>
+                </th>
+            </tr>
+            <tr>
+                <td class="content-cell">
+                    <ul>
+                        <li>NCERT Class 11 Mathematics Textbook (Chapter 10)</li>
+                        <li>Physical models of cones and planes</li>
+                        <li>Conic sections worksheets with problems</li>
+                        <li>Digital resources:
+                            <ul>
+                                <li>GeoGebra applets for conic section visualization</li>
+                                <li>Interactive cone-plane intersection simulations</li>
+                                <li>Khan Academy videos on conic sections</li>
+                                <li>Online graphing tools for plotting conic sections</li>
+                            </ul>
+                        </li>
+                        <li>Historical documents on Apollonius and conic sections</li>
+                        <li>Images of real-world conic section applications</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Post Teaching Reflection -->
+        <table>
+            <tr>
+                <th colspan="2" class="bilingual">
+                    <div class="english">Post Teaching Reflection</div>
+                    <div class="hindi">शिक्षण पश्चात चिंतन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="50%" class="bilingual">
+                    <div class="english">No. of periods required</div>
+                    <div class="hindi">आवश्यक अवधियों की संख्या</div>
+                </td>
+                <td width="50%">[To be completed after teaching]</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Planning for remedial teaching</div>
+                    <div class="hindi">उपचारात्मक शिक्षण हेतु योजना</div>
+                </td>
+                <td>Extra sessions on standard equation derivation and parameter calculation</td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Concepts for which remedial classes are required</div>
+                    <div class="hindi">जिन संकल्पनाओं हेतु उपचारात्मक कक्षाओं की आवश्यकता है</div>
+                </td>
+                <td>
+                    <ul>
+                        <li>Deriving standard equations from definitions</li>
+                        <li>Calculating eccentricity</li>
+                        <li>Identifying conic sections from general equations</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Self-assessment Section -->
+        <table>
+            <tr>
+                <th colspan="3" class="bilingual">
+                    <div class="english">Self-assessment by the teacher</div>
+                    <div class="hindi">शिक्षक द्वारा स्व-मूल्यांकन</div>
+                </th>
+            </tr>
+            <tr>
+                <td width="70%" class="bilingual">
+                    <div class="english">Were all students engaged in all activities?</div>
+                    <div class="hindi">क्या सभी छात्र सभी गतिविधियों में संलग्न थे?</div>
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td width="15%" style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Were the questions posed to test students' understanding appropriate?</div>
+                    <div class="hindi">क्या छात्रों की समझ परखने के लिए पूछे गए प्रश्न उपयुक्त थे?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to move through the various stages successfully?</div>
+                    <div class="hindi">क्या मैं विभिन्न चरणों में सफलतापूर्वक आगे बढ़ पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Was I able to keep time?</div>
+                    <div class="hindi">क्या मैं समय का पालन कर पाया/पाई?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">How satisfactory has been the implementation of the plan?</div>
+                    <div class="hindi">योजना का कार्यान्वयन कितना संतोषजनक रहा?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+            <tr>
+                <td class="bilingual">
+                    <div class="english">Do I need any modifications in the plan?</div>
+                    <div class="hindi">क्या मुझे योजना में किसी संशोधन की आवश्यकता है?</div>
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> Yes | हाँ
+                </td>
+                <td style="text-align: center;">
+                    <input type="checkbox"> No | नहीं
+                </td>
+            </tr>
+        </table>
+        
+        <!-- Signature Section -->
+        <div class="signature-row">
+            <div class="signature-box">
+                <p>Signature of Teacher with date | शिक्षक के हस्ताक्षर सहित तिथि</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+            <div class="signature-box">
+                <p>Signature of HM/Vice Principal/Principal | प्रधानाध्यापक/उप-प्राचार्य/प्राचार्य के हस्ताक्षर</p>
+                <p style="margin-top:40px;">.............................................</p>
+            </div>
+        </div>
+        
+        <p class="footer-note">
+            Note: This lesson plan covers 8 periods and follows NCERT guidelines for Class 11 Mathematics Chapter 10.
+        </p>
+    </div>
+</body>
+</html>
